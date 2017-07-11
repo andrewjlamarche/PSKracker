@@ -1,0 +1,1 @@
+**PSKracker** is a collection of WPA/WPA2 default algorithms/password generators written in C.
