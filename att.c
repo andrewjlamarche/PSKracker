@@ -6,6 +6,7 @@
  */
 
 #include <stdio.h>
+#include <limits.h>
 
 void genpass(unsigned x, unsigned char *buf) {
 	static const char CHARSET[] = "abcdefghijkmnpqrstuvwxyz23456789#%+=?";
@@ -26,7 +27,7 @@ void genpass(unsigned x, unsigned char *buf) {
 char main() {
 	static const char VERSION[] = "0.1";
 	unsigned char pw[12];
-	for (long j = 0; j < 2147483648; j++) {
+	for (unsigned j = 0; j < INT_MAX; j++) {
 		genpass(j, pw);
 		printf("%s\n", pw);
 	}
