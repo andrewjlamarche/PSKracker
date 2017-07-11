@@ -27,7 +27,7 @@ void genpass(unsigned x, unsigned char *buf) {
 char main() {
 	static const char VERSION[] = "0.1";
 	unsigned char pw[12];
-	for (unsigned j = 0; j < INT_MAX; j++) {
+	for (unsigned j = 0; j <= INT_MAX; j++) {
 		genpass(j, pw);
 		printf("%s\n", pw);
 	}
