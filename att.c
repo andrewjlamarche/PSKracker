@@ -51,7 +51,7 @@ int main(int argc, char **argv) {
 		switch (opt) {
 		case 'm':
 			if ((strcmp("nvg589", optarg)) == 0) {
-				for (unsigned j = 0; j <= 10; j++) {
+				for (unsigned j = 0; j <= INT_MAX; j++) {
 					genpass589(j, pw);
 					printf("%s\n", pw);
 				}
