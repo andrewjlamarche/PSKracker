@@ -31,7 +31,7 @@ Required Arguments:
 # Usage Example
 
 ```
-	att -m nvg589
+att -m nvg589
 ```
 
 # Supported OS
