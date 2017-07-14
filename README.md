@@ -4,9 +4,7 @@
 
 # Requirements
 
-```
-None
-```
+GCC compiler
 
 # Setup
 **Download**
@@ -15,16 +13,14 @@ None
 
 **Build**
 
+```
 cd PSKracker
 gcc att.c -o att
+```
 
 # Usage
 
 ```
-PSKracker WiFi Security Auditing Toolkit
-ATTxxxxxxx WPA2 Bruteforce Utility 0.1
-Copyright (c) 2017, soxrok2212 <soxrok2212@gmail.com>
-
 Usage: att <arguments>
 
 Required Arguments:
@@ -35,8 +31,6 @@ Required Arguments:
 # Usage Example
 
 ```
-Example:
-
 	att -m nvg589
 ```
 
