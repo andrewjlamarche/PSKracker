@@ -19,14 +19,15 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
+#include "../att/att.h"
+
 #include <stdio.h>
 #include <getopt.h>
 #include <stdlib.h>
 #include <limits.h>
 #include <string.h>
 
-#include "att.h"
-#include "version.h"
+#include "../att/version.h"
 
 int DONE = 0;
 
@@ -56,7 +57,8 @@ void genpass589(unsigned x, unsigned char *buf) {
 }
 
 void genpass599(unsigned y, unsigned char *buf) {
-	// not implemented yet
+	static const char CHARSET[] = "abcdefghijkmnpqrstuvwxyz23456789#%+=?";
+	long double x1 = y
 }
 
 int main(int argc, char **argv) {
@@ -74,19 +76,19 @@ int main(int argc, char **argv) {
 					printf("%s\n", pw);
 				}
 			} else if ((strcmp("nvg599", optarg)) == 0) {
-				/* for (unsigned j = 0; j <= INT_MAX; j++) {
-				 genpass599(j, pw);
-				 printf("%s\n", pw);
-				 }
-				 */
+				for (unsigned k = 0; k <= INT_MAX; k++) {
+					genpass599(k, pw);
+					printf("%s\n", pw);
+				}
 			} else {
 				usage_err();
 			}
 			break;
 		case 'h':
-				usage_err();
+			usage_err();
 			break;
 		default:
+			usage_err();
 			break;
 		}
 		opt = getopt_long(argc, argv, option_string, long_options, &long_index);
