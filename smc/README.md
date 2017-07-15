@@ -15,7 +15,7 @@ GCC compiler
 **Build**
 
 ```
-cd PSKracker
+cd PSKracker/smc
 gcc smcwps.c -o smcwps
 ```
 
