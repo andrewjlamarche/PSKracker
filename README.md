@@ -40,4 +40,6 @@ This code should compile on most *nix and Widnows systems.
 
 # Acknowledgements
 
+Thank you to mrfancypants for sourcing the original Python code and discovery of the algorithm. [https://hashcat.net/forum/thread-6170-post-35595.html#pid35595]
+
 Thank you to rofl0r and datahead for helping me on my first C endeavour!
