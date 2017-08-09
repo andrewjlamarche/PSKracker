@@ -10,13 +10,12 @@ CFLAGS += -Wall -Wno-unused -D_GNU_SOURCE -std=c99
 
 -include config.mak
 
-all: $(PROG)
+all: $(PROG) $(PROG1)
 
 install: $(PROG)
         install -d $(DESTDIR)/$(bindir)
         install -D -m 755 $(PROG) $(DESTDIR)/$(bindir)/$(PROG)
         install -D -m 755 $(PROG1) $(DESTDIR)/$(bindir)/$(PROG1)
-
 clean:
         rm -f $(PROG)
         rm -f $(OBJS)
