@@ -22,7 +22,7 @@ char usage[] =
 	"\n"
 	"Example:\n"
 	"\n"
-	"	pskracker -t <target< -w <security mode> -s <serial number> -m <mac address>\n"
+	"	pskracker -t <target> -w <security mode> -s <serial number> -m <mac address>\n"
 	"\n";
 
 char usage_verbose[] =
@@ -44,7 +44,11 @@ char usage_verbose[] =
 	"\n"
 	"Example:\n"
 	"\n"
+<<<<<<< HEAD
 	"	pskracker -t <target>  -w <security mode> -s <serial number> -m <mac address>\n"
+=======
+	"	pskracker -t <target> -w <security mode> -s <serial number> -m <mac address>\n"
+>>>>>>> 7f58f05483f5fbf968da8aead3e24b059f87eec7
 	"\n"
 	"Supported attacks:\n"
 	"\n"
