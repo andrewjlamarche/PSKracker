@@ -1,5 +1,8 @@
 #ifndef PSKRACKER_H_
 #define PSKRACKER_H_
+
+#include "att.h"
+
 char usage[] =
 	"\n"
 	"PSKracker WiFi Security Auditing Toolkit\n"
@@ -41,6 +44,7 @@ char usage_verbose[] =
 	"\n"
 	"Example:\n"
 	"\n"
+	"	pskracker -t <target>  -w <security mode> -s <serial number> -m <mac address>\n"
 	"	pskracker -t <target> -w <security mode> -s <serial number> -m <mac address>\n"
 	"\n"
 	"Supported attacks:\n"
