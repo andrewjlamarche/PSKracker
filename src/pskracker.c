@@ -31,8 +31,8 @@
 int DONE = 0;
 char TARGET[9];
 char MODE[4];
-char SERIAL[];
-char MADDR[];
+//char SERIAL[];
+//char MADDR[];
 
 static const char *option_string = "t:w:s:m:h";
 static const struct option long_options[] = {
@@ -46,6 +46,11 @@ static const struct option long_options[] = {
 
 void usage_err() {
 	fprintf(stderr, usage, SHORT_VERSION);
+	exit(0);
+}
+void usage_err_verbose() {
+	fprintf(stderr, usage_verbose, SHORT_VERSION);
+	exit(0);
 }
 
 void genpass589(unsigned x, unsigned char *buf) {
@@ -111,7 +116,7 @@ int main(int argc, char **argv) {
 				usage_err();
 			break;
 
-		case 'm':
+		case 'w':
 			if ((strcmp("wpa", optarg)) == 0) {
 				strcpy(MODE, optarg);
 
@@ -122,7 +127,7 @@ int main(int argc, char **argv) {
 			break;
 
 		case 'h':
-			usage_err();
+			usage_err_verbose();
 			break;
 
 		default:
