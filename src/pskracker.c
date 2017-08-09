@@ -31,11 +31,18 @@
 int DONE = 0;
 char TARGET[9];
 char MODE[4];
+char SERIAL[];
+char MADDR[];
 
-static const char *option_string = "t:m:h";
-static const struct option long_options[] = { { "target", required_argument, 0,
-		't' }, { "mode", required_argument, 0, 'm' }, { "help", no_argument, 0,
-		0 }, { 0, no_argument, 0, 'h' }, { 0, 0, 0, 0 } };
+static const char *option_string = "t:w:s:m:h";
+static const struct option long_options[] = {
+		{ "target", required_argument, 0, 't' },
+		{ "mode", required_argument, 0, 'w' },
+		{ "serial", required_argument, 0, 's' },
+		{ "maddr", required_argument, 0, 'm'},
+		{ "help", no_argument, 0, 0 },
+		{ 0, no_argument, 0, 'h' },
+		{ 0, 0, 0, 0 } };
 
 void usage_err() {
 	fprintf(stderr, usage, SHORT_VERSION);
