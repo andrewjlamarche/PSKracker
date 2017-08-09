@@ -1,6 +1,6 @@
 /*
- * ATTxxxxxxx PSKracker: ATTxxxxxxx WPA default password generator.
- *           Thank you to mrfancypants for research and preliminary Python code.
+ * PSKracker: .
+ *           Thank you to mrfancypants for research and preliminary Python code for ATTXXXXXXX networks.
  *
  * Copyright (c) 2017, soxrok2212 <soxrok2212@gmail.com>
  * SPDX-License-Identifier: GPL-3.0+
@@ -19,22 +19,23 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-
 #include <stdio.h>
 #include <getopt.h>
 #include <stdlib.h>
 #include <limits.h>
 #include <string.h>
 
-#include "att.h"
+#include "pskracker.h"
 #include "version.h"
 
 int DONE = 0;
+char TARGET[9];
+char MODE[4];
 
-static const char *option_string = "m:h";
-static const struct option long_options[] = { { "mode", required_argument, 0,
-		'm' }, { "help", no_argument, 0, 0 }, { 0, no_argument, 0, 'h' }, { 0,
-		0, 0, 0 } };
+static const char *option_string = "t:m:h";
+static const struct option long_options[] = { { "target", required_argument, 0,
+		't' }, { "mode", required_argument, 0, 'm' }, { "help", no_argument, 0,
+		0 }, { 0, no_argument, 0, 'h' }, { 0, 0, 0, 0 } };
 
 void usage_err() {
 	fprintf(stderr, usage, SHORT_VERSION);
@@ -57,41 +58,72 @@ void genpass589(unsigned x, unsigned char *buf) {
 }
 
 void genpass599(unsigned y, unsigned char *buf) {
-	static const char CHARSET[] = "abcdefghijkmnpqrstuvwxyz23456789#%+=?";
-	long double x1 = y
+	// static const char CHARSET[] = "abcdefghijkmnpqrstuvwxyz23456789#%+=?";
+	// long double x1 = y;
+	// long long x2 = x1;
+	printf("Not functioning yet");
+}
+
+void attack() {
+	unsigned char pw[13];
+	if (((strcmp("nvg589", TARGET)) == 0) && ((strcmp("wpa", MODE)) == 0)) {
+		for (unsigned k = 0; k <= INT_MAX; k++) {
+			genpass589(k, pw);
+			printf("%s\n", pw);
+		}
+	} else if (((strcmp("nvg599", TARGET)) == 0)
+			&& ((strcmp("wpa", MODE)) == 0)) {
+		/** for (unsigned k = 0; k <= INT_MAX; k++) {
+		 genpass599(0, pw);
+		 printf("%s\n", pw);
+		 }
+		 **/
+	} else {
+		usage_err();
+	}
 }
 
 int main(int argc, char **argv) {
-	unsigned char pw[13];
 	int opt = 0;
 	int long_index = 0;
 
 	opt = getopt_long(argc, argv, option_string, long_options, &long_index);
 	while (opt != -1) {
 		switch (opt) {
-		case 'm':
+
+		case 't':
 			if ((strcmp("nvg589", optarg)) == 0) {
-				for (unsigned j = 0; j <= INT_MAX; j++) {
-					genpass589(j, pw);
-					printf("%s\n", pw);
-				}
+				strcpy(TARGET, optarg);
+
 			} else if ((strcmp("nvg599", optarg)) == 0) {
-				for (unsigned k = 0; k <= INT_MAX; k++) {
-					genpass599(k, pw);
-					printf("%s\n", pw);
-				}
-			} else {
+				strcpy(TARGET, optarg);
+
+			} else if ((strcmp("smcd3gnv", optarg)) == 0) {
+				strcpy(TARGET, optarg);
+			} else
 				usage_err();
-			}
 			break;
+
+		case 'm':
+			if ((strcmp("wpa", optarg)) == 0) {
+				strcpy(MODE, optarg);
+
+			} else if ((strcmp("wps", optarg)) == 0) {
+				strcpy(MODE, optarg);
+			} else
+				usage_err();
+			break;
+
 		case 'h':
 			usage_err();
 			break;
+
 		default:
 			usage_err();
 			break;
 		}
 		opt = getopt_long(argc, argv, option_string, long_options, &long_index);
 	}
+	attack();
 	return DONE;
 }
