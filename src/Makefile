@@ -1,23 +1,28 @@
-CCFLAGS ?= -std=c99 -O3
+prefix = /usr/local
+bindir = $(prefix)/bin
 
-TARGET = pskracker
-SOURCE = $(TARGET).c
-PREFIX ?= $(DESTDIR)/usr
-BINDIR = $(PREFIX)/bin
+PROG = pskracker att
+SRCS =  pskracker.c att.c
+OBJS = $(SRCS:.c=.o)
 
-all:
-	$(CC) $(CFLAGS) $(CCFLAGS) $(CPPFLAGS) -o $(TARGET) $(SOURCE) $(LDFLAGS)
+CFLAGS += -Wall -Wno-unused -D_GNU_SOURCE -std=c99
 
-debug:
-	$(CC) $(CLFAGS) $(CCFLAGS) $(CPPFLAGS) -DDEBUG -o $(TARGET) $(SOURCE) $(LDFLAGS)
+-include config.mak
 
-install:
-	rm -f $(BINDIR)/$(TARGET)
-	install -d $(BINDIR)
-	install -m 755 $(TARGET) $(BINDIR)
+all: $(PROG)
 
-uninstall:
-	rm -f $(BINDIR)/$(TARGET)
+install: $(PROG)
+	install -d $(DESTDIR)/$(bindir)
+	install -D -m 755 $(PROG) $(DESTDIR)/$(bindir)/$(PROG)
 
 clean:
-	rm -f $(TARGET)
+	rm -f $(PROG)
+	rm -f $(OBJS)
+
+%.o: %.c
+	$(CC) $(CPPFLAGS) $(CFLAGS) $(INC) $(PIC) -c -o $@ $<
+
+$(PROG): $(OBJS)
+	$(CC) $(LDFLAGS) $(OBJS) $(LIBS) -o $@
+
+.PHONY: all clean install
