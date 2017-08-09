@@ -18,8 +18,7 @@ install: $(PROGa) $(PROGb)
 	install -D -m 755 $(PROGa) $(DESTDIR)/$(bindir)/$(PROGa)
 	install -D -m 755 $(PROGb) $(DESTDIR)/$(bindir)/$(PROGb)
 clean:
-	rm -f $(PROGa)
-	rm -f $(PROGb)
+	rm -f $(PROGi)
 	rm -f $(OBJS)
 
 %.o: %.c
