@@ -1,5 +1,5 @@
 /*
- * PSKracker: .
+ * PSKracker: WPA/WPA2/WPS default key/pin generator written in C.
  *           Thank you to mrfancypants for research and preliminary Python code for ATTXXXXXXX networks.
  *
  * Copyright (c) 2017, soxrok2212 <soxrok2212@gmail.com>

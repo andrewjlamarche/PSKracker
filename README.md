@@ -30,12 +30,12 @@ Usage: pskracker <arguments>
 
 Required Arguments:
 
-	-t, --target			: Target model number
-	-m, --mode			: Security type (wps, wpa)
+	-t, --target		: Target model number
+	-m, --mode		: Security type
 	
 Optional Arguments:
-	-s, --serial			: Serial number
-	-m, --maddr			: Mac address
+	-s, --serial		: Serial number
+	-m, --maddr		: Mac address
 
 ```
 
