@@ -12,6 +12,7 @@ attic
 award
 bacon
 badge
+bagel
 basic
 beard
 begin
