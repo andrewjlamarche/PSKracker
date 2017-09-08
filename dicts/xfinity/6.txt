@@ -38,6 +38,7 @@ celery
 center
 chance
 change
+Charge
 cheery
 chores
 chosen
