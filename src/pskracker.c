@@ -43,7 +43,7 @@ char MADDR[11];
 /**
  * Just some command line arguments using getopt
  */
-static const char *option_string = "t:w:s:m:h";
+static const char *option_string = "t:e:s:m:h";
 static const struct option long_options[] = { { "target", required_argument, 0,
 		't' }, { "encryption", required_argument, 0, 'e' }, { "serial",
 required_argument, 0, 's' }, { "maddr",
