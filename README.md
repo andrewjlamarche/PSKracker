@@ -31,7 +31,7 @@ Usage: pskracker <arguments>
 Required Arguments:
 
 	-t, --target		: Target model number
-	-m, --mode		: Security type
+	-e, --encryption	: Security/encryption type
 	
 Optional Arguments:
 	-s, --serial		: Serial number
@@ -41,7 +41,7 @@ Optional Arguments:
 
 # Usage Example
 
-`pskracker -t <target> -w <security mode> -s <serial number> -m <mac address>`
+`pskracker -t <target> -e <security/encryption type> -s <serial number> -m <mac address>`
 
 # Supported OS
 

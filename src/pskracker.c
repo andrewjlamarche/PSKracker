@@ -45,7 +45,7 @@ char MADDR[11];
  */
 static const char *option_string = "t:w:s:m:h";
 static const struct option long_options[] = { { "target", required_argument, 0,
-		't' }, { "mode", required_argument, 0, 'w' }, { "serial",
+		't' }, { "encryption", required_argument, 0, 'e' }, { "serial",
 required_argument, 0, 's' }, { "maddr",
 required_argument, 0, 'm' }, { "help", no_argument, 0, 0 }, { 0,
 no_argument, 0, 'h' }, { 0, 0, 0, 0 } };
@@ -68,14 +68,14 @@ void usage_err_verbose() {
 void bruteforce() {
 	unsigned char pw[13]; // set size of password (12)
 	if (((strcmp("nvg589", TARGET)) == 0) && ((strcmp("wpa", MODE)) == 0)) {
-		for (unsigned long k = 0; k <= INT_MAX; k++) {
+		for (int k = 0; k <= INT_MAX; k++) {
 			genpass589(k, pw);
 			printf("%s\n", pw);
 			DONE = 0;
 		}
 	} else if (((strcmp("nvg599", TARGET)) == 0)
 			&& ((strcmp("wpa", MODE)) == 0)) {
-		for (unsigned long k = 0; k <= INT_MAX; k++) {
+		for (int k = 0; k <= INT_MAX; k++) {
 			genpass599(k, pw);
 			printf("%s\n", pw);
 			DONE = 0;
@@ -116,7 +116,7 @@ int main(int argc, char **argv) {
 				usage_err();
 			break;
 
-		case 'w': // security mode selection
+		case 'e': // security/encryption mode selection
 			if ((strcmp("wpa", optarg)) == 0) {
 				strcpy(MODE, optarg);
 
