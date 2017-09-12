@@ -1,10 +1,10 @@
 prefix = /usr/local
 bindir = $(prefix)/bin
 
-PROGi = pskracker att
+PROGi = pskracker att xfinity
 PROGa = pskracker
 PROGb = att
-SRCS =  pskracker.c att.c
+SRCS =  pskracker.c att.c xfinity.c
 OBJS = $(SRCS:.c=.o)
 
 CFLAGS += -Wall -Wno-unused -D_GNU_SOURCE -std=c99

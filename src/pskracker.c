@@ -1,6 +1,5 @@
 /*
  * PSKracker: WPA/WPA2/WPS default key/pin generator written in C.
- *           Thank you to mrfancypants for research and preliminary Python code for ATTXXXXXXX networks.
  *
  * Copyright (c) 2017, soxrok2212 <soxrok2212@gmail.com>
  * SPDX-License-Identifier: GPL-3.0+
@@ -27,9 +26,11 @@
 
 #include "pskracker.h"
 #include "version.h"
-#include "att.h"
+#include "att.h" // att module
+#include "xfinity.h" // xfinity module
 
-int DONE = 0;
+int DONE = 1;
+char ERR[120]; // should change this
 char TARGET[9];
 char MODE[4];
 /**
@@ -37,7 +38,8 @@ char MODE[4];
  * (and once I actually know C :P)
  */
 //char SERIAL[];
-//char MADDR[];
+//
+char MADDR[11];
 /**
  * Just some command line arguments using getopt
  */
@@ -66,17 +68,24 @@ void usage_err_verbose() {
 void bruteforce() {
 	unsigned char pw[13]; // set size of password (12)
 	if (((strcmp("nvg589", TARGET)) == 0) && ((strcmp("wpa", MODE)) == 0)) {
-		for (unsigned k = 0; k <= INT_MAX; k++) {
+		for (unsigned long k = 0; k <= INT_MAX; k++) {
 			genpass589(k, pw);
 			printf("%s\n", pw);
+			DONE = 0;
 		}
 	} else if (((strcmp("nvg599", TARGET)) == 0)
 			&& ((strcmp("wpa", MODE)) == 0)) {
-		/** for (unsigned k = 0; k <= INT_MAX; k++) {
-		 genpass599(0, pw);
-		 printf("%s\n", pw);
-		 }
-		 */
+		for (unsigned long k = 0; k <= INT_MAX; k++) {
+			genpass599(k, pw);
+			printf("%s\n", pw);
+			DONE = 0;
+		}
+	} else if ((((strcmp("dpc3939", TARGET)) == 0)
+			|| ((strcmp("dpc3941", TARGET)) == 0)
+			|| ((strcmp("tg1682g", TARGET)) == 0))
+			&& ((strcmp("wpa", MODE)) == 0)) {
+		genpassXHS();
+		DONE = 0;
 	} else {
 		usage_err();
 	}
@@ -99,6 +108,10 @@ int main(int argc, char **argv) {
 
 			} else if ((strcmp("smcd3gnv", optarg)) == 0) {
 				strcpy(TARGET, optarg);
+			} else if (((strcmp("dpc3939", optarg)) == 0)
+					|| ((strcmp("dpc3941", optarg)) == 0)
+					|| ((strcmp("tg1682g", optarg)) == 0)) {
+				strcpy(TARGET, optarg);
 			} else
 				usage_err();
 			break;
@@ -113,7 +126,16 @@ int main(int argc, char **argv) {
 				usage_err();
 			break;
 
-		case 'h': // display verbose help
+		case 'm':
+			if ((strlen(optarg) == 10)) {
+				strcpy(MADDR, optarg);
+			} else {
+				strcpy(ERR,
+						"Invalid MAC Address or length. Please enter the MAC Address without colons. Ex: 0011223344\n");
+			}
+			break;
+		case 'h':
+			// display verbose help
 			usage_err_verbose();
 			break;
 
@@ -124,5 +146,6 @@ int main(int argc, char **argv) {
 		opt = getopt_long(argc, argv, option_string, long_options, &long_index);
 	}
 	bruteforce();
+	printf("%s", ERR);
 	return DONE;
 }
