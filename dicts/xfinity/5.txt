@@ -1,4 +1,5 @@
 again
+ahead
 aisle
 alert
 alley
@@ -25,6 +26,7 @@ boast
 bonus
 booth
 borus
+bread
 brick
 bring
 brook
@@ -50,6 +52,8 @@ cocoa
 cough
 count
 court
+cover
+creak
 cream
 creek
 crumb
@@ -71,7 +75,10 @@ earth
 elbow
 elect
 empty
+enter
+entry
 equal
+event
 exact
 fancy
 favor
