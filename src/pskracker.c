@@ -23,6 +23,7 @@
 #include <stdlib.h>
 #include <limits.h>
 #include <string.h>
+#include <math.h>
 
 #include "pskracker.h"
 #include "version.h"
@@ -79,7 +80,7 @@ void bruteforce() {
 			genpass599(k, pw);
 			printf("%s\n", pw);
 			DONE = 0;
-		}
+		}	
 	} else if ((((strcmp("dpc3939", TARGET)) == 0)
 			|| ((strcmp("dpc3941", TARGET)) == 0)
 			|| ((strcmp("tg1682g", TARGET)) == 0))
