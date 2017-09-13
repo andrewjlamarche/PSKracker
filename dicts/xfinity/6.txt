@@ -52,6 +52,7 @@ clever
 collar
 column
 comedy
+copied
 corral
 county
 course
