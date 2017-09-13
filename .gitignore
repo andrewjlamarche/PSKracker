@@ -55,3 +55,7 @@ dkms.conf
 *.DS_Store
 .AppleDouble
 .LSOverride
+
+# Custom
+src/att
+src/pskracker
