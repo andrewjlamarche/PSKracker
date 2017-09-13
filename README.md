@@ -50,3 +50,7 @@ PSKracker should compile on any *nix system
 # Acknowledgements
 
 Thank you to rofl0r and datahead for my first C endeavours!
+
+# Disclaimer
+
+In publishing these documents and source code, I (and other developers/contributors) take no responsibility for your actions. What you do with everything in this repository, as well as any information online, is your responsibility. Use this repo wisely. In light of anything I may have failed to mention regarding laws, this does not grant excuse to include the developers or contributors in any way to your legal statements. Thank you.
