@@ -25,18 +25,16 @@
 #include <string.h>
 #include <math.h>
 
-#include "pskracker.h"
 #include "version.h"
 #include "att.h" // att module
 #include "xfinity.h" // xfinity module
 
 int DONE = 1;
-char ERR[120]; // should change this
 char TARGET[9];
 char MODE[4];
 /**
  * Serial and mac address are for future keygens
- * (and once I actually know C :P)
+ * (and once I actually know C)
  */
 //char SERIAL[];
 //
@@ -52,11 +50,28 @@ required_argument, 0, 'm' }, { "help", no_argument, 0, 0 }, { 0,
 no_argument, 0, 'h' }, { 0, 0, 0, 0 } };
 
 void usage_err() {
-	fprintf(stderr, usage, SHORT_VERSION);
-	exit(0);
-}
-void usage_err_verbose() {
-	fprintf(stderr, usage_verbose, SHORT_VERSION);
+	printf(
+        "\n"
+        "PSKracker WiFi Security Auditing Toolkit\n"
+        "Copyright (c) 2017, soxrok2212 <soxrok2212@gmail.com>\n"
+        "\n"
+        "Usage: pskracker <arguments>\n"
+        "\n"
+        "Required Arguments:\n"
+        "\n"
+        "       -t, --target            : Target model number\n"
+        "       -e, --encryption        : Security/encryption type\n"
+        "\n"
+        "Optional Arguments:\n"
+        "\n"
+        "       -s, --serial            : Serial number\n"
+        "       -m, --maddr             : Mac address\n"
+        "\n"
+        "Example:\n"
+        "\n"
+        "       pskracker -t <target> -w <security mode> -s <serial number> -m <mac address>\n"
+        "\n"
+);
 	exit(0);
 }
 
@@ -131,13 +146,13 @@ int main(int argc, char **argv) {
 			if ((strlen(optarg) == 10)) {
 				strcpy(MADDR, optarg);
 			} else {
-				strcpy(ERR,
-						"Invalid MAC Address or length. Please enter the MAC Address without colons. Ex: 0011223344\n");
+				printf("Invalid MAC Address or length. Please enter the MAC Address without colons. Ex: 0011223344\n");
+				exit(1);
 			}
 			break;
 		case 'h':
 			// display verbose help
-			usage_err_verbose();
+			usage_err();
 			break;
 
 		default:
@@ -147,6 +162,6 @@ int main(int argc, char **argv) {
 		opt = getopt_long(argc, argv, option_string, long_options, &long_index);
 	}
 	bruteforce();
-	printf("%s", ERR);
-	return DONE;
+	return 0;
+	exit(0);
 }
