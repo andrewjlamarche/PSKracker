@@ -109,7 +109,7 @@ MobileWifi-xxxx - [0-9] Length 8
 `?d?d?d?d?d?d?d?d`
 
 NETGEARXX - Adjective + Noun + 3 Digits  
-#### /dicts/netgear`  
+#### /dicts/netgear  
 `-a 6 netgear_adjective_noun.txt ?d`  
 or  
 `-a 6 netgear_adjective_noun.txt ?d?d?d`  
