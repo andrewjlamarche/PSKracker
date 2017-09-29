@@ -1,10 +1,10 @@
 # ISP
 
-### ATT
+## ATT
 ATTXXX - [0-9] Length 10  
 `?d?d?d?d?d?d?d?d?d?d` 
 
-### BrightBox
+## BrightBox
 
 BrightBox-xxxx - 3 Words separated by "-"  
 #### /dicts/ee-brightbox
@@ -12,9 +12,9 @@ BrightBox-xxxx - 3 Words separated by "-"
 EE-BrightBox - 3 Words separated by "-"  
 #### /dicts/ee-brightbox
 
-### Bright House Networks
+## Bright House Networks
 
-### BT
+## BT
 
 BTHomeHub1XXXX - [0-9a-f] Length 10  
 `?h?h?h?h?h?h?h?h?h?h`
@@ -28,48 +28,48 @@ BTHub3 - [2-9a-f] Length 10
 BTHub4 - [2-9a-f] Length 10  
 `-1 23456789abcdef ?1?1?1?1?1?1?1?1?1?1`
 
-### CenturyLink
+## CenturyLink
 
 CenturyLinkXXXX - [0-9a-f] Length 14  
 `?h?h?h?h?h?h?h?h?h?h?h?h?h?h`
 
-### Charter/Spectrum
+## Charter/Spectrum
 
-### Comcast/Xfinity
+## Comcast/Xfinity
 
-### Cox Communications
+## Cox Communications
 
-### dishNET
+## dishNET
 
-### FiOS
+## FiOS
 
-### Frontier Communications
+## Frontier Communications
 
-### Google
+## Google
 
-### HughesNet
+## HughesNet
 
-### Optimum/Cablevision
+## Optimum/Cablevision
 
-### Suddenlink Communications
+## Suddenlink Communications
 
-### Time Warner Cable
+## Time Warner Cable
 
-### Windstream
+## Windstream
 
-### WOW!
+## WOW!
 
 
 # Manufacturer
 
-### 2WIRE
+## 2WIRE
 2WIREXXX - [0-9] Length 10  
 `?d?d?d?d?d?d?d?d?d?d`  
 
-### 3Wireless
+## 3Wireless
 3Wireless Modem XXXX - [0-9A-F] (first 4 digits of ESSID then 4 x [0-9A-F]) Length 8  
  
-### Belkin 
+## Belkin 
 belkin.xxx - [2-9a-f] length 8  
 `-1 23456789abcdef ?1?1?1?1?1?1?1?1`
 
