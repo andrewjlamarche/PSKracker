@@ -8,10 +8,10 @@ Belkin.XXXX - [0-9a-f] Length 8
 belkin.XXXX - [2-9a-f] length 8
 Belkin_XXXXXX - [0-9A-F] Length 8
 BrightBox - 3 Words separated by "-" Example dizzy-tool-cat Lengths 3-4-5 or any combination.
-BTHomeHub1XXXX - [0-9a-f] (Broken algorithm) Length 10 
-BTHomeHub2XXXX - [2-9a-f] (0 and 1 omitted) Length 10 
-BTHub3 - [2-9a-f] (0 and 1 omitted) Length 10 
-BTHub4 - [2-9a-f] (0 and 1 omitted) Length 10 
+BTHomeHub1XXXX - [0-9a-f] (Broken algorithm) Length 10
+BTHomeHub2XXXX - [2-9a-f] (0 and 1 omitted) Length 10
+BTHub3 - [2-9a-f] (0 and 1 omitted) Length 10
+BTHub4 - [2-9a-f] (0 and 1 omitted) Length 10
 CenturyLinkXXXX - [0-9a-f] Length 14
 DJAWEB_xxxxx - [0-9] Length 10
 Domino-XXXX - [0-9A-F] Length 8
@@ -49,4 +49,4 @@ Virgin Media - [abcdefghjklmnpqrstuvwxyz] (0 and i omitted) Length 8
 Virgin Mobile - MiFiXXXX XXX - [0-9] Length 11
 VMXXXXXXX 2G - [abcdefghjklmnpqrstuvwxyz] (0 and i omitted) Length 8
 VMXXXXXXX 5G - [abcdefghjklmnpqrstuvwxyz] (0 and i omitted) Length 8
-ZyXELXXXXXX - [0-9A-Z] Length 13
+ZyXELXXXXXX - [0-9A-Z] Length 13  
