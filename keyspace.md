@@ -1,6 +1,8 @@
 2WIREXXX - [0-9] Length 10
+`?d?d?d?d?d?d?d?d?d?d`
 3Wireless Modem XXXX - [0-9A-F] (first 4 digits of ESSID then 4 x [0-9A-F]) Length 8
-ATT?d?d?d - [0-9] Length 10
+ATTXXX - [0-9] Length 10
+`?d?d?d?d?d?d?d?d?d?d`
 belkin.xxx - [2-9a-f] length 8
 Belkin.XXXX - [0-9a-f] Length 8
 belkin.XXXX - [2-9a-f] length 8
