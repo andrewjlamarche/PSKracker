@@ -45,7 +45,7 @@ char MADDR[11];
 static const char *option_string = "t:e:s:m:h";
 static const struct option long_options[] = { { "target", required_argument, 0,
 		't' }, { "encryption", required_argument, 0, 'e' }, { "serial",
-required_argument, 0, 's' }, { "maddr",
+required_argument, 0, 's' }, { "mac",
 required_argument, 0, 'm' }, { "help", no_argument, 0, 0 }, { 0,
 no_argument, 0, 'h' }, { 0, 0, 0, 0 } };
 
@@ -59,17 +59,17 @@ void usage_err() {
         "\n"
         "Required Arguments:\n"
         "\n"
-        "       -t, --target            : Target model number\n"
-        "       -e, --encryption        : Security/encryption type\n"
+        "       -t, --target		: Target model number\n"
+        "       -e, --encryption		: Security/encryption type\n"
         "\n"
         "Optional Arguments:\n"
         "\n"
-        "       -s, --serial            : Serial number\n"
-        "       -m, --maddr             : Mac address\n"
+        "       -s, --serial		: Serial number\n"
+        "       -m, --mac		: Mac address\n"
         "\n"
         "Example:\n"
         "\n"
-        "       pskracker -t <target> -w <security mode> -s <serial number> -m <mac address>\n"
+        "       pskracker -t <target> -e <security/encryption mode> -s <serial number> -m <mac address>\n"
         "\n"
 );
 	exit(0);
@@ -95,7 +95,7 @@ void bruteforce() {
 			genpass599(k, pw);
 			printf("%s\n", pw);
 			DONE = 0;
-		}	
+		}
 	} else if ((((strcmp("dpc3939", TARGET)) == 0)
 			|| ((strcmp("dpc3941", TARGET)) == 0)
 			|| ((strcmp("tg1682g", TARGET)) == 0))
@@ -116,27 +116,22 @@ int main(int argc, char **argv) {
 		switch (opt) {
 
 		case 't': // target model number selection
-			if ((strcmp("nvg589", optarg)) == 0) {
-				strcpy(TARGET, optarg);
 
-			} else if ((strcmp("nvg599", optarg)) == 0) {
-				strcpy(TARGET, optarg);
-
-			} else if ((strcmp("smcd3gnv", optarg)) == 0) {
-				strcpy(TARGET, optarg);
-			} else if (((strcmp("dpc3939", optarg)) == 0)
-					|| ((strcmp("dpc3941", optarg)) == 0)
-					|| ((strcmp("tg1682g", optarg)) == 0)) {
-				strcpy(TARGET, optarg);
-			} else
+			if ((strcmp("nvg589", optarg)) == 0
+		|| (strcmp("nvg599", optarg)) == 0
+		|| (strcmp("smcd3gnv", optarg)) == 0
+		|| (strcmp("dpc3939", optarg)) == 0
+		|| (strcmp("dpc3941", optarg)) == 0
+		|| (strcmp("tg1682g", optarg)) == 0) {
+			strcpy(TARGET, optarg);
+		}
+			else
 				usage_err();
 			break;
 
 		case 'e': // security/encryption mode selection
-			if ((strcmp("wpa", optarg)) == 0) {
-				strcpy(MODE, optarg);
-
-			} else if ((strcmp("wps", optarg)) == 0) {
+			if ((strcmp("wpa", optarg)) == 0
+			|| (strcmp("wps", optarg)) == 0) {
 				strcpy(MODE, optarg);
 			} else
 				usage_err();
@@ -151,7 +146,7 @@ int main(int argc, char **argv) {
 			}
 			break;
 		case 'h':
-			// display verbose help
+			// display help
 			usage_err();
 			break;
 
