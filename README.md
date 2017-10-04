@@ -32,10 +32,10 @@ Required Arguments:
 
 	-t, --target		: Target model number
 	-e, --encryption	: Security/encryption type
-	
+
 Optional Arguments:
 	-s, --serial		: Serial number
-	-m, --maddr		: Mac address
+	-m, --mac		: Mac address
 
 ```
 
