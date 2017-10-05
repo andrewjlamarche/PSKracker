@@ -13,7 +13,7 @@ void genpass589(unsigned x, unsigned char *buf) {
 	int i;
 	buf[12] = 0; // create buffer for password
 
-	/**
+	/*
 	 * This code finds the associated ascii value in the charset specified above
 	 * If we knew the seed they were using, we wouldn't have to bruteforce every
 	 * possibility
@@ -36,7 +36,7 @@ void genpass599(unsigned y, unsigned char *buf) {
 	int i;
 	buf[12] = 0; // create buffer for password
 
-	/**
+	/*
 	 * This code finds the associated ascii value in the charset specified above
 	 * If we knew the seed they were using, we wouldn't have to bruteforce every
 	 * possibility

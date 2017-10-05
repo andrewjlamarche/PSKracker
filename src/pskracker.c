@@ -31,55 +31,58 @@
 int DONE = 1;
 char TARGET[9];
 char MODE[4];
-/**
+/*
  * Serial and mac address are for future keygens
  * (and once I actually know C)
  */
 //char SERIAL[];
 //
 char MADDR[11];
-/**
+/*
  * Just some command line arguments using getopt
  */
 static const char *option_string = "t:e:s:m:h";
-static const struct option long_options[] = { { "target", required_argument, 0,
-		't' }, { "encryption", required_argument, 0, 'e' }, { "serial",
-required_argument, 0, 's' }, { "mac",
-required_argument, 0, 'm' }, { "help", no_argument, 0, 0 }, { 0,
-no_argument, 0, 'h' }, { 0, 0, 0, 0 } };
+static const struct option long_options[] = {
+		{ "target",     required_argument, 0, 't' },
+		{ "encryption", required_argument, 0, 'e' },
+		{ "serial",     required_argument, 0, 's' },
+		{ "mac",        required_argument, 0, 'm' },
+		{ "help",       no_argument,       0,  0  },
+		{ 0,            no_argument,       0, 'h' },
+		{ 0,            0,                 0,  0  }
+};
 
 void usage_err() {
 	printf(
-        "\n"
-        "PSKracker WiFi Security Auditing Toolkit\n"
-        "Copyright (c) 2017, soxrok2212 <soxrok2212@gmail.com>\n"
-        "\n"
-        "Usage: pskracker <arguments>\n"
-        "\n"
-        "Required Arguments:\n"
-        "\n"
-        "       -t, --target		: Target model number\n"
-        "       -e, --encryption		: Security/encryption type\n"
-        "\n"
-        "Optional Arguments:\n"
-        "\n"
-        "       -s, --serial		: Serial number\n"
-        "       -m, --mac		: Mac address\n"
-        "\n"
-        "Example:\n"
-        "\n"
-        "       pskracker -t <target> -e <security/encryption mode> -s <serial number> -m <mac address>\n"
-        "\n"
-);
+			"\n"
+      "PSKracker WiFi Security Auditing Toolkit\n"
+      "Copyright (c) 2017, soxrok2212 <soxrok2212@gmail.com>\n"
+      "\n"
+      "Usage: pskracker <arguments>\n"
+      "\n"
+      "Required Arguments:\n"
+      "\n"
+      "    -t, --target		  : Target model number\n"
+      "    -e, --encryption	: Security/encryption type\n"
+      "\n"
+      "Optional Arguments:\n"
+      "\n"
+      "    -s, --serial     : Serial number\n"
+      "    -m, --mac		    : Mac address\n"
+      "\n"
+      "Example:\n"
+      "\n"
+      "    pskracker -t <target> -e <security/encryption mode> -s <serial number> -m <mac address>\n"
+      "\n"
+	);
 	exit(0);
 }
 
-/**
- *  This probably isn't optimal coding technique but it works
- *  Just some simple configuration vectors
- *  Thanks for understanding
+/*
+ * This probably isn't optimal coding technique but it works
+ * Just some simple configuration vectors
+ * Thanks for understanding
  */
-
 void bruteforce() {
 	unsigned char pw[13]; // set size of password (12)
 	if (((strcmp("nvg589", TARGET)) == 0) && ((strcmp("wpa", MODE)) == 0)) {
@@ -88,8 +91,7 @@ void bruteforce() {
 			printf("%s\n", pw);
 			DONE = 0;
 		}
-	} else if (((strcmp("nvg599", TARGET)) == 0)
-			&& ((strcmp("wpa", MODE)) == 0)) {
+	} else if (((strcmp("nvg599", TARGET)) == 0) && ((strcmp("wpa", MODE)) == 0)) {
 		for (int k = 0; k <= INT_MAX; k++) {
 			genpass599(k, pw);
 			printf("%s\n", pw);
@@ -117,20 +119,20 @@ int main(int argc, char **argv) {
 		case 't': // target model number selection
 
 			if ((strcmp("nvg589", optarg)) == 0
-		|| (strcmp("nvg599", optarg)) == 0
-		|| (strcmp("smcd3gnv", optarg)) == 0
-		|| (strcmp("dpc3939", optarg)) == 0
-		|| (strcmp("dpc3941", optarg)) == 0
-		|| (strcmp("tg1682g", optarg)) == 0) {
-			strcpy(TARGET, optarg);
-		}
-			else
+					|| (strcmp("nvg599", optarg)) == 0
+					|| (strcmp("smcd3gnv", optarg)) == 0
+					|| (strcmp("dpc3939", optarg)) == 0
+					|| (strcmp("dpc3941", optarg)) == 0
+					|| (strcmp("tg1682g", optarg)) == 0) {
+				strcpy(TARGET, optarg);
+			} else {
 				usage_err();
+			}
 			break;
 
 		case 'e': // security/encryption mode selection
 			if ((strcmp("wpa", optarg)) == 0
-			|| (strcmp("wps", optarg)) == 0) {
+					|| (strcmp("wps", optarg)) == 0) {
 				strcpy(MODE, optarg);
 			} else
 				usage_err();
