@@ -19,28 +19,20 @@
  */
 
 #include <stdio.h>
-#include <getopt.h>
 #include <stdlib.h>
-#include <limits.h>
 #include <string.h>
+#include <limits.h>
+#include <stdint.h>
+#include <getopt.h>
 
+#include "pskracker.h"
 #include "att.h"
 #include "xfinity.h"
 #include "version.h"
 
-int DONE = 1;
 char TARGET[9];
 char MODE[4];
-/*
- * Serial and mac address are for future keygens
- * (and once I actually know C)
- */
-//char SERIAL[];
-//
-char MADDR[11];
-/*
- * Just some command line arguments using getopt
- */
+
 static const char *option_string = "t:e:s:m:h";
 static const struct option long_options[] = {
 		{ "target",     required_argument, 0, 't' },
@@ -77,51 +69,77 @@ void usage_err() {
 	exit(1);
 }
 
-/*
- * This probably isn't optimal coding technique but it works
- * Just some simple configuration vectors
- * Thanks for understanding
- */
+unsigned int hex_string_to_byte_array(char *in, uint8_t *out, const unsigned int n_len) {
+	unsigned int o, i, j;
+	unsigned int len = strlen(in);
+	unsigned int b_len = n_len * 2 + n_len - 1;
+
+	if (len != n_len * 2 && len != b_len)
+		return 1;
+	for (i = 0; i < n_len; i++) {
+		o = 0;
+		for (j = 0; j < 2; j++) {
+			o <<= 4;
+			if (*in >= 'A' && *in <= 'F')
+				*in += 'a'-'A';
+			if (*in >= '0' && *in <= '9')
+				o += *in - '0';
+			else
+				if (*in >= 'a' && *in <= 'f')
+					o += *in - 'a' + 10;
+				else
+					return 1;
+			in++;
+		}
+		*out++ = o;
+		if (len == b_len) {
+			if (*in == ':' || *in == '-' || *in == ' ' || *in == 0)
+				in++;
+			else
+				return 1;
+		}
+	}
+	return 0;
+}
+
 void bruteforce() {
 	unsigned char pw[13]; // set size of password (12)
-	if (((strcmp("nvg589", TARGET)) == 0) && ((strcmp("wpa", MODE)) == 0)) {
+	if (((strcmp(STR_TARGET_NVG589, TARGET)) == 0) && ((strcmp(STR_ENC_WPA, MODE)) == 0)) {
 		for (int k = 0; k <= INT_MAX; k++) {
 			genpass589(k, pw);
 			printf("%s\n", pw);
-			DONE = 0;
 		}
-	} else if (((strcmp("nvg599", TARGET)) == 0) && ((strcmp("wpa", MODE)) == 0)) {
+	} else if (((strcmp(STR_TARGET_NVG599, TARGET)) == 0) && ((strcmp(STR_ENC_WPA, MODE)) == 0)) {
 		for (int k = 0; k <= INT_MAX; k++) {
 			genpass599(k, pw);
 			printf("%s\n", pw);
-			DONE = 0;
 		}
-	} else if ((((strcmp("dpc3939", TARGET)) == 0)
-			|| ((strcmp("dpc3941", TARGET)) == 0)
-			|| ((strcmp("tg1682g", TARGET)) == 0))
-			&& ((strcmp("wpa", MODE)) == 0)) {
+	} else if ((((strcmp(STR_TARGET_DPC3939, TARGET)) == 0)
+			|| ((strcmp(STR_TARGET_DPC3941, TARGET)) == 0)
+			|| ((strcmp(STR_TARGET_TG1682G, TARGET)) == 0))
+			&& ((strcmp(STR_ENC_WPA, MODE)) == 0)) {
 		genpassXHS();
-		DONE = 0;
 	} else {
 		usage_err();
 	}
 }
 
 int main(int argc, char **argv) {
+	uint8_t mac[6];
+
 	int opt = 0;
 	int long_index = 0;
-
 	opt = getopt_long(argc, argv, option_string, long_options, &long_index);
 	while (opt != -1) {
 		switch (opt) {
 
 		case 't': // target model number selection
-			if ((strcmp("nvg589", optarg)) == 0
-					|| (strcmp("nvg599", optarg)) == 0
-					|| (strcmp("smcd3gnv", optarg)) == 0
-					|| (strcmp("dpc3939", optarg)) == 0
-					|| (strcmp("dpc3941", optarg)) == 0
-					|| (strcmp("tg1682g", optarg)) == 0) {
+			if ((strcmp(STR_TARGET_NVG589, optarg)) == 0
+					|| (strcmp(STR_TARGET_NVG599, optarg)) == 0
+					|| (strcmp(STR_TARGET_SMCD3GNV, optarg)) == 0
+					|| (strcmp(STR_TARGET_DPC3939, optarg)) == 0
+					|| (strcmp(STR_TARGET_DPC3941, optarg)) == 0
+					|| (strcmp(STR_TARGET_TG1682G, optarg)) == 0) {
 				strcpy(TARGET, optarg);
 			} else {
 				usage_err();
@@ -129,18 +147,16 @@ int main(int argc, char **argv) {
 			break;
 
 		case 'e': // security/encryption mode selection
-			if ((strcmp("wpa", optarg)) == 0
-					|| (strcmp("wps", optarg)) == 0) {
+			if ((strcmp(STR_ENC_WPA, optarg)) == 0
+					|| (strcmp(STR_ENC_WPS, optarg)) == 0) {
 				strcpy(MODE, optarg);
 			} else
 				usage_err();
 			break;
 
 		case 'm':
-			if ((strlen(optarg) == 10)) {
-				strcpy(MADDR, optarg);
-			} else {
-				printf("Invalid MAC Address or length. Please enter the MAC Address without colons. Ex: 0011223344\n");
+			if (hex_string_to_byte_array(optarg, mac, BSSID_LEN)) {
+				printf("Invalid MAC Address\n");
 				exit(2);
 			}
 			break;

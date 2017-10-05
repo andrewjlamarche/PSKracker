@@ -31,7 +31,7 @@ void genpass589(unsigned x, unsigned char *buf) {
 // nvg599 password algorithm, not finished
 void genpass599(unsigned y, unsigned char *buf) {
 	static const char CHARSET[] = "abcdefghijkmnpqrstuvwxyz23456789#%+=?";
-	long long y1 = y * pow(2,32)+2; // thank you mrfancypants for finding this number
+	long long y1 = y * pow(2, 32) + 2; // thank you mrfancypants for finding this number
 	long long y2 = y1;
 	int i;
 	buf[12] = 0; // create buffer for password
