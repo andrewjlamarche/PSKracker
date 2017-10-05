@@ -9,8 +9,6 @@ OBJS = $(SRCS:.c=.o)
 
 CFLAGS += -Wno-unused
 
--include config.mak
-
 all: $(PROGa) $(PROGb)
 
 install: $(PROGa) $(PROGb)

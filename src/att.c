@@ -2,8 +2,8 @@
  * Thank you to mrfancypants for research and preliminary Python code for ATTXXXXXXX networks.
  */
 #include <math.h>
+
 #include "att.h"
-#include <pthread.h>
 
 // nvg589 password algorithm, about 80% accurate
 void genpass589(unsigned x, unsigned char *buf) {
