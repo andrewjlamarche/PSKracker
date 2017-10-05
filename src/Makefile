@@ -7,7 +7,7 @@ PROGb = att
 SRCS =  pskracker.c att.c xfinity.c
 OBJS = $(SRCS:.c=.o)
 
-CFLAGS += -Wall -Wno-unused -D_GNU_SOURCE -std=c99
+CFLAGS += -Wno-unused
 
 -include config.mak
 
@@ -22,7 +22,7 @@ clean:
 	rm -f $(OBJS)
 
 %.o: %.c
-	$(CC) $(CPPFLAGS) $(CFLAGS) $(INC) $(PIC) -c -o $@ $<
+	$(CC) $(CFLAGS) $(INC) $(PIC) -c -o $@ $<
 
 $(PROGi): $(OBJS)
 	$(CC) $(LDFLAGS) $(OBJS) $(LIBS) -o $@
