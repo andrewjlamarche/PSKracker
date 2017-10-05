@@ -1,28 +1,25 @@
-prefix = /usr/local
-bindir = $(prefix)/bin
+PREFIX ?= $(DESTDIR)/usr/local
+BINDIR = $(PREFIX)/bin
 
-PROGi = pskracker att xfinity
-PROGa = pskracker
-PROGb = att
-SRCS =  pskracker.c att.c xfinity.c
+PROG = pskracker
+SRCS = pskracker.c att.c xfinity.c
 OBJS = $(SRCS:.c=.o)
 
 CFLAGS += -Wno-unused
 
-all: $(PROGa) $(PROGb)
+all: $(PROG)
 
-install: $(PROGa) $(PROGb)
-	install -d $(DESTDIR)/$(bindir)
-	install -D -m 755 $(PROGa) $(DESTDIR)/$(bindir)/$(PROGa)
-	install -D -m 755 $(PROGb) $(DESTDIR)/$(bindir)/$(PROGb)
+install: $(PROG)
+	install -D -m 755 $(PROG) $(BINDIR)/$(PROG)
+
 clean:
-	rm -f $(PROGi)
-	rm -f $(OBJS)
+	$(RM) $(PROG)
+	$(RM) $(OBJS)
 
 %.o: %.c
-	$(CC) $(CFLAGS) $(INC) $(PIC) -c -o $@ $<
+	$(CC) $(CFLAGS) $(PIC) -c -o $@ $<
 
-$(PROGi): $(OBJS)
+$(PROG): $(OBJS)
 	$(CC) $(LDFLAGS) $(OBJS) $(LIBS) -o $@
 
 .PHONY: all clean install
