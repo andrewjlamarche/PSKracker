@@ -7,7 +7,7 @@ PROGb = att
 SRCS =  pskracker.c att.c xfinity.c
 OBJS = $(SRCS:.c=.o)
 
-CFLAGS += -Wall -Wno-unused -D_GNU_SOURCE -std=c99 -m64
+CFLAGS += -Wall -Wno-unused -D_GNU_SOURCE -std=c99
 
 -include config.mak
 
