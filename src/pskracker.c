@@ -102,7 +102,7 @@ unsigned int hex_string_to_byte_array(char *in, uint8_t *out, const unsigned int
 	return 0;
 }
 
-void bruteforce() {
+char *bruteforce(uint8_t *mac) {
 	unsigned char pw[13]; // set size of password (12)
 	if (((strcmp(STR_TARGET_NVG589, TARGET)) == 0) && ((strcmp(STR_ENC_WPA, MODE)) == 0)) {
 		for (int k = 0; k <= INT_MAX; k++) {
@@ -117,15 +117,16 @@ void bruteforce() {
 	} else if ((((strcmp(STR_TARGET_DPC3939, TARGET)) == 0)
 			|| ((strcmp(STR_TARGET_DPC3941, TARGET)) == 0)
 			|| ((strcmp(STR_TARGET_TG1682G, TARGET)) == 0))
-			&& ((strcmp(STR_ENC_WPA, MODE)) == 0)) {
-		genpassXHS();
+			&& ((strcmp(STR_ENC_WPA, MODE)) == 0)
+			&& mac) {
+		return genpassXHS(mac);
 	} else {
 		usage_err();
 	}
 }
 
 int main(int argc, char **argv) {
-	uint8_t mac[6];
+	uint8_t mac[6], *ptrmac = 0;
 
 	int opt = 0;
 	int long_index = 0;
@@ -159,6 +160,7 @@ int main(int argc, char **argv) {
 				printf("Invalid MAC Address\n");
 				exit(2);
 			}
+			ptrmac = mac;
 			break;
 
 		case 'h':
@@ -171,6 +173,10 @@ int main(int argc, char **argv) {
 		}
 		opt = getopt_long(argc, argv, option_string, long_options, &long_index);
 	}
-	bruteforce();
+	char *psk = bruteforce(ptrmac);
+	if (psk) {
+		printf("PSK is \'%s\'\n", psk);
+		free(psk);
+	}
 	return 0;
 }
