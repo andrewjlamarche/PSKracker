@@ -24,9 +24,9 @@
 #include <limits.h>
 #include <string.h>
 
+#include "att.h"
+#include "xfinity.h"
 #include "version.h"
-#include "att.h" // att module
-#include "xfinity.h" // xfinity module
 
 int DONE = 1;
 char TARGET[9];
@@ -47,35 +47,34 @@ static const struct option long_options[] = {
 		{ "encryption", required_argument, 0, 'e' },
 		{ "serial",     required_argument, 0, 's' },
 		{ "mac",        required_argument, 0, 'm' },
-		{ "help",       no_argument,       0,  0  },
-		{ 0,            no_argument,       0, 'h' },
+		{ "help",       no_argument,       0, 'h' },
 		{ 0,            0,                 0,  0  }
 };
 
 void usage_err() {
 	printf(
-			"\n"
-      "PSKracker WiFi Security Auditing Toolkit\n"
-      "Copyright (c) 2017, soxrok2212 <soxrok2212@gmail.com>\n"
-      "\n"
-      "Usage: pskracker <arguments>\n"
-      "\n"
-      "Required Arguments:\n"
-      "\n"
-      "    -t, --target		  : Target model number\n"
-      "    -e, --encryption	: Security/encryption type\n"
-      "\n"
-      "Optional Arguments:\n"
-      "\n"
-      "    -s, --serial     : Serial number\n"
-      "    -m, --mac		    : Mac address\n"
-      "\n"
-      "Example:\n"
-      "\n"
-      "    pskracker -t <target> -e <security/encryption mode> -s <serial number> -m <mac address>\n"
-      "\n"
+		"\n"
+		"PSKracker WiFi Security Auditing Toolkit\n"
+		"Copyright (c) 2017, soxrok2212 <soxrok2212@gmail.com>\n"
+		"\n"
+		"Usage: pskracker <arguments>\n"
+		"\n"
+		"Required Arguments:\n"
+		"\n"
+		"    -t, --target       : Target model number\n"
+		"    -e, --encryption   : Security/encryption type\n"
+		"\n"
+		"Optional Arguments:\n"
+		"\n"
+		"    -s, --serial       : Serial number\n"
+		"    -m, --mac          : Mac address\n"
+		"\n"
+		"Example:\n"
+		"\n"
+		"    pskracker -t <target> -e <security/encryption mode> -s <serial number> -m <mac address>\n"
+		"\n"
 	);
-	exit(0);
+	exit(1);
 }
 
 /*
@@ -117,7 +116,6 @@ int main(int argc, char **argv) {
 		switch (opt) {
 
 		case 't': // target model number selection
-
 			if ((strcmp("nvg589", optarg)) == 0
 					|| (strcmp("nvg599", optarg)) == 0
 					|| (strcmp("smcd3gnv", optarg)) == 0
@@ -143,11 +141,11 @@ int main(int argc, char **argv) {
 				strcpy(MADDR, optarg);
 			} else {
 				printf("Invalid MAC Address or length. Please enter the MAC Address without colons. Ex: 0011223344\n");
-				exit(1);
+				exit(2);
 			}
 			break;
+
 		case 'h':
-			// display help
 			usage_err();
 			break;
 
@@ -159,5 +157,4 @@ int main(int argc, char **argv) {
 	}
 	bruteforce();
 	return 0;
-	exit(0);
 }
