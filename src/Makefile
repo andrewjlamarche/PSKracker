@@ -5,7 +5,7 @@ PROG = pskracker
 SRCS = pskracker.c att.c xfinity.c
 OBJS = $(SRCS:.c=.o)
 
-CFLAGS += -Wno-unused
+CFLAGS += -Wno-unused -Wno-return-type
 
 all: $(PROG)
 

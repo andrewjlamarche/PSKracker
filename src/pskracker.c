@@ -155,7 +155,7 @@ int main(int argc, char **argv) {
 				usage_err();
 			break;
 
-		case 'm':
+		case 'm': // mac address selection
 			if (hex_string_to_byte_array(optarg, mac, BSSID_LEN)) {
 				printf("Invalid MAC Address\n");
 				exit(2);
@@ -163,7 +163,7 @@ int main(int argc, char **argv) {
 			ptrmac = mac;
 			break;
 
-		case 'h':
+		case 'h': // display usage menu
 			usage_err();
 			break;
 

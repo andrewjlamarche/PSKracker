@@ -47,7 +47,7 @@ static unsigned int sub_AQf4(unsigned int a1, unsigned int a2)
     }
   } while (!v16);
   if (v14 > 0xFD)
-    return v12 & 0x80000000 | 0x7F800000;
+    return (v12 & 0x80000000) | 0x7F800000;
   result = (v14 << 23) + (v11 >= v10) + v12;
   if (v11 == v10)
     result &= 0xFFFFFFFE;

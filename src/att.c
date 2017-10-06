@@ -2,14 +2,15 @@
  * Thank you to mrfancypants for research and preliminary Python code for ATTXXXXXXX networks.
  */
 #include <math.h>
+#include <stdint.h>
 
 #include "att.h"
 
 // nvg589 password algorithm, about 80% accurate
 void genpass589(unsigned x, unsigned char *buf) {
 	static const char CHARSET[] = "abcdefghijkmnpqrstuvwxyz23456789#%+=?";
-	long long x1 = x * 465661287.5245797; // thank you mrfancypants for finding this number
-	long long x2 = x1;
+	uint64_t x1 = x * 465661287.5245797; // thank you mrfancypants for finding this number
+	uint64_t x2 = x1;
 	int i;
 	buf[12] = 0; // create buffer for password
 
@@ -31,8 +32,8 @@ void genpass589(unsigned x, unsigned char *buf) {
 // nvg599 password algorithm, not finished
 void genpass599(unsigned y, unsigned char *buf) {
 	static const char CHARSET[] = "abcdefghijkmnpqrstuvwxyz23456789#%+=?";
-	long long y1 = y * pow(2, 32) + 2; // thank you mrfancypants for finding this number
-	long long y2 = y1;
+	uint64_t y1 = y * pow(2, 32) + 2; // thank you mrfancypants for finding this number
+	uint64_t y2 = y1;
 	int i;
 	buf[12] = 0; // create buffer for password
 
