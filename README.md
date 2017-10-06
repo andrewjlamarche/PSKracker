@@ -56,4 +56,6 @@ Thank you to AAnarchYY for research dedication and motivation.
 
 # Disclaimer
 
-In publishing these documents and source code, I (and other developers/contributors) take no responsibility for your actions. What you do with everything in this repository, as well as any information online, is your responsibility. Use this repo wisely. In light of anything I may have failed to mention regarding laws, this does not grant excuse to include the developers or contributors in any way to your legal statements. Thank you.
+This project is intended for testing and securing your own networks or networks you have permission to audit. This is not intended to be used maliciously.
+
+In publishing these documents and source code, I (and other developers/contributors) take no responsibility for your actions. What you do with everything in this repository, as well as any information online, is your responsibility. Use this repo wisely. In light of anything I may have failed to mention regarding laws to any country or civilized region, this does not grant the excuse to include the developers or contributors in any way to your legal statements or prosecutor. Thank you.
