@@ -46,10 +46,12 @@ Optional Arguments:
 # Supported OS
 
 PSKracker should compile on any *nix system
+Embedded systems are not supported. PSKracker is intended to be run on true pentesting environments (Desktop/Workstation/Laptop).
 
 # Acknowledgements
 
-Thank you to rofl0r and datahead for my first C endeavours!
+Thank you to rofl0r, wiire and datahead for my first C endeavors!
+Thank you to AAnarchYY for research dedication and motivation
 
 # Disclaimer
 
