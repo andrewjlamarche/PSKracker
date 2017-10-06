@@ -45,13 +45,14 @@ Optional Arguments:
 
 # Supported OS
 
-PSKracker should compile on any *nix system
+PSKracker should compile on macOS any Linux system.  
+It has been tested on macOS Sierra 10.12 and Ubuntu 16.04.  
 Embedded systems are not supported. PSKracker is intended to be run on true pentesting environments (Desktop/Workstation/Laptop).
 
 # Acknowledgements
 
-Thank you to rofl0r, wiire and datahead for my first C endeavors!
-Thank you to AAnarchYY for research dedication and motivation
+Thank you to rofl0r, wiire and datahead for my first C endeavors!  
+Thank you to AAnarchYY for research dedication and motivation.
 
 # Disclaimer
 
