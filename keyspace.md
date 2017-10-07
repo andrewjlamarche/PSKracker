@@ -1,47 +1,47 @@
 # ISP
 
 ## ATT
-ATTXXX - [0-9] Length 10  
+* ATTXXX - [0-9] Length 10  
 `?d?d?d?d?d?d?d?d?d?d` 
 
 ## BrightBox
 
-BrightBox-xxxx - 3 Words separated by "-"  
+* BrightBox-xxxx - 3 Words separated by "-"  
 #### /dicts/ee-brightbox
 
-EE-BrightBox - 3 Words separated by "-"  
+* EE-BrightBox - 3 Words separated by "-"  
 #### /dicts/ee-brightbox
 
 ## Bright House Networks
 
 ## BT
 
-BTHomeHub1XXXX - [0-9a-f] Length 10  
+* BTHomeHub1XXXX - [0-9a-f] Length 10  
 `?h?h?h?h?h?h?h?h?h?h`
 
-BTHomeHub2XXXX - [2-9a-f] Length 10  
+* BTHomeHub2XXXX - [2-9a-f] Length 10  
 `-1 23456789abcdef ?1?1?1?1?1?1?1?1?1?1`
 
-BTHub3 - [2-9a-f] Length 10  
+* BTHub3 - [2-9a-f] Length 10  
 `-1 23456789abcdef ?1?1?1?1?1?1?1?1?1?1`
 
-BTHub4 - [2-9a-f] Length 10  
+* BTHub4 - [2-9a-f] Length 10  
 `-1 23456789abcdef ?1?1?1?1?1?1?1?1?1?1`
 
 ## CenturyLink
 
-CenturyLinkXXXX - [0-9a-f] Length 14  
+* CenturyLinkXXXX - [0-9a-f] Length 14  
 `?h?h?h?h?h?h?h?h?h?h?h?h?h?h`
 
 ## Charter/Spectrum
 
-MyCharterWiFi-XX - Adjective + Noun + 1/3 Digits  
+* MyCharterWiFi-XX - Adjective + Noun + 1/3 Digits  
 #### /dicts/netgear  
 `-a 6 netgear_adjective_noun.txt ?d`  
 or  
 `-a 6 netgear_adjective_noun.txt ?d?d?d` 
 
-MySpectrumWiFi-XX - Adjective + Noun + 1/3 Digits  
+* MySpectrumWiFi-XX - Adjective + Noun + 1/3 Digits  
 #### /dicts/netgear  
 `-a 6 netgear_adjective_noun.txt ?d`  
 or  
@@ -65,21 +65,21 @@ or
 
 ## Orange
 
-Orange - ?d?l?d?l?l?d - [0-9a-f] Length 8  
+* Orange - ?d?l?d?l?l?d - [0-9a-f] Length 8  
 `?h?h?h?h?h?h?h?h`
 
-Orange - ?u?u?d?u?d?d - [0-9A-F] Length 12  
+* Orange - ?u?u?d?u?d?d - [0-9A-F] Length 12  
 `?H?H?H?H?H?H?H?H?H?H?H?H`
 
-Orange-XXXX - [2345679ACEF] Length 8  
+* Orange-XXXX - [2345679ACEF] Length 8  
 `-1 2345679ACEF ?1?1?1?1?1?1?1?1`
 
 ## Sky UK
 
-SKYXXXXX - (Sky Hub)[A-Z] Length 8  
+* SKYXXXXX - (Sky Hub)[A-Z] Length 8  
 `?u?u?u?u?u?u?u?u`
 
-SKYXXXXX - (Sky Q Hub) [BCDFLMNPQRSTVWXY] Length 10  
+* SKYXXXXX - (Sky Q Hub) [BCDFLMNPQRSTVWXY] Length 10  
 `-1 BCDFLMNPQRSTVWXY ?1?1?1?1?1?1?1?1?1X`
 
 First hex value in SSID -> Last letter of PSK, X:
@@ -106,10 +106,10 @@ F = F
 
 ## Virgin Media
 
-viginmediaxxxxxx - [abcdefghjklmnpqrstuvwxyz] Length 8  
+* viginmediaxxxxxx - [abcdefghjklmnpqrstuvwxyz] Length 8  
 `-1 abcdefghjklmnpqrstuvwxyz ?1?1?1?1?1?1?1?1`
 
-VMXXXXXXX-XG - [abcdefghjklmnpqrstuvwxyz] Length 8  
+* VMXXXXXXX-XG - [abcdefghjklmnpqrstuvwxyz] Length 8  
 `-1 abcdefghjklmnpqrstuvwxyz ?1?1?1?1?1?1?1?1`
 
 ## Windstream
@@ -120,99 +120,99 @@ VMXXXXXXX-XG - [abcdefghjklmnpqrstuvwxyz] Length 8
 # Manufacturer
 
 ## 2WIRE
-2WIREXXX - [0-9] Length 10  
+* 2WIREXXX - [0-9] Length 10  
 `?d?d?d?d?d?d?d?d?d?d`  
 
 ## 3Wireless
-3Wireless Modem XXXX - [0-9A-F] (first 4 digits of ESSID then 4 x [0-9A-F]) Length 8  
+* 3Wireless Modem XXXX - [0-9A-F] (first 4 digits of ESSID then 4 x [0-9A-F]) Length 8  
  
 ## Belkin 
-belkin.xxx - [2-9a-f] length 8  
+* belkin.xxx - [2-9a-f] length 8  
 `-1 23456789abcdef ?1?1?1?1?1?1?1?1`
 
-Belkin.XXXX - [0-9a-f] Length 8  
+* Belkin.XXXX - [0-9a-f] Length 8  
 `?h?h?h?h?h?h?h?h`
 
-belkin.XXXX - [2-9a-f] length 8  
+* belkin.XXXX - [2-9a-f] length 8  
 `-1 23456789abcdef ?1?1?1?1?1?1?1?1`
 
-Belkin_XXXXXX - [0-9A-F] Length 8  
+* Belkin_XXXXXX - [0-9A-F] Length 8  
 `?H?H?H?H?H?H?H?H`
 
-DJAWEB_xxxxx - [0-9] Length 10  
+* DJAWEB_xxxxx - [0-9] Length 10  
 `?d?d?d?d?d?d?d?d?d?d`
 
-Domino-XXXX - [0-9A-F] Length 8  
+* Domino-XXXX - [0-9A-F] Length 8  
 `?H?H?H?H?H?H?H?H`
 
-E583x-xxxx - [0-9] Length 8  
+* E583x-xxxx - [0-9] Length 8  
 `?d?d?d?d?d?d?d?d`
 
-E583x-xxxxx - [0-9A-F] Length 8 
+* E583x-xxxxx - [0-9A-F] Length 8 
 `?H?H?H?H?H?H?H?H`
 
-EasyBox-xxxxxx - [0-9A-F] Length 9  
+* EasyBox-xxxxxx - [0-9A-F] Length 9  
 `?H?H?H?H?H?H?H?H?H`
 
-FRITZ!Box Fon WLAN xxxx - [0-9] Length 16  
+* FRITZ!Box Fon WLAN xxxx - [0-9] Length 16  
 `?d?d?d?d?d?d?d?d?d?d?d?d?d?d?d?d`
 
-Keenetic-XXXX - [a-zA-Z0-9] Length 8  
+* Keenetic-XXXX - [a-zA-Z0-9] Length 8  
 `-1 ?u?l?d ?1?1?1?1?1?1?1?1`
 
-Livebox-XXXX - Impossible  
+* Livebox-XXXX - Impossible  
 
-MobileWifi-xxxx - [0-9] Length 8  
+* MobileWifi-xxxx - [0-9] Length 8  
 `?d?d?d?d?d?d?d?d`
 
-NETGEARXX - Adjective + Noun + 1/3 Digits  
+* NETGEARXX - Adjective + Noun + 1/3 Digits  
 #### /dicts/netgear  
 `-a 6 netgear_adjective_noun.txt ?d`  
 or  
 `-a 6 netgear_adjective_noun.txt ?d?d?d`  
 
-ONOXXXX - [0-9] Length 10  
+* ONOXXXX - [0-9] Length 10  
 `?d?d?d?d?d?d?d?d?d?d`  
 
-PlusnetWireless-XXXXXX - [0-9A-F] Length 10  
+* PlusnetWireless-XXXXXX - [0-9A-F] Length 10  
 `?H?H?H?H?H?H?H?H?H?H`
 
-SpeedTouchXXXXXX - [0-9a-f] Length 10 (Broken algorithm)  
+* SpeedTouchXXXXXX - [0-9a-f] Length 10 (Broken algorithm)  
 `?h?h?h?h?h?h?h?h?h?h`
 
-TALKTALK-XXXXXX - [ABCDEFGHJKMNPQRTUVWXY346789] Length 8  
+* TALKTALK-XXXXXX - [ABCDEFGHJKMNPQRTUVWXY346789] Length 8  
 `-1 ABCDEFGHJKMNPQRTUVWXY346789 ?1?1?1?1?1?1?1?1`
 
 ## Technicolor
 
-Technicolor-Router [0-9A-F] Length 10 
+* Technicolor-Router [0-9A-F] Length 10 
 `?H?H?H?H?H?H?H?H?H?H`
 
-Thomson - [0-9A-F] Length 10  
+* Thomson - [0-9A-F] Length 10  
 `?H?H?H?H?H?H?H?H?H?H`
 
-ThomsonXXXXXX - [0-9a-f] Length 10  
+* ThomsonXXXXXX - [0-9a-f] Length 10  
 `?h?h?h?h?h?h?h?h?h?h`
 
-TNCAP-XXXX [0-9A-F] Length 10  
+* TNCAP-XXXX [0-9A-F] Length 10  
 `?H?H?H?H?H?H?H?H?H?H`
 
-TNCAPXXXXXX - [0-9A-F] Length 10  
+* TNCAPXXXXXX - [0-9A-F] Length 10  
 `?H?H?H?H?H?H?H?H?H?H`
 
 ## TP-Link
 
-TP-LINK_xxxxxx - [0-9A-F] Length 8  
+* TP-LINK_xxxxxx - [0-9A-F] Length 8  
 `?H?H?H?H?H?H?H?H`
 
-UNITE-XXXX - [0-9] Length 8  
+* UNITE-XXXX - [0-9] Length 8  
 `?d?d?d?d?d?d?d?d`
 
-UPCXXXXXXX - [A-Z] Length 8 
+* UPCXXXXXXX - [A-Z] Length 8 
 `?U?U?U?U?U?U?U?U`
 
-Verizon MIFIXXXX XXXX - [0-9] Length 11  
+* Verizon MIFIXXXX XXXX - [0-9] Length 11  
 `?d?d?d?d?d?d?d?d?d?d?d`
 
-ZyXELXXXXXX - [0-9A-Z] Length 13    
+* ZyXELXXXXXX - [0-9A-Z] Length 13    
 `-1 ?u?d ?1?1?1?1?1?1?1?1?1?1?1?1?1`
