@@ -115,26 +115,82 @@ or
 `-a 6 netgear_adjective_noun.txt ?d?d?d`  
 
 ONOXXXX - [0-9] Length 10  
-Orange - ?d?l?d?l?l?d - [0-9a-f] Length 8  
+`?d?d?d?d?d?d?d?d?d?d`  
+
+Orange - ?d?l?d?l?l?d - [0-9a-f] Length 8  
+`?h?h?h?h?h?h?h?h`
+
 Orange - ?u?u?d?u?d?d - [0-9A-F] Length 12  
+`?H?H?H?H?H?H?H?H?H?H?H?H`
+
 Orange-XXXX - [2345679ACEF] Length 8  
-Plusnet Broadband UK - [a-zA-Z0-9] Length 64  
+`-1 2345679ACEF ?1?1?1?1?1?1?1?1`
+
 PlusnetWireless-XXXXXX - [0-9A-F] Length 10  
-SKYXXXXX - [A-Z] Length 8  
-SpeedTouchXXXXXX - [0-9a-f] Length 10 (Broken algorithm)  
-SSID: NETGEAR37 KEY: Adjective + Noun + 3 Digits Example vastcoconut260  
-TALKTALK-XXXXXX - [ABCDEFGHJKMNPQRTUVWXY346789] (ILOSZ0125 omitted) Length 8  
-Technicolor-Router [0-9A-F] Length 10  
+`?H?H?H?H?H?H?H?H?H?H`
+
+SKYXXXXX - (Sky Hub)[A-Z] Length 8  
+`?u?u?u?u?u?u?u?u`
+
+SKYXXXXX - (Sky Q Hub) [] Length 10  
+`-1 BCDFLMNPQRSTVWXY ?1?1?1?1?1?1?1?1?1X`
+
+First hex value in SSID -> Last letter of PSK, X:
+0 = P
+1 = Q
+2 = R
+3 = S
+4 = T
+5 = N
+6 = V
+7 = W
+8 = X
+9 = Y
+A = L
+B = B
+C = C
+D = D
+E = M
+F = F
+
+SpeedTouchXXXXXX - [0-9a-f] Length 10 (Broken algorithm)  
+`?h?h?h?h?h?h?h?h?h?h`
+
+TALKTALK-XXXXXX - [ABCDEFGHJKMNPQRTUVWXY346789] Length 8  
+`-1 ABCDEFGHJKMNPQRTUVWXY346789 ?1?1?1?1?1?1?1?1`
+
+Technicolor-Router [0-9A-F] Length 10 
+`?H?H?H?H?H?H?H?H?H?H`
+
 Thomson - [0-9A-F] Length 10  
+`?H?H?H?H?H?H?H?H?H?H`
+
 ThomsonXXXXXX - [0-9a-f] Length 10  
+`?h?h?h?h?h?h?h?h?h?h`
+
 TNCAP-XXXX [0-9A-F] Length 10  
+`?H?H?H?H?H?H?H?H?H?H`
+
 TNCAPXXXXXX - [0-9A-F] Length 10  
+`?H?H?H?H?H?H?H?H?H?H`
+
 TP-LINK_xxxxxx - [0-9A-F] Length 8  
+`?H?H?H?H?H?H?H?H`
+
 UNITE-XXXX - [0-9] Length 8  
-UPCXXXXXXX - [A-Z] Length 8  
+`?d?d?d?d?d?d?d?d`
+
+UPCXXXXXXX - [A-Z] Length 8 
+`?U?U?U?U?U?U?U?U`
+
 Verizon MIFIXXXX XXXX - [0-9] Length 11  
-Virgin Media - [abcdefghjklmnpqrstuvwxyz] (0 and i omitted) Length 8  
-Virgin Mobile - MiFiXXXX XXX - [0-9] Length 11  
-VMXXXXXXX 2G - [abcdefghjklmnpqrstuvwxyz] (0 and i omitted) Length 8  
-VMXXXXXXX 5G - [abcdefghjklmnpqrstuvwxyz] (0 and i omitted) Length 8  
+`?d?d?d?d?d?d?d?d?d?d?d`
+
+viginmediaxxxxxx - [abcdefghjklmnpqrstuvwxyz] Length 8  
+`-1 abcdefghjklmnpqrstuvwxyz ?1?1?1?1?1?1?1?1`
+
+VMXXXXXXX-XG - [abcdefghjklmnpqrstuvwxyz] Length 8  
+`-1 abcdefghjklmnpqrstuvwxyz ?1?1?1?1?1?1?1?1`
+
 ZyXELXXXXXX - [0-9A-Z] Length 13    
+`-1 ?u?1 ?1?1?1?1?1?1?1?1?1?1?1?1?1`
