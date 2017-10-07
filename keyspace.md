@@ -35,6 +35,18 @@ CenturyLinkXXXX - [0-9a-f] Length 14
 
 ## Charter/Spectrum
 
+MyCharterWiFi-XX - Adjective + Noun + 1/3 Digits  
+#### /dicts/netgear  
+`-a 6 netgear_adjective_noun.txt ?d`  
+or  
+`-a 6 netgear_adjective_noun.txt ?d?d?d` 
+
+MySpectrumWiFi-XX - Adjective + Noun + 1/3 Digits  
+#### /dicts/netgear  
+`-a 6 netgear_adjective_noun.txt ?d`  
+or  
+`-a 6 netgear_adjective_noun.txt ?d?d?d` 
+
 ## Comcast/Xfinity
 
 ## Cox Communications
@@ -51,9 +63,54 @@ CenturyLinkXXXX - [0-9a-f] Length 14
 
 ## Optimum/Cablevision
 
+## Orange
+
+Orange - ?d?l?d?l?l?d - [0-9a-f] Length 8  
+`?h?h?h?h?h?h?h?h`
+
+Orange - ?u?u?d?u?d?d - [0-9A-F] Length 12  
+`?H?H?H?H?H?H?H?H?H?H?H?H`
+
+Orange-XXXX - [2345679ACEF] Length 8  
+`-1 2345679ACEF ?1?1?1?1?1?1?1?1`
+
+## Sky UK
+
+SKYXXXXX - (Sky Hub)[A-Z] Length 8  
+`?u?u?u?u?u?u?u?u`
+
+SKYXXXXX - (Sky Q Hub) [BCDFLMNPQRSTVWXY] Length 10  
+`-1 BCDFLMNPQRSTVWXY ?1?1?1?1?1?1?1?1?1X`
+
+First hex value in SSID -> Last letter of PSK, X:
+0 = P  
+1 = Q  
+2 = R  
+3 = S  
+4 = T  
+5 = N  
+6 = V  
+7 = W  
+8 = X  
+9 = Y  
+A = L  
+B = B  
+C = C  
+D = D  
+E = M  
+F = F  
+
 ## Suddenlink Communications
 
 ## Time Warner Cable
+
+## Virgin Media
+
+viginmediaxxxxxx - [abcdefghjklmnpqrstuvwxyz] Length 8  
+`-1 abcdefghjklmnpqrstuvwxyz ?1?1?1?1?1?1?1?1`
+
+VMXXXXXXX-XG - [abcdefghjklmnpqrstuvwxyz] Length 8  
+`-1 abcdefghjklmnpqrstuvwxyz ?1?1?1?1?1?1?1?1`
 
 ## Windstream
 
@@ -108,7 +165,7 @@ Livebox-XXXX - Impossible
 MobileWifi-xxxx - [0-9] Length 8  
 `?d?d?d?d?d?d?d?d`
 
-NETGEARXX - Adjective + Noun + 3 Digits  
+NETGEARXX - Adjective + Noun + 1/3 Digits  
 #### /dicts/netgear  
 `-a 6 netgear_adjective_noun.txt ?d`  
 or  
@@ -117,47 +174,16 @@ or
 ONOXXXX - [0-9] Length 10  
 `?d?d?d?d?d?d?d?d?d?d`  
 
-Orange - ?d?l?d?l?l?d - [0-9a-f] Length 8  
-`?h?h?h?h?h?h?h?h`
-
-Orange - ?u?u?d?u?d?d - [0-9A-F] Length 12  
-`?H?H?H?H?H?H?H?H?H?H?H?H`
-
-Orange-XXXX - [2345679ACEF] Length 8  
-`-1 2345679ACEF ?1?1?1?1?1?1?1?1`
-
 PlusnetWireless-XXXXXX - [0-9A-F] Length 10  
 `?H?H?H?H?H?H?H?H?H?H`
-
-SKYXXXXX - (Sky Hub)[A-Z] Length 8  
-`?u?u?u?u?u?u?u?u`
-
-SKYXXXXX - (Sky Q Hub) [] Length 10  
-`-1 BCDFLMNPQRSTVWXY ?1?1?1?1?1?1?1?1?1X`
-
-First hex value in SSID -> Last letter of PSK, X:
-0 = P
-1 = Q
-2 = R
-3 = S
-4 = T
-5 = N
-6 = V
-7 = W
-8 = X
-9 = Y
-A = L
-B = B
-C = C
-D = D
-E = M
-F = F
 
 SpeedTouchXXXXXX - [0-9a-f] Length 10 (Broken algorithm)  
 `?h?h?h?h?h?h?h?h?h?h`
 
 TALKTALK-XXXXXX - [ABCDEFGHJKMNPQRTUVWXY346789] Length 8  
 `-1 ABCDEFGHJKMNPQRTUVWXY346789 ?1?1?1?1?1?1?1?1`
+
+## Technicolor
 
 Technicolor-Router [0-9A-F] Length 10 
 `?H?H?H?H?H?H?H?H?H?H`
@@ -174,6 +200,8 @@ TNCAP-XXXX [0-9A-F] Length 10
 TNCAPXXXXXX - [0-9A-F] Length 10  
 `?H?H?H?H?H?H?H?H?H?H`
 
+## TP-Link
+
 TP-LINK_xxxxxx - [0-9A-F] Length 8  
 `?H?H?H?H?H?H?H?H`
 
@@ -185,12 +213,6 @@ UPCXXXXXXX - [A-Z] Length 8
 
 Verizon MIFIXXXX XXXX - [0-9] Length 11  
 `?d?d?d?d?d?d?d?d?d?d?d`
-
-viginmediaxxxxxx - [abcdefghjklmnpqrstuvwxyz] Length 8  
-`-1 abcdefghjklmnpqrstuvwxyz ?1?1?1?1?1?1?1?1`
-
-VMXXXXXXX-XG - [abcdefghjklmnpqrstuvwxyz] Length 8  
-`-1 abcdefghjklmnpqrstuvwxyz ?1?1?1?1?1?1?1?1`
 
 ZyXELXXXXXX - [0-9A-Z] Length 13    
 `-1 ?u?1 ?1?1?1?1?1?1?1?1?1?1?1?1?1`
