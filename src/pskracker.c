@@ -106,12 +106,12 @@ char *bruteforce(uint8_t *mac) {
 	unsigned char pw[13]; // set size of password (12)
 	int k;
 	if (((strcmp(STR_TARGET_NVG589, TARGET)) == 0) && ((strcmp(STR_ENC_WPA, MODE)) == 0)) {
-		for (k = 0; k <= INT_MAX; k++) {
+		for (k = 0; k < INT_MAX; k++) {
 			genpass589(k, pw);
 			printf("%s\n", pw);
 		}
 	} else if (((strcmp(STR_TARGET_NVG599, TARGET)) == 0) && ((strcmp(STR_ENC_WPA, MODE)) == 0)) {
-		for (k = 0; k <= INT_MAX; k++) {
+		for (k = 0; k < INT_MAX; k++) {
 			genpass599(k, pw);
 			printf("%s\n", pw);
 		}
