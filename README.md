@@ -63,8 +63,8 @@ In publishing these documents and source code, I (and other developers/contribut
 # References
 
 ### Xfinity Home Security Network Algorithm
-* [CVE-2017-9476] (https://nvd.nist.gov/vuln/detail/CVE-2017-9476)
-* [Bastille DEFCON 25 Whitepaper] (https://github.com/BastilleResearch/CableTap/blob/master/doc/pdf/DEFCON-25-Marc-Newlin-CableTap-White-Paper.pdf)
+* [CVE-2017-9476](https://nvd.nist.gov/vuln/detail/CVE-2017-9476)
+* [Bastille DEFCON 25 Whitepaper](https://github.com/BastilleResearch/CableTap/blob/master/doc/pdf/DEFCON-25-Marc-Newlin-CableTap-White-Paper.pdf)
 
 ### ATT NVG589 and NVG599 Algorithm
-* [Hashcat Forum (mrfancypants) [https://hashcat.net/forum/thread-6170-post-35739.html#pid35739]
+* [Hashcat Forum (mrfancypants)](https://hashcat.net/forum/thread-6170-post-35739.html#pid35739)
