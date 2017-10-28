@@ -33,6 +33,7 @@ camera
 candid
 canvas
 canyon
+career
 carpet
 castle
 cattle
@@ -71,6 +72,7 @@ effect
 eighty
 eleven
 energy
+engine
 entire
 escape
 factor
