@@ -103,23 +103,26 @@ unsigned int hex_string_to_byte_array(char *in, uint8_t *out, const unsigned int
 	return 0;
 }
 
-char *bruteforce(uint8_t *mac) {
-	//unsigned char pw[13]; // set size of password (12)
+void bruteforce(uint8_t *mac) {
 	uint32_t k;
 	if (((strcmp(STR_TARGET_NVG589, TARGET)) == 0) && ((strcmp(STR_ENC_WPA, MODE)) == 0)) {
+		unsigned char psk[ATT_NVG5XX_PSK_LEN];
 		for (k = 0; k < INT_MAX; k++) {
-			printf("%s\n", genpass589(k));
+			genpass589(k, psk);
+			printf("%s\n", psk);
 		}
 	} else if (((strcmp(STR_TARGET_NVG599, TARGET)) == 0) && ((strcmp(STR_ENC_WPA, MODE)) == 0)) {
+			unsigned char psk[ATT_NVG5XX_PSK_LEN];
 			for (k = 0; k < INT_MAX; k++) {
-				printf("%s\n", genpass599(k));
+				genpass599(k, psk);
+				printf("%s\n", psk);
 			}
 		} else if ((((strcmp(STR_TARGET_DPC3939, TARGET)) == 0)
 			|| ((strcmp(STR_TARGET_DPC3941, TARGET)) == 0)
 			|| ((strcmp(STR_TARGET_TG1682G, TARGET)) == 0))
 			&& ((strcmp(STR_ENC_WPA, MODE)) == 0)
 			&& mac) {
-		return genpassXHS(mac);
+				printf("Key Found: %s\n", genpassXHS(mac));
 	} else {
 		usage_err();
 	}
@@ -172,11 +175,6 @@ int main(int argc, char **argv) {
 		}
 		opt = getopt_long(argc, argv, option_string, long_options, &long_index);
 	}
-	char *psk = bruteforce(ptrmac);
-	if (psk) {
-		printf("PSK is \'%s\'\n", psk);
-		//free(psk);
-	}
-	free(psk);
+	bruteforce(ptrmac);
 	return 0;
 }

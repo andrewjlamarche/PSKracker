@@ -2,19 +2,19 @@
  * Thank you to mrfancypants for research and preliminary Python code for ATTXXXXXXX networks.
  */
 
-#define ATT_NVG5XX_PSK_LEN 13
 #include <stdint.h>
 
-static const char CHARSET[] = "abcdefghijkmnpqrstuvwxyz23456789#%+=?";
-int i;
+#define ATT_NVG5XX_PSK_LEN 13
 
-char *genpass589(uint32_t x) {
+void genpass589(uint32_t x, unsigned char *psk) {
+	static const char CHARSET[] = "abcdefghijkmnpqrstuvwxyz23456789#%+=?";
+	int i;
 
-	char *psk = malloc(ATT_NVG5XX_PSK_LEN + 1);
 	uint64_t one = x * 465661287.5245797; // thank you mrfancypants for finding this number
 	uint64_t two = one;
+	psk[ATT_NVG5XX_PSK_LEN - 1] = 0;
 
-	for (i = 0; i < 6; i++) {
+	for (i = 0; i < 6; i++) { // select character from the charset at given position
 		int key1 = CHARSET[two % 37];
 		two /= 37;
 		int key2 = 50 + (two % 8);
@@ -22,16 +22,18 @@ char *genpass589(uint32_t x) {
 		psk[(10 - (i * 2)) + 1] = key1;
 		psk[(10 - (i * 2))] = key2;
 	}
-	return psk;
 }
 
-char *genpass599(uint32_t x) {
-	char *psk = malloc(ATT_NVG5XX_PSK_LEN + 1);
-	uint64_t one = (double) (x * ((1l << 32) + 2));
+void genpass599(uint32_t x, unsigned char *psk) {
+	static const char CHARSET[] = "abcdefghijkmnpqrstuvwxyz23456789#%+=?";
+	int i;
 
-	for (i = 0; i < ATT_NVG5XX_PSK_LEN; i++, one /= 37) {
+	uint64_t one = (double) (x * ((1l << 32) + 2));
+	psk[ATT_NVG5XX_PSK_LEN -1] = 0;
+
+	for (i = 1; i < ATT_NVG5XX_PSK_LEN; i++, one /= 37) {
 		psk[ATT_NVG5XX_PSK_LEN - i - 1] = CHARSET[one % 37];
-								}
+	}
 }
 
 // nvg599 password algorithm
