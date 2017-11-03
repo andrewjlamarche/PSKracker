@@ -2,7 +2,7 @@ PREFIX ?= $(DESTDIR)/usr/local
 BINDIR = $(PREFIX)/bin
 
 PROG = pskracker
-SRCS = pskracker.c att.c xfinity.c
+SRCS = pskracker.c
 OBJS = $(SRCS:.c=.o)
 
 CFLAGS += -Wno-unused -Wno-return-type

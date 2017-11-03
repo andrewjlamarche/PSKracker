@@ -26,9 +26,10 @@
 #include <getopt.h>
 
 #include "pskracker.h"
-#include "att.h"
-#include "xfinity.h"
 #include "version.h"
+
+#include "att.c"
+#include "xfinity.c"
 
 char TARGET[9];
 char MODE[4];
@@ -103,19 +104,18 @@ unsigned int hex_string_to_byte_array(char *in, uint8_t *out, const unsigned int
 }
 
 char *bruteforce(uint8_t *mac) {
-	unsigned char pw[13]; // set size of password (12)
-	int k;
+	//unsigned char pw[13]; // set size of password (12)
+	uint32_t k;
 	if (((strcmp(STR_TARGET_NVG589, TARGET)) == 0) && ((strcmp(STR_ENC_WPA, MODE)) == 0)) {
-		for (k = 0; k < INT_MAX; k++) {
-			genpass589(k, pw);
-			printf("%s\n", pw);
+		for (k = 0; k < 10; k++) {
+			printf("Key: %s\n", genpass589(0x57c5d9ab));
 		}
-	} else if (((strcmp(STR_TARGET_NVG599, TARGET)) == 0) && ((strcmp(STR_ENC_WPA, MODE)) == 0)) {
-		for (k = 0; k < INT_MAX; k++) {
-			genpass599(k, pw);
-			printf("%s\n", pw);
-		}
-	} else if ((((strcmp(STR_TARGET_DPC3939, TARGET)) == 0)
+	}
+	 	else if (((strcmp(STR_TARGET_NVG599, TARGET)) == 0) && ((strcmp(STR_ENC_WPA, MODE)) == 0)) {
+			/*for (k = 0; k < INT_MAX; k++) {
+				return genpass599(k);
+			}*/
+		} else if ((((strcmp(STR_TARGET_DPC3939, TARGET)) == 0)
 			|| ((strcmp(STR_TARGET_DPC3941, TARGET)) == 0)
 			|| ((strcmp(STR_TARGET_TG1682G, TARGET)) == 0))
 			&& ((strcmp(STR_ENC_WPA, MODE)) == 0)
@@ -177,7 +177,8 @@ int main(int argc, char **argv) {
 	char *psk = bruteforce(ptrmac);
 	if (psk) {
 		printf("PSK is \'%s\'\n", psk);
-		free(psk);
+		//free(psk);
 	}
+	free(psk);
 	return 0;
 }

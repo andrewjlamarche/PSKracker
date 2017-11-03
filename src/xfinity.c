@@ -10,7 +10,6 @@
 #include <string.h>
 #include <stdint.h>
 
-#include "xfinity.h"
 #include "pskracker.h"
 
 static unsigned int sub_AQW4(unsigned int result)
