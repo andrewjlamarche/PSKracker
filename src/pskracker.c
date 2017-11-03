@@ -26,9 +26,10 @@
 #include <getopt.h>
 
 #include "pskracker.h"
-#include "att.h"
-#include "xfinity.h"
 #include "version.h"
+
+#include "att.c"
+#include "xfinity.c"
 
 char TARGET[9];
 char MODE[4];
@@ -102,25 +103,26 @@ unsigned int hex_string_to_byte_array(char *in, uint8_t *out, const unsigned int
 	return 0;
 }
 
-char *bruteforce(uint8_t *mac) {
-	unsigned char pw[13]; // set size of password (12)
-	int k;
+void bruteforce(uint8_t *mac) {
+	uint32_t k;
 	if (((strcmp(STR_TARGET_NVG589, TARGET)) == 0) && ((strcmp(STR_ENC_WPA, MODE)) == 0)) {
+		unsigned char psk[ATT_NVG5XX_PSK_LEN];
 		for (k = 0; k < INT_MAX; k++) {
-			genpass589(k, pw);
-			printf("%s\n", pw);
+			genpass589(k, psk);
+			printf("%s\n", psk);
 		}
 	} else if (((strcmp(STR_TARGET_NVG599, TARGET)) == 0) && ((strcmp(STR_ENC_WPA, MODE)) == 0)) {
-		for (k = 0; k < INT_MAX; k++) {
-			genpass599(k, pw);
-			printf("%s\n", pw);
-		}
-	} else if ((((strcmp(STR_TARGET_DPC3939, TARGET)) == 0)
+			unsigned char psk[ATT_NVG5XX_PSK_LEN];
+			for (k = 0; k < INT_MAX; k++) {
+				genpass599(k, psk);
+				printf("%s\n", psk);
+			}
+		} else if ((((strcmp(STR_TARGET_DPC3939, TARGET)) == 0)
 			|| ((strcmp(STR_TARGET_DPC3941, TARGET)) == 0)
 			|| ((strcmp(STR_TARGET_TG1682G, TARGET)) == 0))
 			&& ((strcmp(STR_ENC_WPA, MODE)) == 0)
 			&& mac) {
-		return genpassXHS(mac);
+				printf("PSK (%s): %s\n", TARGET, genpassXHS(mac));
 	} else {
 		usage_err();
 	}
@@ -138,7 +140,6 @@ int main(int argc, char **argv) {
 		case 't': // target model number selection
 			if ((strcmp(STR_TARGET_NVG589, optarg)) == 0
 					|| (strcmp(STR_TARGET_NVG599, optarg)) == 0
-					|| (strcmp(STR_TARGET_SMCD3GNV, optarg)) == 0
 					|| (strcmp(STR_TARGET_DPC3939, optarg)) == 0
 					|| (strcmp(STR_TARGET_DPC3941, optarg)) == 0
 					|| (strcmp(STR_TARGET_TG1682G, optarg)) == 0) {
@@ -174,10 +175,6 @@ int main(int argc, char **argv) {
 		}
 		opt = getopt_long(argc, argv, option_string, long_options, &long_index);
 	}
-	char *psk = bruteforce(ptrmac);
-	if (psk) {
-		printf("PSK is \'%s\'\n", psk);
-		free(psk);
-	}
+	bruteforce(ptrmac);
 	return 0;
 }
