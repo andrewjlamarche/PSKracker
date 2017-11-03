@@ -103,7 +103,7 @@ unsigned int hex_string_to_byte_array(char *in, uint8_t *out, const unsigned int
 	return 0;
 }
 
-void bruteforce(uint8_t *mac) {
+char *bruteforce(uint8_t *mac) {
 	uint32_t k;
 	if (((strcmp(STR_TARGET_NVG589, TARGET)) == 0) && ((strcmp(STR_ENC_WPA, MODE)) == 0)) {
 		unsigned char psk[ATT_NVG5XX_PSK_LEN];
@@ -122,7 +122,7 @@ void bruteforce(uint8_t *mac) {
 			|| ((strcmp(STR_TARGET_TG1682G, TARGET)) == 0))
 			&& ((strcmp(STR_ENC_WPA, MODE)) == 0)
 			&& mac) {
-				printf("Key Found: %s\n", genpassXHS(mac));
+				printf("PSK (%s): %s\n", TARGET, genpassXHS(mac));
 	} else {
 		usage_err();
 	}
