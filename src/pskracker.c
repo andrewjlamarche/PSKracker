@@ -137,7 +137,6 @@ int main(int argc, char **argv) {
 		case 't': // target model number selection
 			if ((strcmp(STR_TARGET_NVG589, optarg)) == 0
 					|| (strcmp(STR_TARGET_NVG599, optarg)) == 0
-					|| (strcmp(STR_TARGET_SMCD3GNV, optarg)) == 0
 					|| (strcmp(STR_TARGET_DPC3939, optarg)) == 0
 					|| (strcmp(STR_TARGET_DPC3941, optarg)) == 0
 					|| (strcmp(STR_TARGET_TG1682G, optarg)) == 0) {
