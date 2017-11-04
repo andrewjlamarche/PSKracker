@@ -32,16 +32,19 @@
 #include "xfinity.c"
 
 char TARGET[9];
-char MODE[4];
+char ENCR[4];
+char PASS2SEED[20];
+uint8_t mode = 1;
 
-static const char *option_string = "t:e:s:m:h";
+static const char *option_string = "t:e:s:m:f:h";
 static const struct option long_options[] = {
-		{ "target",     required_argument, 0, 't' },
-		{ "encryption", required_argument, 0, 'e' },
-		{ "serial",     required_argument, 0, 's' },
-		{ "mac",        required_argument, 0, 'm' },
-		{ "help",       no_argument,       0, 'h' },
-		{ 0,            0,                 0,  0  }
+		{ "target",     required_argument, 	0, 't' },
+		{ "encryption", required_argument, 	0, 'e' },
+		{ "serial",     required_argument, 	0, 's' },
+		{ "mac",        required_argument, 	0, 'm' },
+		{ "findseed",	required_argument,	0, 'f' },
+		{ "help",       no_argument,      	0, 'h' },
+		{ 0,            0,                	0,  0  }
 };
 
 void usage_err() {
@@ -105,14 +108,14 @@ unsigned int hex_string_to_byte_array(char *in, uint8_t *out, const unsigned int
 
 void bruteforce(uint8_t *mac) {
 	uint32_t k;
-	if (((strcmp(STR_TARGET_NVG589, TARGET)) == 0) && ((strcmp(STR_ENC_WPA, MODE)) == 0)) {
-		unsigned char psk[ATT_NVG5XX_PSK_LEN];
+	if (((strcmp(STR_TARGET_NVG589, TARGET)) == 0) && ((strcmp(STR_ENC_WPA, ENCR)) == 0)) {
+		char psk[ATT_NVG5XX_PSK_LEN];
 		for (k = 0; k < INT_MAX; k++) {
 			genpass589(k, psk);
 			printf("%s\n", psk);
 		}
-	} else if (((strcmp(STR_TARGET_NVG599, TARGET)) == 0) && ((strcmp(STR_ENC_WPA, MODE)) == 0)) {
-			unsigned char psk[ATT_NVG5XX_PSK_LEN];
+	} else if (((strcmp(STR_TARGET_NVG599, TARGET)) == 0) && ((strcmp(STR_ENC_WPA, ENCR) && mode) == 0)) {
+		 	char psk[ATT_NVG5XX_PSK_LEN];
 			for (k = 0; k < INT_MAX; k++) {
 				genpass599(k, psk);
 				printf("%s\n", psk);
@@ -120,12 +123,26 @@ void bruteforce(uint8_t *mac) {
 		} else if ((((strcmp(STR_TARGET_DPC3939, TARGET)) == 0)
 			|| ((strcmp(STR_TARGET_DPC3941, TARGET)) == 0)
 			|| ((strcmp(STR_TARGET_TG1682G, TARGET)) == 0))
-			&& ((strcmp(STR_ENC_WPA, MODE)) == 0)
+			&& ((strcmp(STR_ENC_WPA, ENCR)) == 0)
 			&& mac) {
 				printf("PSK (%s): %s\n", TARGET, genpassXHS(mac));
 	} else {
 		usage_err();
 	}
+}
+
+void findSeed() {
+	char psk[ATT_NVG5XX_PSK_LEN];
+	int k;
+		for(k = 0; k < INT_MAX; k++) {
+			genpass589(k, psk);
+			//printf("PSKKKK: %s\n", psk);
+			//printf("KKKKSP: %s\n", PASS2SEED);
+			if(strcmp(psk, PASS2SEED) == 0) {
+				printf("Seed: %d\n", k);
+				break;
+			}
+		}
 }
 
 int main(int argc, char **argv) {
@@ -152,7 +169,7 @@ int main(int argc, char **argv) {
 		case 'e': // security/encryption mode selection
 			if ((strcmp(STR_ENC_WPA, optarg)) == 0
 					|| (strcmp(STR_ENC_WPS, optarg)) == 0) {
-				strcpy(MODE, optarg);
+				strcpy(ENCR, optarg);
 			} else
 				usage_err();
 			break;
@@ -163,6 +180,10 @@ int main(int argc, char **argv) {
 				exit(2);
 			}
 			ptrmac = mac;
+			break;
+		case 'f':
+			strcpy(PASS2SEED, optarg);
+			mode = 0;
 			break;
 
 		case 'h': // display usage menu
@@ -175,6 +196,9 @@ int main(int argc, char **argv) {
 		}
 		opt = getopt_long(argc, argv, option_string, long_options, &long_index);
 	}
-	bruteforce(ptrmac);
+	if (mode)
+		bruteforce(ptrmac);
+	else
+		findSeed();
 	return 0;
 }

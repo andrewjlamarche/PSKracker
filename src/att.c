@@ -6,7 +6,7 @@
 
 #define ATT_NVG5XX_PSK_LEN 13
 
-void genpass589(uint32_t x, unsigned char *psk) {
+void genpass589(uint32_t x, char *psk) {
 	static const char CHARSET[] = "abcdefghijkmnpqrstuvwxyz23456789#%+=?";
 	int i;
 
