@@ -136,8 +136,6 @@ void findSeed() {
 	int k;
 		for(k = 0; k < INT_MAX; k++) {
 			genpass589(k, psk);
-			//printf("PSKKKK: %s\n", psk);
-			//printf("KKKKSP: %s\n", PASS2SEED);
 			if(strcmp(psk, PASS2SEED) == 0) {
 				printf("Seed: %d\n", k);
 				break;
