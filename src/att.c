@@ -6,7 +6,7 @@
 
 #define ATT_NVG5XX_PSK_LEN 13
 
-void genpass589(uint32_t x, char *psk) {
+void genpass589(uint32_t x, unsigned char *psk) {
 	static const char CHARSET[] = "abcdefghijkmnpqrstuvwxyz23456789#%+=?";
 	int i;
 
@@ -36,13 +36,25 @@ void genpass599(uint32_t x, unsigned char *psk) {
 	}
 }
 
-// nvg599 password algorithm
-/*void genpass599(unsigned x, unsigned char *buf) {
-   static const char CHARSET[] = "abcdefghijkmnpqrstuvwxyz23456789#%+=?";
-   buf[12] = 0; // create buffer for password
-
-   fnn = (double) (x * ((1l << 32) + 2));
-   for (i = 1; i < PW_LENGTH; i++, fnn /= 37) {
-   buf[PW_LENGTH - i - 1] = CHARSET[fnn % 37];
-   }
-   }*/
+void findSeed(unsigned char *PASS2SEED) {
+	unsigned char psk[ATT_NVG5XX_PSK_LEN];
+	unsigned char psk2[ATT_NVG5XX_PSK_LEN];
+	int found = 0;
+	int k;
+		for(k = 0; k < INT_MAX; k++) {
+			genpass589(k, psk);
+			genpass599(k, psk2);
+			if(strcmp(psk, PASS2SEED) == 0) {
+				printf("Seed (nvg589): %d\n", k);
+				found = 1;
+				break;
+			} else if(strcmp(psk2, PASS2SEED) == 0) {
+				printf("Seed (nvg599): %d\n", k);
+				found = 1;
+				break;
+			}
+		}
+	if(!found) {
+		printf("Seed not found");
+	}
+}

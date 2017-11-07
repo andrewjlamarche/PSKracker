@@ -33,8 +33,9 @@
 
 char TARGET[9];
 char ENCR[4];
-char PASS2SEED[20];
+unsigned char PASS2SEED[20];
 uint8_t mode = 1;
+uint8_t found = 0;
 
 static const char *option_string = "t:e:s:m:f:h";
 static const struct option long_options[] = {
@@ -109,13 +110,13 @@ unsigned int hex_string_to_byte_array(char *in, uint8_t *out, const unsigned int
 void bruteforce(uint8_t *mac) {
 	uint32_t k;
 	if (((strcmp(STR_TARGET_NVG589, TARGET)) == 0) && ((strcmp(STR_ENC_WPA, ENCR)) == 0)) {
-		char psk[ATT_NVG5XX_PSK_LEN];
+		unsigned char psk[ATT_NVG5XX_PSK_LEN];
 		for (k = 0; k < INT_MAX; k++) {
 			genpass589(k, psk);
 			printf("%s\n", psk);
 		}
 	} else if (((strcmp(STR_TARGET_NVG599, TARGET)) == 0) && ((strcmp(STR_ENC_WPA, ENCR) && mode) == 0)) {
-		 	char psk[ATT_NVG5XX_PSK_LEN];
+		 	unsigned char psk[ATT_NVG5XX_PSK_LEN];
 			for (k = 0; k < INT_MAX; k++) {
 				genpass599(k, psk);
 				printf("%s\n", psk);
@@ -129,18 +130,6 @@ void bruteforce(uint8_t *mac) {
 	} else {
 		usage_err();
 	}
-}
-
-void findSeed() {
-	char psk[ATT_NVG5XX_PSK_LEN];
-	int k;
-		for(k = 0; k < INT_MAX; k++) {
-			genpass589(k, psk);
-			if(strcmp(psk, PASS2SEED) == 0) {
-				printf("Seed: %d\n", k);
-				break;
-			}
-		}
 }
 
 int main(int argc, char **argv) {
@@ -197,6 +186,6 @@ int main(int argc, char **argv) {
 	if (mode)
 		bruteforce(ptrmac);
 	else
-		findSeed();
+		findSeed(PASS2SEED);
 	return 0;
 }
