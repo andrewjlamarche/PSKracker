@@ -1,4 +1,4 @@
-# Overview
+# Overview [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://github.com/soxrok2212/PSKracker/blob/master/LICENSE)
 
 **PSKracker** is a collection of WPA/WPA2/WPS default algorithms/password generators/pingens written in C.
 
