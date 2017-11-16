@@ -30,6 +30,7 @@
 
 #include "att.c"
 #include "xfinity.c"
+#include "tools.c"
 
 char TARGET[9];
 char MODE[4];
@@ -68,39 +69,6 @@ void usage_err() {
 		"\n"
 	);
 	exit(1);
-}
-
-unsigned int hex_string_to_byte_array(char *in, uint8_t *out, const unsigned int n_len) {
-	unsigned int o, i, j;
-	unsigned int len = strlen(in);
-	unsigned int b_len = n_len * 2 + n_len - 1;
-
-	if (len != n_len * 2 && len != b_len)
-		return 1;
-	for (i = 0; i < n_len; i++) {
-		o = 0;
-		for (j = 0; j < 2; j++) {
-			o <<= 4;
-			if (*in >= 'A' && *in <= 'F')
-				*in += 'a'-'A';
-			if (*in >= '0' && *in <= '9')
-				o += *in - '0';
-			else
-				if (*in >= 'a' && *in <= 'f')
-					o += *in - 'a' + 10;
-				else
-					return 1;
-			in++;
-		}
-		*out++ = o;
-		if (len == b_len) {
-			if (*in == ':' || *in == '-' || *in == ' ' || *in == 0)
-				in++;
-			else
-				return 1;
-		}
-	}
-	return 0;
 }
 
 void bruteforce(uint8_t *mac) {
