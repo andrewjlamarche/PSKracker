@@ -69,10 +69,11 @@ void usage_err() {
 }
 
 // target selection
-enum model {nvg589 = 0x00, nvg599 = 0x01, ENDMODEL = END};
+enum model {nvg589 = 0x00, nvg599 = 0x01, dpc3939 = 0x02, dpc3941 = 0x03, tg1682g = 0x04, ENDMODEL = END};
 enum encryption {wpa = 0x00, wpa2 = 0x01, wps = 0x02, ENDENC = 0x03};
+
 enum model getModel(char *inModel) {
-	static const char *models[] = {"nvg589", "nvg599"};
+	static const char *models[] = {"nvg589", "nvg599", "dpc3939", "dpc3941", "tg1682g"};
 	uint8_t i;
 	for(i = 0; i < ENDMODEL; ++i) {
 		if(!strcmp(models[i], inModel)) {
@@ -81,6 +82,7 @@ enum model getModel(char *inModel) {
 	}
 	return ENDMODEL;
 }
+
 enum encryption getEncryption(char *inEnc) {
 	static const char *enctypes[] = {"wpa", "wpa2", "wps"};
 	uint8_t i;
@@ -93,31 +95,29 @@ enum encryption getEncryption(char *inEnc) {
 }
 
 void bruteforce(uint8_t m, uint8_t e, uint8_t *mac) {
-	switch(m) {
 
-		case 0: {
-			int32_t i;
-			unsigned char psk[ATT_NVG5XX_PSK_LEN];
-			for (i = 0; i < INT_MAX; i++) {
-				genpass589(i, psk);
-				printf("%s\n", psk);
-			}
+	if(m == 0) {
+		int32_t i;
+		unsigned char psk[ATT_NVG5XX_PSK_LEN];
+		for (i = 0; i < INT_MAX; i++) {
+			genpass589(i, psk);
+			printf("%s\n", psk);
 		}
-		break;
-
-		case 1: {
-			int32_t i;
-			unsigned char psk[ATT_NVG5XX_PSK_LEN];
-			for (i = 0; i < INT_MAX; i++) {
-				genpass599(i, psk);
-				printf("%s\n", psk);
-			}
+	}
+	else if(m == 1) {
+		int32_t i;
+		unsigned char psk[ATT_NVG5XX_PSK_LEN];
+		for (i = 0; i < INT_MAX; i++) {
+			genpass599(i, psk);
+			printf("%s\n", psk);
 		}
-		break;
-
-		default:
-			usage_err();
-		break;
+	}
+	else if(m == 2 || m == 3 || m == 4) {
+		if(mac == NULL) {
+			printf("Invalid MAC address\n");
+			exit(1);
+		}
+		printf("PSK: %s\n", genpassXHS(mac));
 	}
 }
 
@@ -148,7 +148,7 @@ int main(int argc, char **argv) {
 
 		case 'm': // mac address selection
 			if (hex_string_to_byte_array(optarg, mac, BSSID_LEN)) {
-				printf("Invalid MAC Address\n");
+				printf("Invalid MAC address\n");
 				exit(2);
 			}
 			pMac = mac;

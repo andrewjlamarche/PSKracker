@@ -23,7 +23,7 @@
 
 /* General */
 #define BSSID_LEN 6
-#define END 0x02
+#define END 0x05
 
 /* Encryption Types*/
 #define STR_ENC_WPA "wpa"
