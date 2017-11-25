@@ -77,9 +77,11 @@ static unsigned int sub_AQlY(int a1) {
         result = ((a1 << 8) | 0x80000000) >> v3;
         if (a1 & 0x80000000)
             result = -result;
-    } else if (v3 == -('a') && a1 << 9) {
+    }
+    else if (v3 == -('a') && a1 << 9) {
         result = 0;
-    } else {
+    }
+    else {
         if (!(a1 & 0x80000000))
         result = 0x7FFFFFFF;
     }
@@ -134,10 +136,12 @@ char *genpassXHS(uint8_t *mac) {
     vendorLen = strlen(PRIV_KEY_CHARS);
     for (i = 0; i != XHS_PSK_LEN; i++) {
         int16_t tmp = meld_integers(mac16[i % BSSID_LEN], PRIV_KEY_CHARS[i]);
-        if (vendorLen > i)
+        if (vendorLen > i) {
             psk[i] = meld_integers(PRIV_KEY_CHARS[i], tmp);
-        else
+        }
+        else {
             psk[i] = tmp;
+        }
     }
 psk[XHS_PSK_LEN] = '\0';
 return psk;

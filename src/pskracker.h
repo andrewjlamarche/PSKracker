@@ -23,16 +23,36 @@
 
 /* General */
 #define BSSID_LEN 6
+#define END 0x02
 
-/* Encryption */
+/* Encryption Types*/
 #define STR_ENC_WPA "wpa"
 #define STR_ENC_WPS "wps"
 
-/* Targets */
-#define STR_TARGET_NVG589   "nvg589"
-#define STR_TARGET_NVG599   "nvg599"
-#define STR_TARGET_DPC3939  "dpc3939"
-#define STR_TARGET_DPC3941  "dpc3941"
-#define STR_TARGET_TG1682G  "tg1682g"
+/* MODELS */
+#define STR_MODEL_NVG589 "nvg589"
+#define STR_MODEL_NVG599 "nvg599"
+//#define STR_MODEL_7550      "7550"
+//#define STR_MODEL_5268AC    "5268ac"
+#define STR_MODEL_DPC3939 "dpc3939"
+#define STR_MODEL_DPC3941 "dpc3941"
+#define STR_MODEL_TG1682G "tg1682g"
+
+/* ISPS */
+#define STR_ISP_ATT "att"
+#define STR_ISP_BRIGTHOUSE "brighthouse"
+#define STR_ISP_CENTURYLINK "centurylink"
+#define STR_ISP_CHARTER "charter"
+#define STR_ISP_SPECTRUM "spectrum"
+#define STR_ISP_COMCAST "comcast"
+#define STR_ISP_XFINITY "xfintiy"
+#define STR_ISP_COX "cox"
+#define STR_ISP_FIOS "fios"
+#define STR_ISP_FRONTIER "frontier"
+#define STR_ISP_GOOGLE "google"
+#define STR_ISP_OPTIMUM "optimum"
+#define STR_ISP_SUDDENLINK "suddenlink"
+#define STR_ISP_TIMEWARNER "timewarner"
+#define STR_ISP_WOW "wow"
 
 #endif /* PSKRACKER_H_ */

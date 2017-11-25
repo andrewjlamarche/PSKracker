@@ -32,9 +32,6 @@
 #include "xfinity.c"
 #include "tools.c"
 
-char TARGET[9];
-char MODE[4];
-
 static const char *option_string = "t:e:s:m:h";
 static const struct option long_options[] = {
 		{ "target",     required_argument, 0, 't' },
@@ -71,33 +68,63 @@ void usage_err() {
 	exit(1);
 }
 
-void bruteforce(uint8_t *mac) {
-	uint32_t k;
-	if (((strcmp(STR_TARGET_NVG589, TARGET)) == 0) && ((strcmp(STR_ENC_WPA, MODE)) == 0)) {
-		unsigned char psk[ATT_NVG5XX_PSK_LEN];
-		for (k = 0; k < INT_MAX; k++) {
-			genpass589(k, psk);
-			printf("%s\n", psk);
+// target selection
+enum model {nvg589 = 0x00, nvg599 = 0x01, ENDMODEL = END};
+enum encryption {wpa = 0x00, wpa2 = 0x01, wps = 0x02, ENDENC = 0x03};
+enum model getModel(char *inModel) {
+	static const char *models[] = {"nvg589", "nvg599"};
+	uint8_t i;
+	for(i = 0; i < ENDMODEL; ++i) {
+		if(!strcmp(models[i], inModel)) {
+			return i;
 		}
-	} else if (((strcmp(STR_TARGET_NVG599, TARGET)) == 0) && ((strcmp(STR_ENC_WPA, MODE)) == 0)) {
+	}
+	return ENDMODEL;
+}
+enum encryption getEncryption(char *inEnc) {
+	static const char *enctypes[] = {"wpa", "wpa2", "wps"};
+	uint8_t i;
+	for(i = 0; i < ENDENC; ++i) {
+		if(!strcmp(enctypes[i], inEnc)) {
+			return i;
+		}
+	}
+	return ENDENC;
+}
+
+void bruteforce(uint8_t m, uint8_t e, uint8_t *mac) {
+	switch(m) {
+
+		case 0: {
+			int32_t i;
 			unsigned char psk[ATT_NVG5XX_PSK_LEN];
-			for (k = 0; k < INT_MAX; k++) {
-				genpass599(k, psk);
+			for (i = 0; i < INT_MAX; i++) {
+				genpass589(i, psk);
 				printf("%s\n", psk);
 			}
-		} else if ((((strcmp(STR_TARGET_DPC3939, TARGET)) == 0)
-			|| ((strcmp(STR_TARGET_DPC3941, TARGET)) == 0)
-			|| ((strcmp(STR_TARGET_TG1682G, TARGET)) == 0))
-			&& ((strcmp(STR_ENC_WPA, MODE)) == 0)
-			&& mac) {
-				printf("PSK (%s): %s\n", TARGET, genpassXHS(mac));
-	} else {
-		usage_err();
+		}
+		break;
+
+		case 1: {
+			int32_t i;
+			unsigned char psk[ATT_NVG5XX_PSK_LEN];
+			for (i = 0; i < INT_MAX; i++) {
+				genpass599(i, psk);
+				printf("%s\n", psk);
+			}
+		}
+		break;
+
+		default:
+			usage_err();
+		break;
 	}
 }
 
 int main(int argc, char **argv) {
-	uint8_t mac[6], *ptrmac = 0;
+	uint8_t mac[6], *pMac = 0;
+	uint8_t model;
+	uint8_t enc;
 
 	int opt = 0;
 	int long_index = 0;
@@ -106,23 +133,17 @@ int main(int argc, char **argv) {
 		switch (opt) {
 
 		case 't': // target model number selection
-			if ((strcmp(STR_TARGET_NVG589, optarg)) == 0
-					|| (strcmp(STR_TARGET_NVG599, optarg)) == 0
-					|| (strcmp(STR_TARGET_DPC3939, optarg)) == 0
-					|| (strcmp(STR_TARGET_DPC3941, optarg)) == 0
-					|| (strcmp(STR_TARGET_TG1682G, optarg)) == 0) {
-				strcpy(TARGET, optarg);
-			} else {
+			model = (uint8_t) getModel(optarg);
+			if(model == END) {
 				usage_err();
 			}
 			break;
 
 		case 'e': // security/encryption mode selection
-			if ((strcmp(STR_ENC_WPA, optarg)) == 0
-					|| (strcmp(STR_ENC_WPS, optarg)) == 0) {
-				strcpy(MODE, optarg);
-			} else
+			enc = (uint8_t) getEncryption(optarg);
+			if(enc == 0x03) {
 				usage_err();
+			}
 			break;
 
 		case 'm': // mac address selection
@@ -130,7 +151,7 @@ int main(int argc, char **argv) {
 				printf("Invalid MAC Address\n");
 				exit(2);
 			}
-			ptrmac = mac;
+			pMac = mac;
 			break;
 
 		case 'h': // display usage menu
@@ -143,6 +164,6 @@ int main(int argc, char **argv) {
 		}
 		opt = getopt_long(argc, argv, option_string, long_options, &long_index);
 	}
-	bruteforce(ptrmac);
+	bruteforce(model, enc, pMac);
 	return 0;
 }
