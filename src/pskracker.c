@@ -94,9 +94,9 @@ enum encryption getEncryption(char *inEnc) {
 	return ENDENC;
 }
 
-void bruteforce(uint8_t m, uint8_t e, uint8_t *mac) {
+void bruteforce(uint8_t model, uint8_t enc, uint8_t *mac) {
 
-	if(m == 0) {
+	if(model == 0x00) {
 		int32_t i;
 		unsigned char psk[ATT_NVG5XX_PSK_LEN];
 		for (i = 0; i < INT_MAX; i++) {
@@ -104,7 +104,7 @@ void bruteforce(uint8_t m, uint8_t e, uint8_t *mac) {
 			printf("%s\n", psk);
 		}
 	}
-	else if(m == 1) {
+	else if(model == 0x01) {
 		int32_t i;
 		unsigned char psk[ATT_NVG5XX_PSK_LEN];
 		for (i = 0; i < INT_MAX; i++) {
@@ -112,7 +112,7 @@ void bruteforce(uint8_t m, uint8_t e, uint8_t *mac) {
 			printf("%s\n", psk);
 		}
 	}
-	else if(m == 2 || m == 3 || m == 4) {
+	else if((model == 0x02 || model == 0x03 || model == 0x04) && (enc == 0x00 || enc == 0x01)) {
 		if(mac == NULL) {
 			printf("Invalid MAC address\n");
 			exit(1);
@@ -133,22 +133,24 @@ int main(int argc, char **argv) {
 		switch (opt) {
 
 		case 't': // target model number selection
-			model = (uint8_t) getModel(optarg);
-			if(model == END) {
+			if (getModel(optarg) != END) {
+				model = getModel(optarg);
+			} else {
 				usage_err();
 			}
 			break;
 
 		case 'e': // security/encryption mode selection
-			enc = (uint8_t) getEncryption(optarg);
-			if(enc == 0x03) {
+			if (getEncryption(optarg) != 0x03) {
+				enc = getEncryption(optarg);
+			} else {
 				usage_err();
 			}
 			break;
 
 		case 'm': // mac address selection
 			if (hex_string_to_byte_array(optarg, mac, BSSID_LEN)) {
-				printf("Invalid MAC address\n");
+				printf("Invalid MAC Address\n");
 				exit(2);
 			}
 			pMac = mac;
@@ -164,6 +166,7 @@ int main(int argc, char **argv) {
 		}
 		opt = getopt_long(argc, argv, option_string, long_options, &long_index);
 	}
+	printf("Model: %d \tEncryption: %d \tMac Address: %s\n", model, enc, pMac);
 	bruteforce(model, enc, pMac);
 	return 0;
 }
