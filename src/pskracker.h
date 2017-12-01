@@ -29,7 +29,7 @@
 #define STR_ENC_WPA "wpa"
 #define STR_ENC_WPS "wps"
 
-/* MODELS */
+/* TARGETS */
 #define STR_MODEL_NVG589 "nvg589"
 #define STR_MODEL_NVG599 "nvg599"
 //#define STR_MODEL_7550      "7550"
