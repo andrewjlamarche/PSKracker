@@ -38,21 +38,4 @@
 #define STR_MODEL_DPC3941 "dpc3941"
 #define STR_MODEL_TG1682G "tg1682g"
 
-/* ISPS */
-#define STR_ISP_ATT "att"
-#define STR_ISP_BRIGTHOUSE "brighthouse"
-#define STR_ISP_CENTURYLINK "centurylink"
-#define STR_ISP_CHARTER "charter"
-#define STR_ISP_SPECTRUM "spectrum"
-#define STR_ISP_COMCAST "comcast"
-#define STR_ISP_XFINITY "xfintiy"
-#define STR_ISP_COX "cox"
-#define STR_ISP_FIOS "fios"
-#define STR_ISP_FRONTIER "frontier"
-#define STR_ISP_GOOGLE "google"
-#define STR_ISP_OPTIMUM "optimum"
-#define STR_ISP_SUDDENLINK "suddenlink"
-#define STR_ISP_TIMEWARNER "timewarner"
-#define STR_ISP_WOW "wow"
-
 #endif /* PSKRACKER_H_ */

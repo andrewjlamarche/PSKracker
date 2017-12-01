@@ -73,7 +73,7 @@ void bruteforce(char *target, uint8_t mode, uint8_t *pMac) {
 	/* WPA */
 	if(mode == 0) {
 		/* ATT NVG589 */
-		if(!strcmp("nvg589", target)) {
+		if(!strcmp(STR_MODEL_NVG589, target)) {
 			int i;
 			unsigned char psk[ATT_NVG5XX_PSK_LEN];
 			for (i = 0; i < INT_MAX; i++) {
@@ -82,7 +82,7 @@ void bruteforce(char *target, uint8_t mode, uint8_t *pMac) {
 			}
 		}
 		/* ATT NVG599 */
-		else if(!strcmp("nvg599", target)) {
+		else if(!strcmp(STR_MODEL_NVG599, target)) {
 			int i;
 			unsigned char psk[ATT_NVG5XX_PSK_LEN];
 			for (i = 0; i < INT_MAX; i++) {
@@ -91,7 +91,7 @@ void bruteforce(char *target, uint8_t mode, uint8_t *pMac) {
 			}
 		}
 		/* Comcast/Xfinity Home Security DPC3939, DPC3491, TG1682G */
-		else if (!strcmp("dpc3939", target) || !strcmp("dpc3941", target) || !strcmp("tg1682g", target)) {
+		else if (!strcmp(STR_MODEL_DPC3939, target) || !strcmp(STR_MODEL_DPC3941, target) || !strcmp(STR_MODEL_TG1682G, target)) {
 			if(pMac != NULL) {
 				printf("PSK: %s\n",genpassXHS(pMac));
 			}
