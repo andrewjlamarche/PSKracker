@@ -120,7 +120,7 @@ int main(int argc, char **argv) {
 	int long_index = 0;
 	opt = getopt_long(argc, argv, option_string, long_options, &long_index);
 	while (opt != -1) {
-		switch (opt) { // default setting for variable options is 0
+		switch (opt) {
 
 		case 't':
 			mode = 0; // set WPA (bruteforce())
