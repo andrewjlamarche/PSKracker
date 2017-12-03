@@ -23,11 +23,7 @@
 
 /* General */
 #define BSSID_LEN 6
-#define END 0x05
 
-/* Encryption Types*/
-#define STR_ENC_WPA "wpa"
-#define STR_ENC_WPS "wps"
 
 /* TARGETS */
 #define STR_MODEL_NVG589 "nvg589"
