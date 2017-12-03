@@ -35,11 +35,11 @@
 static const char *option_string = "t:b:s:Wh";
 static const struct option long_options[] = {
 		{ "target",     required_argument,	0, 't' },
-		{ "bssid", 		required_argument,	0, 'b' },
-		{ "wps", 		no_argument,		0, 'W' },
+		{ "bssid", 	required_argument,	0, 'b' },
+		{ "wps", 	no_argument,		0, 'W' },
 		{ "serial",     required_argument,	0, 's' },
 		{ "help",       no_argument,		0, 'h' },
-		{ 0,            0,					0,  0  }
+		{ 0, 0,	0, 0 }
 };
 
 void usage_err() {
@@ -56,14 +56,14 @@ void usage_err() {
 		"\n"
 		"Optional Arguments:\n"
 		"\n"
-		"	-b, --bssid			: BSSID of target\n"
-		"	-W, --wps			: Output possible WPS pin(s) only\n"
+		"	-b, --bssid		: BSSID of target\n"
+		"	-W, --wps		: Output possible WPS pin(s) only\n"
 		"	-s, --serial		: Serial number\n"
-		"	-h, --help			: Display help/usage\n"
+		"	-h, --help		: Display help/usage\n"
 		"\n"
 		"Example:\n"
 		"\n"
-		"	pskracker -t <target model> -b <bssid> -s <serial number>\n"
+		"pskracker -t <target model> -b <bssid> -s <serial number>\n"
 		"\n"
 	);
 	exit(1);
