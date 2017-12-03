@@ -19,7 +19,6 @@
  */
 
  /* MAC Address Parser */
-
  unsigned int hex_string_to_byte_array(char *in, uint8_t *out, const unsigned int n_len) {
  	unsigned int o, i, j;
  	unsigned int len = strlen(in);
