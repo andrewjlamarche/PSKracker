@@ -10,7 +10,7 @@ CFLAGS += -Wno-unused -Wno-return-type
 all: $(PROG)
 
 install:
-	install -D -m 755 $(PROG) $(BINDIR)/$(PROG)
+	install -m 755 $(PROG) $(BINDIR)/$(PROG)
 
 clean:
 	$(RM) $(PROG)

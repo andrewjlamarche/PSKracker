@@ -46,26 +46,26 @@ static const struct option long_options[] = {
 void usage_err() {
 	printf(
 		"\n"
-		"PSKracker WiFi Security Auditing Toolkit\n"
-		"Copyright (c) 2017, soxrok2212 <soxrok2212@gmail.com>\n"
+		" PSKracker %s WiFi Security Auditing Toolkit\n"
+		" Copyright (c) 2017, soxrok2212 <soxrok2212@gmail.com>\n"
 		"\n"
-		"Usage: pskracker <arguments>\n"
+		" Usage: pskracker <arguments>\n"
 		"\n"
-		"Required Arguments:\n"
+		" Required Arguments:\n"
 		"\n"
-		"   -t, --target		: Target model number\n"
+		"	-t, --target	: Target model number\n"
 		"\n"
-		"Optional Arguments:\n"
+		" Optional Arguments:\n"
 		"\n"
-		"	-b, --bssid		: BSSID of target\n"
-		"	-W, --wps		: Output possible WPS pin(s) only\n"
-		"	-s, --serial		: Serial number\n"
-		"	-h, --help		: Display help/usage\n"
+		"	-b, --bssid	: BSSID of target\n"
+		"	-W, --wps	: Output possible WPS pin(s) only\n"
+		"	-s, --serial	: Serial number\n"
+		"	-h, --help	: Display help/usage\n"
 		"\n"
-		"Example:\n"
+		" Example:\n"
 		"\n"
-		"pskracker -t <target model> -b <bssid> -s <serial number>\n"
-		"\n"
+		" pskracker -t <target model> -b <bssid> -s <serial number>\n"
+		"\n", LONG_VERSION
 	);
 	exit(1);
 }
@@ -101,10 +101,13 @@ void bruteforce(char *target, uint8_t mode, uint8_t *pMac) {
 				exit(1);
 			}
 		}
+		else {
+			printf("[!] WPA not supported for target %s\n", target);
+		}
 	}
 	/* WPS */
 	else if (mode == 1){
-		// nothing implemented yet
+		printf("[!] WPS not supported for target %s\n", target);
 	}
 	/* Neither, exit */
 	else {
