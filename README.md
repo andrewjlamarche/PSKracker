@@ -10,12 +10,12 @@ GCC compiler
 
 **Download**
 
-`git clone https://github.com/soxrok2212/PSKracker`
+`git clone https://github.com/soxrok2212/pskracker`
 
 **Build**
 
 ```bash
-cd PSKracker/src
+cd pskracker/src
 make
 ```
 
