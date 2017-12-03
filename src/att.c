@@ -1,4 +1,24 @@
 /*
+ * PSKracker: WPA/WPA2/WPS default key/pin generator written in C.
+ *
+ * Copyright (c) 2017, soxrok2212 <soxrok2212@gmail.com>
+ * SPDX-License-Identifier: GPL-3.0+
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/*
  * Thank you to mrfancypants for research and preliminary Python code for ATTXXXXXXX networks.
  */
 
@@ -35,14 +55,3 @@ void genpass599(uint32_t x, unsigned char *psk) {
 		psk[ATT_NVG5XX_PSK_LEN - i - 1] = CHARSET[one % 37];
 	}
 }
-
-// nvg599 password algorithm
-/*void genpass599(unsigned x, unsigned char *buf) {
-   static const char CHARSET[] = "abcdefghijkmnpqrstuvwxyz23456789#%+=?";
-   buf[12] = 0; // create buffer for password
-
-   fnn = (double) (x * ((1l << 32) + 2));
-   for (i = 1; i < PW_LENGTH; i++, fnn /= 37) {
-   buf[PW_LENGTH - i - 1] = CHARSET[fnn % 37];
-   }
-   }*/

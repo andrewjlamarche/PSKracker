@@ -30,18 +30,17 @@
 
 #include "att.c"
 #include "xfinity.c"
+#include "tools.c"
 
-char TARGET[9];
-char MODE[4];
-
-static const char *option_string = "t:e:s:m:h";
+static const char *option_string = "t:b:s:WVh";
 static const struct option long_options[] = {
-		{ "target",     required_argument, 0, 't' },
-		{ "encryption", required_argument, 0, 'e' },
-		{ "serial",     required_argument, 0, 's' },
-		{ "mac",        required_argument, 0, 'm' },
-		{ "help",       no_argument,       0, 'h' },
-		{ 0,            0,                 0,  0  }
+		{ "target",     required_argument,	0, 't' },
+		{ "bssid", 	required_argument,	0, 'b' },
+		{ "wps", 	no_argument,		0, 'W' },
+		{ "serial",     required_argument,	0, 's' },
+		{ "help",       no_argument,		0, 'h' },
+		{ "version",	no_argument,		0, 'V' },
+		{ 0, 0,	0, 0 }
 };
 
 void usage_err() {
@@ -54,82 +53,68 @@ void usage_err() {
 		"\n"
 		"Required Arguments:\n"
 		"\n"
-		"    -t, --target       : Target model number\n"
-		"    -e, --encryption   : Security/encryption type\n"
+		"   -t, --target		: Target model number\n"
 		"\n"
 		"Optional Arguments:\n"
 		"\n"
-		"    -s, --serial       : Serial number\n"
-		"    -m, --mac          : Mac address\n"
+		"	-b, --bssid		: BSSID of target\n"
+		"	-W, --wps		: Output possible WPS pin(s) only\n"
+		"	-s, --serial		: Serial number\n"
+		"	-h, --help		: Display help/usage\n"
 		"\n"
 		"Example:\n"
 		"\n"
-		"    pskracker -t <target> -e <security/encryption mode> -s <serial number> -m <mac address>\n"
+		"pskracker -t <target model> -b <bssid> -s <serial number>\n"
 		"\n"
 	);
 	exit(1);
 }
 
-unsigned int hex_string_to_byte_array(char *in, uint8_t *out, const unsigned int n_len) {
-	unsigned int o, i, j;
-	unsigned int len = strlen(in);
-	unsigned int b_len = n_len * 2 + n_len - 1;
-
-	if (len != n_len * 2 && len != b_len)
-		return 1;
-	for (i = 0; i < n_len; i++) {
-		o = 0;
-		for (j = 0; j < 2; j++) {
-			o <<= 4;
-			if (*in >= 'A' && *in <= 'F')
-				*in += 'a'-'A';
-			if (*in >= '0' && *in <= '9')
-				o += *in - '0';
-			else
-				if (*in >= 'a' && *in <= 'f')
-					o += *in - 'a' + 10;
-				else
-					return 1;
-			in++;
-		}
-		*out++ = o;
-		if (len == b_len) {
-			if (*in == ':' || *in == '-' || *in == ' ' || *in == 0)
-				in++;
-			else
-				return 1;
-		}
-	}
-	return 0;
-}
-
-void bruteforce(uint8_t *mac) {
-	uint32_t k;
-	if (((strcmp(STR_TARGET_NVG589, TARGET)) == 0) && ((strcmp(STR_ENC_WPA, MODE)) == 0)) {
-		unsigned char psk[ATT_NVG5XX_PSK_LEN];
-		for (k = 0; k < INT_MAX; k++) {
-			genpass589(k, psk);
-			printf("%s\n", psk);
-		}
-	} else if (((strcmp(STR_TARGET_NVG599, TARGET)) == 0) && ((strcmp(STR_ENC_WPA, MODE)) == 0)) {
+void bruteforce(char *target, uint8_t mode, uint8_t *pMac) {
+	/* WPA */
+	if(mode == 0) {
+		/* ATT NVG589 */
+		if(!strcmp(STR_MODEL_NVG589, target)) {
+			int i;
 			unsigned char psk[ATT_NVG5XX_PSK_LEN];
-			for (k = 0; k < INT_MAX; k++) {
-				genpass599(k, psk);
+			for (i = 0; i < INT_MAX; i++) {
+				genpass589(i, psk);
 				printf("%s\n", psk);
 			}
-		} else if ((((strcmp(STR_TARGET_DPC3939, TARGET)) == 0)
-			|| ((strcmp(STR_TARGET_DPC3941, TARGET)) == 0)
-			|| ((strcmp(STR_TARGET_TG1682G, TARGET)) == 0))
-			&& ((strcmp(STR_ENC_WPA, MODE)) == 0)
-			&& mac) {
-				printf("PSK (%s): %s\n", TARGET, genpassXHS(mac));
-	} else {
+		}
+		/* ATT NVG599 */
+		else if(!strcmp(STR_MODEL_NVG599, target)) {
+			int i;
+			unsigned char psk[ATT_NVG5XX_PSK_LEN];
+			for (i = 0; i < INT_MAX; i++) {
+				genpass599(i, psk);
+				printf("%s\n", psk);
+			}
+		}
+		/* Comcast/Xfinity Home Security DPC3939, DPC3491, TG1682G */
+		else if (!strcmp(STR_MODEL_DPC3939, target) || !strcmp(STR_MODEL_DPC3941, target) || !strcmp(STR_MODEL_TG1682G, target)) {
+			if(pMac != NULL) {
+				printf("PSK: %s\n",genpassXHS(pMac));
+			}
+			else {
+				printf("[!] Specify target bssid for target %s: -b <bssid>\n", target);
+				exit(1);
+			}
+		}
+	}
+	/* WPS */
+	else if (mode == 1){
+		// nothing implemented yet
+	}
+	/* Neither, exit */
+	else {
 		usage_err();
 	}
 }
 
 int main(int argc, char **argv) {
-	uint8_t mac[6], *ptrmac = 0;
+	uint8_t mac[6], mode = 255, *pMac = 0;
+	char *target;
 
 	int opt = 0;
 	int long_index = 0;
@@ -137,44 +122,45 @@ int main(int argc, char **argv) {
 	while (opt != -1) {
 		switch (opt) {
 
-		case 't': // target model number selection
-			if ((strcmp(STR_TARGET_NVG589, optarg)) == 0
-					|| (strcmp(STR_TARGET_NVG599, optarg)) == 0
-					|| (strcmp(STR_TARGET_DPC3939, optarg)) == 0
-					|| (strcmp(STR_TARGET_DPC3941, optarg)) == 0
-					|| (strcmp(STR_TARGET_TG1682G, optarg)) == 0) {
-				strcpy(TARGET, optarg);
-			} else {
-				usage_err();
-			}
+		case 't':
+			mode = 0; // set WPA (bruteforce())
+			target = optarg;
 			break;
 
-		case 'e': // security/encryption mode selection
-			if ((strcmp(STR_ENC_WPA, optarg)) == 0
-					|| (strcmp(STR_ENC_WPS, optarg)) == 0) {
-				strcpy(MODE, optarg);
-			} else
-				usage_err();
-			break;
-
-		case 'm': // mac address selection
+		case 'b':
 			if (hex_string_to_byte_array(optarg, mac, BSSID_LEN)) {
-				printf("Invalid MAC Address\n");
-				exit(2);
+				printf("[!] Invalid MAC Address\n");
+				exit(1);
 			}
-			ptrmac = mac;
+			pMac = mac;
+			break;
+
+		case 'W':
+			mode = 1; // set WPS (bruteforce())
+			break;
+
+		case 's':
 			break;
 
 		case 'h': // display usage menu
 			usage_err();
 			break;
 
+		case 'V': // display version
+			if(argc > 2) {
+				printf("[!] Bad use of argument --version (-V)\n");
+				exit(1);
+			} 
+			else {
+				printf("PSKracker %s\n", LONG_VERSION);
+				exit(0);
+			}
+			break;
 		default:
-			usage_err();
 			break;
 		}
 		opt = getopt_long(argc, argv, option_string, long_options, &long_index);
 	}
-	bruteforce(ptrmac);
+	bruteforce(target, mode, pMac);
 	return 0;
 }
