@@ -32,13 +32,14 @@
 #include "xfinity.c"
 #include "tools.c"
 
-static const char *option_string = "t:b:s:Wh";
+static const char *option_string = "t:b:s:WVh";
 static const struct option long_options[] = {
 		{ "target",     required_argument,	0, 't' },
 		{ "bssid", 	required_argument,	0, 'b' },
 		{ "wps", 	no_argument,		0, 'W' },
 		{ "serial",     required_argument,	0, 's' },
 		{ "help",       no_argument,		0, 'h' },
+		{ "version",	no_argument,		0, 'V' },
 		{ 0, 0,	0, 0 }
 };
 
@@ -96,7 +97,7 @@ void bruteforce(char *target, uint8_t mode, uint8_t *pMac) {
 				printf("PSK: %s\n",genpassXHS(pMac));
 			}
 			else {
-				printf("Specify target bssid: -b <bssid>\n");
+				printf("[!] Specify target bssid for target %s: -b <bssid>\n", target);
 				exit(1);
 			}
 		}
@@ -145,6 +146,16 @@ int main(int argc, char **argv) {
 			usage_err();
 			break;
 
+		case 'V': // display version
+			if(argc > 2) {
+				printf("[!] Bad use of argument --version (-V)\n");
+				exit(1);
+			} 
+			else {
+				printf("PSKracker %s\n", LONG_VERSION);
+				exit(0);
+			}
+			break;
 		default:
 			break;
 		}
