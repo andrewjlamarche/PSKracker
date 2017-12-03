@@ -55,14 +55,3 @@ void genpass599(uint32_t x, unsigned char *psk) {
 		psk[ATT_NVG5XX_PSK_LEN - i - 1] = CHARSET[one % 37];
 	}
 }
-
-// nvg599 password algorithm
-/*void genpass599(unsigned x, unsigned char *buf) {
-   static const char CHARSET[] = "abcdefghijkmnpqrstuvwxyz23456789#%+=?";
-   buf[12] = 0; // create buffer for password
-
-   fnn = (double) (x * ((1l << 32) + 2));
-   for (i = 1; i < PW_LENGTH; i++, fnn /= 37) {
-   buf[PW_LENGTH - i - 1] = CHARSET[fnn % 37];
-   }
-   }*/
