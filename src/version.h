@@ -22,6 +22,6 @@
 #define VERSION_H_
 
 #define SHORT_VERSION "0.2"
-#define LONG_VERSION "0.2"
+#define LONG_VERSION "0.2.1"
 
 #endif /* VERSION_H_ */
