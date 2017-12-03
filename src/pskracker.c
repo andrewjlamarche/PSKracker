@@ -129,8 +129,8 @@ int main(int argc, char **argv) {
 
 		case 'b':
 			if (hex_string_to_byte_array(optarg, mac, BSSID_LEN)) {
-				printf("Invalid MAC Address\n");
-				exit(2);
+				printf("[!] Invalid MAC Address\n");
+				exit(1);
 			}
 			pMac = mac;
 			break;
