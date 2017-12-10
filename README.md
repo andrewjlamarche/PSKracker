@@ -64,11 +64,6 @@ Comcast/Xfinity Arris TG1682G [psk][bssid]
 ```
 $ pskracker -t nvg599
   ...
-  aaae7jz6p5kb
-  aaae7mm4b3%k
-  aaae7n?z42vv
-  aaae7q2xqzf6
-  aaae7snvcx7a
   aaae7uas5wrj
   aaae7v3qrvbu
   ...
