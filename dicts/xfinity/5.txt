@@ -1,5 +1,6 @@
 about
 again
+agree
 ahead
 aisle
 alert
@@ -36,6 +37,7 @@ brook
 brush
 build
 cabin
+canal
 cause
 chair
 charm
