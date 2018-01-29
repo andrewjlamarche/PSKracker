@@ -29,9 +29,32 @@
 #define STR_MODEL_NVG589 "nvg589"
 #define STR_MODEL_NVG599 "nvg599"
 //#define STR_MODEL_7550      "7550"
-//#define STR_MODEL_5268AC    "5268ac"
+//#define STR_MODEL_5268AC  "5268ac"
 #define STR_MODEL_DPC3939 "dpc3939"
 #define STR_MODEL_DPC3941 "dpc3941"
 #define STR_MODEL_TG1682G "tg1682g"
+
+/* ISP */
+#define STR_ISP_ATT "att"
+#define STR_ISP_COMCAST "comcast"
+#define STR_ISP_XFINITY "xfinity"
+
+void list_att_supported_models() {
+	printf(
+	"Supported AT&T targets:\n"
+	"[+] nvg589\n"
+	"[+] nvg599\n"
+//	"[+] 5268ac\n"
+	);
+}
+
+void list_xfintiy_supported_models() {
+	printf(
+	"Supported Comcast/Xfinity targets:\n"
+	"[+] dpc3939\n"
+	"[+] dpc3941\n"
+	"[+] tg1682g\n"
+	);
+}
 
 #endif /* PSKRACKER_H_ */

@@ -32,77 +32,102 @@
 #include "xfinity.c"
 #include "tools.c"
 
-static const char *option_string = "t:b:s:WVh";
+static const char *option_string = "t:b:s:WVfh";
 static const struct option long_options[] = {
-		{ "target",     required_argument,	0, 't' },
-		{ "bssid", 	required_argument,	0, 'b' },
-		{ "wps", 	no_argument,		0, 'W' },
-		{ "serial",     required_argument,	0, 's' },
-		{ "help",       no_argument,		0, 'h' },
-		{ "version",	no_argument,		0, 'V' },
-		{ 0, 0,	0, 0 }
+	{ "target",     required_argument,	0, 't' },
+	{ "bssid", 	required_argument,	0, 'b' },
+	{ "wps", 	no_argument,		0, 'W' },
+	{ "serial",     required_argument,	0, 's' },
+	{ "force",	no_argument,		0, 'f' },
+	{ "help",       no_argument,		0, 'h' },
+	{ "version",	no_argument,		0, 'V' },
+	{ 0, 0,	0, 0 }
 };
 
 void usage_err() {
 	printf(
-		"\n"
-		" PSKracker %s WiFi Security Auditing Toolkit\n"
-		" Copyright (c) 2017-2018, soxrok2212 <soxrok2212@gmail.com>\n"
-		"\n"
-		" Usage: pskracker <arguments>\n"
-		"\n"
-		" Required Arguments:\n"
-		"\n"
-		"	-t, --target	: Target model number\n"
-		"\n"
-		" Optional Arguments:\n"
-		"\n"
-		"	-b, --bssid	: BSSID of target\n"
-		"	-W, --wps	: Output possible WPS pin(s) only\n"
-		"	-s, --serial	: Serial number\n"
-		"	-h, --help	: Display help/usage\n"
-		"\n"
-		" Example:\n"
-		"\n"
-		" pskracker -t <target model> -b <bssid> -s <serial number>\n"
-		"\n", LONG_VERSION
-	);
+			"\n"
+			" PSKracker %s WiFi Security Auditing Toolkit\n"
+			" Copyright (c) 2017-2018, soxrok2212 <soxrok2212@gmail.com>\n"
+			"\n"
+			" Usage: pskracker <arguments>\n"
+			"\n"
+			" Required Arguments:\n"
+			"\n"
+			"	-t, --target	: Target model number\n"
+			"\n"
+			" Optional Arguments:\n"
+			"\n"
+			"	-b, --bssid	: BSSID of target\n"
+			"	-W, --wps	: Output possible WPS pin(s) only\n"
+			"	-s, --serial	: Serial number\n"
+			"	-f, --force	: Force full output\n"
+			"	-h, --help	: Display help/usage\n"
+			"\n"
+			" Example:\n"
+			"\n"
+			" pskracker -t <target model> -b <bssid> -s <serial number>\n"
+			"\n", LONG_VERSION
+			);
 	exit(1);
 }
 
-void bruteforce(char *target, uint8_t mode, uint8_t *pMac) {
+void bruteforce(char *target, uint8_t mode, uint8_t force, uint8_t *pMac) {
 	/* WPA */
 	if(mode == 0) {
-		/* ATT NVG589 */
-		if(!strcmp(STR_MODEL_NVG589, target)) {
-			int i;
-			unsigned char psk[ATT_NVG5XX_PSK_LEN];
-			for (i = 0; i < INT_MAX; i++) {
-				genpass589(i, psk);
-				printf("%s\n", psk);
-			}
-		}
-		/* ATT NVG599 */
-		else if(!strcmp(STR_MODEL_NVG599, target)) {
-			int i;
-			unsigned char psk[ATT_NVG5XX_PSK_LEN];
-			for (i = 0; i < INT_MAX; i++) {
-				genpass599(i, psk);
-				printf("%s\n", psk);
-			}
-		}
-		/* Comcast/Xfinity Home Security DPC3939, DPC3491, TG1682G */
-		else if (!strcmp(STR_MODEL_DPC3939, target) || !strcmp(STR_MODEL_DPC3941, target) || !strcmp(STR_MODEL_TG1682G, target)) {
-			if(pMac != NULL) {
-				printf("PSK: %s\n",genpassXHS(pMac));
-			}
-			else {
-				printf("[!] Specify target bssid for target %s: -b <bssid>\n", target);
-				exit(1);
+		/* All ATT */
+		if(force)  {
+			if(!strcmp(STR_ISP_ATT, target)) {
+				int i;
+				unsigned char psk[ATT_NVG5XX_PSK_LEN];
+				for (i = 0; i < INT_MAX; i++) {
+					genpass589(i, psk);
+					printf("%s\n", psk);
+					genpass599(i, psk);
+					printf("%s\n", psk);
+				}
 			}
 		}
 		else {
-			printf("[!] WPA not supported for target %s\n", target);
+			/* ATT NVG589 */
+			if(!strcmp(STR_MODEL_NVG589, target)) {
+				int i;
+				unsigned char psk[ATT_NVG5XX_PSK_LEN];
+				for (i = 0; i < INT_MAX; i++) {
+					genpass589(i, psk);
+					printf("%s\n", psk);
+				}
+			}
+			/* ATT NVG599 */
+			else if(!strcmp(STR_MODEL_NVG599, target)) {
+				int i;
+				unsigned char psk[ATT_NVG5XX_PSK_LEN];
+				for (i = 0; i < INT_MAX; i++) {
+					genpass599(i, psk);
+					printf("%s\n", psk);
+				}
+			}
+			/* Comcast/Xfinity Home Security DPC3939, DPC3491, TG1682G */
+			else if (!strcmp(STR_MODEL_DPC3939, target) || !strcmp(STR_MODEL_DPC3941, target) || !strcmp(STR_MODEL_TG1682G, target)) {
+				if(pMac != NULL) {
+					printf("PSK: %s\n", genpassXHS(pMac));
+				}
+				else {
+					printf("[!] Specify target bssid for target %s: -b <bssid>\n", target);
+					exit(1);
+				}
+			}
+			/* All ATT */
+			else if (!strcmp(STR_ISP_ATT, target)) {
+				list_att_supported_models();
+			}
+			/* All Comcast/Xfintiy */
+			else if (!strcmp(STR_ISP_XFINITY, target) || !strcmp(STR_ISP_COMCAST, target)) {
+				list_xfintiy_supported_models();
+			}
+			else {
+				printf("[!] WPA not supported for target %s\n", target);
+			}
 		}
 	}
 	/* WPS */
@@ -116,7 +141,7 @@ void bruteforce(char *target, uint8_t mode, uint8_t *pMac) {
 }
 
 int main(int argc, char **argv) {
-	uint8_t mac[6], mode = 255, *pMac = 0;
+	uint8_t mac[6], mode = 255, force = 0, *pMac = 0;
 	char *target;
 
 	int opt = 0;
@@ -125,45 +150,47 @@ int main(int argc, char **argv) {
 	while (opt != -1) {
 		switch (opt) {
 
-		case 't':
-			mode = 0; // set WPA (bruteforce())
-			target = optarg;
-			break;
+			case 't':
+				mode = 0; // set WPA (bruteforce())
+				target = optarg;
+				break;
 
-		case 'b':
-			if (hex_string_to_byte_array(optarg, mac, BSSID_LEN)) {
-				printf("[!] Invalid MAC Address\n");
-				exit(1);
-			}
-			pMac = mac;
-			break;
+			case 'b':
+				if (hex_string_to_byte_array(optarg, mac, BSSID_LEN)) {
+					printf("[!] Invalid MAC Address\n");
+					exit(1);
+				}
+				pMac = mac;
+				break;
 
-		case 'W':
-			mode = 1; // set WPS (bruteforce())
-			break;
+			case 'W':
+				mode = 1; // set WPS (bruteforce())
+				break;
 
-		case 's':
-			break;
+			case 's':
+				break;
+			case 'f':
+				force = 1;
+				break;
+			case 'h': // display usage menu
+				usage_err();
+				break;
 
-		case 'h': // display usage menu
-			usage_err();
-			break;
-
-		case 'V': // display version
-			if(argc > 2) {
-				printf("[!] Bad use of argument --version (-V)\n");
-				exit(1);
-			} 
-			else {
-				printf("PSKracker %s\n", LONG_VERSION);
-				exit(0);
-			}
-			break;
-		default:
-			break;
+			case 'V': // display version
+				if(argc > 2) {
+					printf("[!] Bad use of argument --version (-V)\n");
+					exit(1);
+				} 
+				else {
+					printf("PSKracker %s\n", LONG_VERSION);
+					exit(0);
+				}
+				break;
+			default:
+				break;
 		}
 		opt = getopt_long(argc, argv, option_string, long_options, &long_index);
 	}
-	bruteforce(target, mode, pMac);
+	bruteforce(target, mode, force, pMac);
 	return 0;
 }
