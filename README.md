@@ -43,6 +43,7 @@ Optional Arguments:
 # Usage Example
 
 `pskracker -t <target> -e <security/encryption type> -s <serial number> -m <mac address>`
+* More detailed usage examples can be found on the [wiki](https://github.com/soxrok2212/PSKracker/wiki/Attack-Types-and-Supported-Models).
 
 # Supported Models
 
