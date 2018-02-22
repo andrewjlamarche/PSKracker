@@ -57,5 +57,4 @@ dkms.conf
 .LSOverride
 
 # Custom
-src/att
-src/pskracker
+pskracker

@@ -1,5 +1,6 @@
 about
 again
+agree
 ahead
 aisle
 alert
@@ -15,6 +16,7 @@ award
 bacon
 badge
 bagel
+baked
 basic
 beard
 begin
@@ -36,6 +38,7 @@ brook
 brush
 build
 cabin
+canal
 cause
 chair
 charm
