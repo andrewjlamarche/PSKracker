@@ -37,15 +37,15 @@
 
 * MyCharterWiFi-XX - Adjective + Noun + 1/3 Digits  
 #### /dicts/netgear  
-`-a 6 netgear_adjective_noun.txt ?d`  
+`-a 6 netgear.txt ?d?d?d`  
 or  
-`-a 6 netgear_adjective_noun.txt ?d?d?d` 
+`-a 6 netgear.txt ?d` 
 
 * MySpectrumWiFi-XX - Adjective + Noun + 1/3 Digits  
 #### /dicts/netgear  
-`-a 6 netgear_adjective_noun.txt ?d`  
+`-a 6 netgear.txt ?d?d?d`  
 or  
-`-a 6 netgear_adjective_noun.txt ?d?d?d` 
+`-a 6 netgear.txt ?d` 
 
 ## Comcast/Xfinity
 
@@ -167,9 +167,9 @@ F = F
 
 * NETGEARXX - Adjective + Noun + 1/3 Digits  
 #### /dicts/netgear  
-`-a 6 netgear_adjective_noun.txt ?d`  
+`-a 6 netgear.txt ?d?d?d`  
 or  
-`-a 6 netgear_adjective_noun.txt ?d?d?d`  
+`-a 6 netgear.txt ?d`  
 
 * ONOXXXX - [0-9] Length 10  
 `?d?d?d?d?d?d?d?d?d?d`  
