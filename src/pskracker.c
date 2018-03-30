@@ -29,14 +29,16 @@
 #include "version.h"
 
 #include "att.c"
+#include "belkin.c"
 #include "xfinity.c"
 #include "tools.c"
 
-static const char *option_string = "t:b:s:WVfh";
+static const char *option_string = "t:b:s:WGVfh";
 static const struct option long_options[] = {
 	{ "target",     required_argument,	0, 't' },
 	{ "bssid", 	required_argument,	0, 'b' },
 	{ "wps", 	no_argument,		0, 'W' },
+	{ "guest", 	no_argument,		0, 'G' },
 	{ "serial",     required_argument,	0, 's' },
 	{ "force",	no_argument,		0, 'f' },
 	{ "help",       no_argument,		0, 'h' },
@@ -60,6 +62,7 @@ void usage_err() {
 			"\n"
 			"	-b, --bssid	: BSSID of target\n"
 			"	-W, --wps	: Output possible WPS pin(s) only\n"
+			"	-G, --guest	: Output possible guest WPA key(s) only\n"
 			"	-s, --serial	: Serial number\n"
 			"	-f, --force	: Force full output\n"
 			"	-h, --help	: Display help/usage\n"
@@ -72,11 +75,16 @@ void usage_err() {
 	exit(1);
 }
 
-void bruteforce(char *target, uint8_t mode, uint8_t force, uint8_t *pMac) {
+void specify_bssid(char *target) {
+	printf("[!] Specify target bssid for target %s: -b <bssid>\n", target);
+        exit(1);
+}
+
+void bruteforce(char *target, uint8_t mode, uint8_t guest, uint8_t force, uint8_t *pMac) {
 	/* WPA */
 	if(mode == 0) {
-		/* All ATT */
 		if(force)  {
+			/* All ATT */
 			if(!strcmp(STR_ISP_ATT, target)) {
 				int i;
 				unsigned char psk[ATT_NVG5XX_PSK_LEN];
@@ -87,6 +95,27 @@ void bruteforce(char *target, uint8_t mode, uint8_t force, uint8_t *pMac) {
 					printf("%s\n", psk);
 				}
 			}
+			/* All Belkin */
+			else if(!strcmp(STR_MANUF_BELKIN, target)) {
+				if(pMac != NULL) {	
+					genpassBelkinOld(pMac);
+				}
+				else {
+                                	specify_bssid(target);
+				}
+			}
+			/* All Comcast/Xfinity */
+			else if(!strcmp(STR_ISP_XFINITY, target) || !strcmp(STR_ISP_COMCAST, target)) {
+				if(pMac != NULL) {
+                                        printf("PSK: %s\n", genpassXHS(pMac));
+                                }
+                                else {
+                                        specify_bssid(target);
+                                }
+			}
+		}
+		else if (guest) {
+			exit(0);
 		}
 		else {
 			/* ATT NVG589 */
@@ -113,14 +142,17 @@ void bruteforce(char *target, uint8_t mode, uint8_t force, uint8_t *pMac) {
 					printf("PSK: %s\n", genpassXHS(pMac));
 				}
 				else {
-					printf("[!] Specify target bssid for target %s: -b <bssid>\n", target);
-					exit(1);
+					specify_bssid(target);
 				}
 			}
 			/* All ATT */
 			else if (!strcmp(STR_ISP_ATT, target)) {
 				list_att_supported_models();
 			}
+			/* All Belkin */
+                        else if(!strcmp(STR_MANUF_BELKIN, target)) {
+                                list_belkin_supported_models();
+                        }
 			/* All Comcast/Xfintiy */
 			else if (!strcmp(STR_ISP_XFINITY, target) || !strcmp(STR_ISP_COMCAST, target)) {
 				list_xfintiy_supported_models();
@@ -141,7 +173,7 @@ void bruteforce(char *target, uint8_t mode, uint8_t force, uint8_t *pMac) {
 }
 
 int main(int argc, char **argv) {
-	uint8_t mac[6], mode = 255, force = 0, *pMac = 0;
+	uint8_t mac[6], mode = 255, guest = 0, force = 0, *pMac = 0;
 	char *target;
 
 	int opt = 0;
@@ -166,7 +198,9 @@ int main(int argc, char **argv) {
 			case 'W':
 				mode = 1; // set WPS (bruteforce())
 				break;
-
+			case 'G':
+				guest = 1; // set guest WPA key
+				break;
 			case 's':
 				break;
 			case 'f':
@@ -191,6 +225,6 @@ int main(int argc, char **argv) {
 		}
 		opt = getopt_long(argc, argv, option_string, long_options, &long_index);
 	}
-	bruteforce(target, mode, force, pMac);
+	bruteforce(target, mode, guest, force, pMac);
 	return 0;
 }

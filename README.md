@@ -35,6 +35,7 @@ Required Arguments:
 Optional Arguments:
 	-b, --bssid	: BSSID of target
 	-W, --wps	: Output possible WPS pin(s) only
+	-G, --guest	: Output possible guest WPA key(s) only
 	-s, --serial	: Serial number
 	-f, --force	: Force full output
 	-h, --help	: Display help/usage
@@ -42,23 +43,8 @@ Optional Arguments:
 
 # Usage Example
 
-`pskracker -t <target> -e <security/encryption type> -s <serial number> -m <mac address>`
-* More detailed usage examples can be found on the [wiki](https://github.com/soxrok2212/PSKracker/wiki/Attack-Types-and-Supported-Models).
-
-# Supported Models
-
-Types: bruteforce and psk
-Bruteforce means the output of PSKracker should be piped into a password recovery tool, such as Hashcat.
-Psk means you will be given one (or a handful) of possible keys.
-
-```
-ATT Arris NVG589 [bruteforce]
-ATT Arris NVG599 [bruteforce]
-
-Comcast/Xfinity Cisco DPC3939 [psk][bssid]
-Comcast/Xfinity Cisco DPC3941 [psk][bssid]
-Comcast/Xfinity Arris TG1682G [psk][bssid]
-```
+`pskracker -t <target> -s <serial number> -b <bssid>`
+* More detailed usage examples and supported models can be found on the [wiki](https://github.com/soxrok2212/PSKracker/wiki/Attack-Types-and-Supported-Models).
 
 # Targeted Example
 
@@ -100,3 +86,7 @@ In publishing these documents and source code, I (and other developers/contribut
 
 ### ATT NVG589 and NVG599 Algorithm
 * [Hashcat Forum (mrfancypants)](https://hashcat.net/forum/thread-6170-post-35739.html#pid35739)
+
+### Belkin
+* [CVE-2012-4366](https://nvd.nist.gov/vuln/detail/CVE-2012-4366)
+* nvram.c from GPL source code center

@@ -25,7 +25,7 @@
 #define BSSID_LEN 6
 
 
-/* TARGETS */
+/* TARGET */
 #define STR_MODEL_NVG589 "nvg589"
 #define STR_MODEL_NVG599 "nvg599"
 //#define STR_MODEL_7550      "7550"
@@ -39,18 +39,33 @@
 #define STR_ISP_COMCAST "comcast"
 #define STR_ISP_XFINITY "xfinity"
 
+/* MANUFACTURER */
+#define STR_MANUF_BELKIN "belkin"
+
 void list_att_supported_models() {
 	printf(
 	"Supported AT&T targets:\n"
+	"SSID pattern: ATTXXXXXXX\n"
 	"[+] nvg589\n"
 	"[+] nvg599\n"
 //	"[+] 5268ac\n"
 	);
 }
 
+void list_belkin_supported_models() {
+	printf(
+	"Supported Belkin targets:\n"
+	"SSID pattern: Belkin.xxxx, belkin.xxxx, belkin.xxx\n"
+	"[!] Not all are supported\n"
+	"[+] F7K*\n"
+	"[+] F9K*\n"
+	);
+}
+
 void list_xfintiy_supported_models() {
 	printf(
 	"Supported Comcast/Xfinity targets:\n"
+	"SSID pattern: HOME-XXXX, HOME-XXXX-2.4, HOME-XXXX-5\n"
 	"[+] dpc3939\n"
 	"[+] dpc3941\n"
 	"[+] tg1682g\n"
