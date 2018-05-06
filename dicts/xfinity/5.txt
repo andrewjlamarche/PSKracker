@@ -22,6 +22,7 @@ beard
 begin
 being
 below
+berry
 bison
 block
 bloom
@@ -90,5 +91,6 @@ fancy
 favor
 feast
 fence
+fever
 field
 fifty
