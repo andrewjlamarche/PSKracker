@@ -10,7 +10,7 @@ GCC compiler
 
 **Download**
 
-`git clone https://gitlab.com/soxrok2212/pskracker.git`
+`git clone https://github.com/soxrok2212/pskracker`
 
 **Build**
 
@@ -33,12 +33,12 @@ Required Arguments:
 	-t, --target	: Target model number
 
 Optional Arguments:
-	-b, --bssid	    : BSSID of target
-	-W, --wps	    : Output possible WPS pin(s) only
-	-G, --guest	    : Output possible guest WPA key(s) only
-	-s, --serial    : Serial number
-	-f, --force	    : Force full output
-	-h, --help	    : Display help/usage
+	-b, --bssid	: BSSID of target
+	-W, --wps	: Output possible WPS pin(s) only
+	-G, --guest	: Output possible guest WPA key(s) only
+	-s, --serial	: Serial number
+	-f, --force	: Force full output
+	-h, --help	: Display help/usage
 ```
 
 # Usage Example
