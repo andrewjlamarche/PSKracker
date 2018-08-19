@@ -5,12 +5,15 @@ ball
 balloon
 banana
 beach
+bike
 bird
 boat
 bolt
+book
 boot
 bottle
 box
+brain
 bread
 breeze
 bubble
@@ -39,6 +42,7 @@ elephant
 emerald
 finch
 fire
+fish
 flamingo
 flower
 flute
