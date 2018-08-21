@@ -133,18 +133,21 @@ void genpassBelkinOld(uint8_t *mac) {
 	printf("%s\n", WpaPreKeyBuf);
 
 	/* make other guesses for modified algorithms */
-	int k;
-	for (k = 0; k < 10; k++) {
-		key_map_2[5] = key_map_2[5] + 1;
+	int k = 0x30;
+	while (k < 0x3a) {
+		key_map_2[5] = k;
 		memcpy(WpaPreKeyBuf, key_map_2, 8);
+		k++;
 		printf("%s\n", WpaPreKeyBuf);
 	}
-	key_map_2[5] = key_map_2[5] - 10;
-	for (k = 10; k > 0; k--) {
-		key_map_2[5] = key_map_2[5] - 1;
+	k = 0x61;
+	while (k < 0x67) {
+		key_map_2[5] = k;
 		memcpy(WpaPreKeyBuf, key_map_2, 8);
+		k++;
 		printf("%s\n", WpaPreKeyBuf);
 	}
+
 }
 
 /* Old guest network algorithm */
