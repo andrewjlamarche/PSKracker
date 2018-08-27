@@ -157,9 +157,9 @@
 
   - `?d?d?d?d?d?d?d?d?d?d`
 
-* iPhone 5	Lowercase word plus 4 #	??
+* iPhone 5	[word + ?d?d?d?d]  - Len: Varies
 
-`need dictionary`
+  - `need dictionary`
 
 * Keenetic-XXXX	-	[0-9a-zA-Z]	-	Len: 8
 
@@ -169,7 +169,7 @@
 
   - `?d?d?d?d?d?d?d?d`
 
-* Livebox-XXXX	??	??
+* Livebox-XXXX	[??-??]  - Len: ??
 
   - `Impossible`
 
@@ -207,7 +207,7 @@
 
 * MYWIFI (EE)	-	[MYWIFI + 4 numbers]	-	Len: 10
 
-`MYWIFI?d?d?d?d`
+  - `MYWIFI?d?d?d?d`
 
 * NETGEARXX	-	[Adjective + Noun + 3 Digits]	-	Len: Varies
 
@@ -241,7 +241,7 @@
 
 * PLDT	-	[PLDTWIFI + Last 5 of MAC]	-	Len: 13
 
-`PLDTWIFI?H?H?H?H?H`
+  - `PLDTWIFI?H?H?H?H?H`
 
 * Plusnet Broadband UK	-	[0-9a-zA-Z]	-	Len: 64
 
@@ -271,12 +271,19 @@
   First hex value in SSID -> Last letter of PSK, X:
 
   0 = P   8 = X
+
   1 = Q   9 = Y
+
   2 = R   A = L
+
   3 = S   B = B
+
   4 = T   C = C
+
   5 = N   D = D
+
   6 = V   E = M
+
   7 = W   F = F
 
 * SmartRG	-	[0-9a-f]	-	Len: 10
@@ -410,4 +417,4 @@
 
   or
 
-  -   - `-1 ?u?d ?1?1?1?1?1?1?1?1?1?1?1?1?1`
+  - `-1 ?u?d ?1?1?1?1?1?1?1?1?1?1?1?1?1`
