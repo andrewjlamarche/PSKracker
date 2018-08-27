@@ -157,7 +157,7 @@
 
   - `?d?d?d?d?d?d?d?d?d?d`
 
-* iPhone 5	[word + ?d?d?d?d]  - Len: Varies
+* iPhone 5  - [word + ?d?d?d?d]  - Len: Varies
 
   - `need dictionary`
 
@@ -270,21 +270,37 @@
 
   First hex value in SSID -> Last letter of PSK, X:
 
-  0 = P   8 = X
+  0 = P
 
-  1 = Q   9 = Y
+  1 = Q
 
-  2 = R   A = L
+  2 = R
 
-  3 = S   B = B
+  3 = S
 
-  4 = T   C = C
+  4 = T
 
-  5 = N   D = D
+  5 = N
 
-  6 = V   E = M
+  6 = V
 
-  7 = W   F = F
+  7 = W
+
+  8 = X
+
+  9 = Y
+
+  A = L
+
+  B = B
+
+  C = C
+
+  D = D
+
+  E = M
+
+  F = F
 
 * SmartRG	-	[0-9a-f]	-	Len: 10
 
@@ -310,7 +326,7 @@
 
   - `?H?H?H?H?H?H?H?H?H?H`
 
-* Telecom-XXXXXXXX	??	??
+* Telecom-XXXXXXXX  - [??-??] - Len: ??
 
   - `Currently Unknown`
 
