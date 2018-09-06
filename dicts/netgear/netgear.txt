@@ -141,7 +141,7 @@ superairplane
 sweetairplane
 swiftairplane
 thirstyairplane
-terrrificairplane
+terrificairplane
 thoughtfulairplane
 tinyairplane
 unevenairplane
@@ -306,7 +306,7 @@ superapple
 sweetapple
 swiftapple
 thirstyapple
-terrrificapple
+terrificapple
 thoughtfulapple
 tinyapple
 unevenapple
@@ -471,7 +471,7 @@ superautomobile
 sweetautomobile
 swiftautomobile
 thirstyautomobile
-terrrificautomobile
+terrificautomobile
 thoughtfulautomobile
 tinyautomobile
 unevenautomobile
@@ -636,7 +636,7 @@ superball
 sweetball
 swiftball
 thirstyball
-terrrificball
+terrificball
 thoughtfulball
 tinyball
 unevenball
@@ -801,7 +801,7 @@ superballoon
 sweetballoon
 swiftballoon
 thirstyballoon
-terrrificballoon
+terrificballoon
 thoughtfulballoon
 tinyballoon
 unevenballoon
@@ -966,7 +966,7 @@ superbanana
 sweetbanana
 swiftbanana
 thirstybanana
-terrrificbanana
+terrificbanana
 thoughtfulbanana
 tinybanana
 unevenbanana
@@ -1131,7 +1131,7 @@ superbeach
 sweetbeach
 swiftbeach
 thirstybeach
-terrrificbeach
+terrificbeach
 thoughtfulbeach
 tinybeach
 unevenbeach
@@ -1296,7 +1296,7 @@ superbike
 sweetbike
 swiftbike
 thirstybike
-terrrificbike
+terrificbike
 thoughtfulbike
 tinybike
 unevenbike
@@ -1461,7 +1461,7 @@ superbird
 sweetbird
 swiftbird
 thirstybird
-terrrificbird
+terrificbird
 thoughtfulbird
 tinybird
 unevenbird
@@ -1626,7 +1626,7 @@ superboat
 sweetboat
 swiftboat
 thirstyboat
-terrrificboat
+terrificboat
 thoughtfulboat
 tinyboat
 unevenboat
@@ -1791,7 +1791,7 @@ superbolt
 sweetbolt
 swiftbolt
 thirstybolt
-terrrificbolt
+terrificbolt
 thoughtfulbolt
 tinybolt
 unevenbolt
@@ -1956,7 +1956,7 @@ superbook
 sweetbook
 swiftbook
 thirstybook
-terrrificbook
+terrificbook
 thoughtfulbook
 tinybook
 unevenbook
@@ -2121,7 +2121,7 @@ superboot
 sweetboot
 swiftboot
 thirstyboot
-terrrificboot
+terrificboot
 thoughtfulboot
 tinyboot
 unevenboot
@@ -2286,7 +2286,7 @@ superbottle
 sweetbottle
 swiftbottle
 thirstybottle
-terrrificbottle
+terrificbottle
 thoughtfulbottle
 tinybottle
 unevenbottle
@@ -2451,7 +2451,7 @@ superbox
 sweetbox
 swiftbox
 thirstybox
-terrrificbox
+terrificbox
 thoughtfulbox
 tinybox
 unevenbox
@@ -2616,7 +2616,7 @@ superbrain
 sweetbrain
 swiftbrain
 thirstybrain
-terrrificbrain
+terrificbrain
 thoughtfulbrain
 tinybrain
 unevenbrain
@@ -2781,7 +2781,7 @@ superbread
 sweetbread
 swiftbread
 thirstybread
-terrrificbread
+terrificbread
 thoughtfulbread
 tinybread
 unevenbread
@@ -2946,7 +2946,7 @@ superbreeze
 sweetbreeze
 swiftbreeze
 thirstybreeze
-terrrificbreeze
+terrificbreeze
 thoughtfulbreeze
 tinybreeze
 unevenbreeze
@@ -3111,7 +3111,7 @@ superbubble
 sweetbubble
 swiftbubble
 thirstybubble
-terrrificbubble
+terrificbubble
 thoughtfulbubble
 tinybubble
 unevenbubble
@@ -3276,7 +3276,7 @@ superbug
 sweetbug
 swiftbug
 thirstybug
-terrrificbug
+terrificbug
 thoughtfulbug
 tinybug
 unevenbug
@@ -3441,7 +3441,7 @@ superbush
 sweetbush
 swiftbush
 thirstybush
-terrrificbush
+terrificbush
 thoughtfulbush
 tinybush
 unevenbush
@@ -3606,7 +3606,7 @@ superbutter
 sweetbutter
 swiftbutter
 thirstybutter
-terrrificbutter
+terrificbutter
 thoughtfulbutter
 tinybutter
 unevenbutter
@@ -3771,7 +3771,7 @@ supercanoe
 sweetcanoe
 swiftcanoe
 thirstycanoe
-terrrificcanoe
+terrificcanoe
 thoughtfulcanoe
 tinycanoe
 unevencanoe
@@ -3936,7 +3936,7 @@ supercarrot
 sweetcarrot
 swiftcarrot
 thirstycarrot
-terrrificcarrot
+terrificcarrot
 thoughtfulcarrot
 tinycarrot
 unevencarrot
@@ -4101,7 +4101,7 @@ supercartoon
 sweetcartoon
 swiftcartoon
 thirstycartoon
-terrrificcartoon
+terrificcartoon
 thoughtfulcartoon
 tinycartoon
 unevencartoon
@@ -4266,7 +4266,7 @@ supercello
 sweetcello
 swiftcello
 thirstycello
-terrrificcello
+terrificcello
 thoughtfulcello
 tinycello
 unevencello
@@ -4431,7 +4431,7 @@ superchair
 sweetchair
 swiftchair
 thirstychair
-terrrificchair
+terrificchair
 thoughtfulchair
 tinychair
 unevenchair
@@ -4596,7 +4596,7 @@ supercheese
 sweetcheese
 swiftcheese
 thirstycheese
-terrrificcheese
+terrificcheese
 thoughtfulcheese
 tinycheese
 unevencheese
@@ -4761,7 +4761,7 @@ superchip
 sweetchip
 swiftchip
 thirstychip
-terrrificchip
+terrificchip
 thoughtfulchip
 tinychip
 unevenchip
@@ -4926,7 +4926,7 @@ supercoast
 sweetcoast
 swiftcoast
 thirstycoast
-terrrificcoast
+terrificcoast
 thoughtfulcoast
 tinycoast
 unevencoast
@@ -5091,7 +5091,7 @@ supercoconut
 sweetcoconut
 swiftcoconut
 thirstycoconut
-terrrificcoconut
+terrificcoconut
 thoughtfulcoconut
 tinycoconut
 unevencoconut
@@ -5256,7 +5256,7 @@ supercomet
 sweetcomet
 swiftcomet
 thirstycomet
-terrrificcomet
+terrificcomet
 thoughtfulcomet
 tinycomet
 unevencomet
@@ -5421,7 +5421,7 @@ supercream
 sweetcream
 swiftcream
 thirstycream
-terrrificcream
+terrificcream
 thoughtfulcream
 tinycream
 unevencream
@@ -5586,7 +5586,7 @@ supercurtain
 sweetcurtain
 swiftcurtain
 thirstycurtain
-terrrificcurtain
+terrificcurtain
 thoughtfulcurtain
 tinycurtain
 unevencurtain
@@ -5751,7 +5751,7 @@ superdaisy
 sweetdaisy
 swiftdaisy
 thirstydaisy
-terrrificdaisy
+terrificdaisy
 thoughtfuldaisy
 tinydaisy
 unevendaisy
@@ -5916,7 +5916,7 @@ superdesk
 sweetdesk
 swiftdesk
 thirstydesk
-terrrificdesk
+terrificdesk
 thoughtfuldesk
 tinydesk
 unevendesk
@@ -6081,7 +6081,7 @@ superdiamond
 sweetdiamond
 swiftdiamond
 thirstydiamond
-terrrificdiamond
+terrificdiamond
 thoughtfuldiamond
 tinydiamond
 unevendiamond
@@ -6246,7 +6246,7 @@ superdeer
 sweetdeer
 swiftdeer
 thirstydeer
-terrrificdeer
+terrificdeer
 thoughtfuldeer
 tinydeer
 unevendeer
@@ -6411,7 +6411,7 @@ superdoor
 sweetdoor
 swiftdoor
 thirstydoor
-terrrificdoor
+terrificdoor
 thoughtfuldoor
 tinydoor
 unevendoor
@@ -6576,7 +6576,7 @@ superearth
 sweetearth
 swiftearth
 thirstyearth
-terrrificearth
+terrificearth
 thoughtfulearth
 tinyearth
 unevenearth
@@ -6741,7 +6741,7 @@ superelephant
 sweetelephant
 swiftelephant
 thirstyelephant
-terrrificelephant
+terrificelephant
 thoughtfulelephant
 tinyelephant
 unevenelephant
@@ -6906,7 +6906,7 @@ superemerald
 sweetemerald
 swiftemerald
 thirstyemerald
-terrrificemerald
+terrificemerald
 thoughtfulemerald
 tinyemerald
 unevenemerald
@@ -7071,7 +7071,7 @@ superfinch
 sweetfinch
 swiftfinch
 thirstyfinch
-terrrificfinch
+terrificfinch
 thoughtfulfinch
 tinyfinch
 unevenfinch
@@ -7236,7 +7236,7 @@ superfire
 sweetfire
 swiftfire
 thirstyfire
-terrrificfire
+terrificfire
 thoughtfulfire
 tinyfire
 unevenfire
@@ -7401,7 +7401,7 @@ superfish
 sweetfish
 swiftfish
 thirstyfish
-terrrificfish
+terrificfish
 thoughtfulfish
 tinyfish
 unevenfish
@@ -7566,7 +7566,7 @@ superflamingo
 sweetflamingo
 swiftflamingo
 thirstyflamingo
-terrrificflamingo
+terrificflamingo
 thoughtfulflamingo
 tinyflamingo
 unevenflamingo
@@ -7731,7 +7731,7 @@ superflower
 sweetflower
 swiftflower
 thirstyflower
-terrrificflower
+terrificflower
 thoughtfulflower
 tinyflower
 unevenflower
@@ -7896,7 +7896,7 @@ superflute
 sweetflute
 swiftflute
 thirstyflute
-terrrificflute
+terrificflute
 thoughtfulflute
 tinyflute
 unevenflute
@@ -8061,7 +8061,7 @@ superforest
 sweetforest
 swiftforest
 thirstyforest
-terrrificforest
+terrificforest
 thoughtfulforest
 tinyforest
 unevenforest
@@ -8226,7 +8226,7 @@ superfree
 sweetfree
 swiftfree
 thirstyfree
-terrrificfree
+terrificfree
 thoughtfulfree
 tinyfree
 unevenfree
@@ -8391,7 +8391,7 @@ supergadfly
 sweetgadfly
 swiftgadfly
 thirstygadfly
-terrrificgadfly
+terrificgadfly
 thoughtfulgadfly
 tinygadfly
 unevengadfly
@@ -8556,7 +8556,7 @@ supergate
 sweetgate
 swiftgate
 thirstygate
-terrrificgate
+terrificgate
 thoughtfulgate
 tinygate
 unevengate
@@ -8721,7 +8721,7 @@ supergiant
 sweetgiant
 swiftgiant
 thirstygiant
-terrrificgiant
+terrificgiant
 thoughtfulgiant
 tinygiant
 unevengiant
@@ -8886,7 +8886,7 @@ supergiraffe
 sweetgiraffe
 swiftgiraffe
 thirstygiraffe
-terrrificgiraffe
+terrificgiraffe
 thoughtfulgiraffe
 tinygiraffe
 unevengiraffe
@@ -9051,7 +9051,7 @@ superglove
 sweetglove
 swiftglove
 thirstyglove
-terrrificglove
+terrificglove
 thoughtfulglove
 tinyglove
 unevenglove
@@ -9216,7 +9216,7 @@ supergrape
 sweetgrape
 swiftgrape
 thirstygrape
-terrrificgrape
+terrificgrape
 thoughtfulgrape
 tinygrape
 unevengrape
@@ -9381,7 +9381,7 @@ supergrasshopper
 sweetgrasshopper
 swiftgrasshopper
 thirstygrasshopper
-terrrificgrasshopper
+terrificgrasshopper
 thoughtfulgrasshopper
 tinygrasshopper
 unevengrasshopper
@@ -9546,7 +9546,7 @@ superhair
 sweethair
 swifthair
 thirstyhair
-terrrifichair
+terrifichair
 thoughtfulhair
 tinyhair
 unevenhair
@@ -9711,7 +9711,7 @@ superhat
 sweethat
 swifthat
 thirstyhat
-terrrifichat
+terrifichat
 thoughtfulhat
 tinyhat
 unevenhat
@@ -9876,7 +9876,7 @@ superhill
 sweethill
 swifthill
 thirstyhill
-terrrifichill
+terrifichill
 thoughtfulhill
 tinyhill
 unevenhill
@@ -10041,7 +10041,7 @@ superhippo
 sweethippo
 swifthippo
 thirstyhippo
-terrrifichippo
+terrifichippo
 thoughtfulhippo
 tinyhippo
 unevenhippo
@@ -10206,7 +10206,7 @@ superhouse
 sweethouse
 swifthouse
 thirstyhouse
-terrrifichouse
+terrifichouse
 thoughtfulhouse
 tinyhouse
 unevenhouse
@@ -10371,7 +10371,7 @@ superink
 sweetink
 swiftink
 thirstyink
-terrrificink
+terrificink
 thoughtfulink
 tinyink
 unevenink
@@ -10536,7 +10536,7 @@ superiris
 sweetiris
 swiftiris
 thirstyiris
-terrrificiris
+terrificiris
 thoughtfuliris
 tinyiris
 uneveniris
@@ -10701,7 +10701,7 @@ superjade
 sweetjade
 swiftjade
 thirstyjade
-terrrificjade
+terrificjade
 thoughtfuljade
 tinyjade
 unevenjade
@@ -10866,7 +10866,7 @@ superjet
 sweetjet
 swiftjet
 thirstyjet
-terrrificjet
+terrificjet
 thoughtfuljet
 tinyjet
 unevenjet
@@ -11031,7 +11031,7 @@ superjungle
 sweetjungle
 swiftjungle
 thirstyjungle
-terrrificjungle
+terrificjungle
 thoughtfuljungle
 tinyjungle
 unevenjungle
@@ -11196,7 +11196,7 @@ superkangaroo
 sweetkangaroo
 swiftkangaroo
 thirstykangaroo
-terrrifickangaroo
+terrifickangaroo
 thoughtfulkangaroo
 tinykangaroo
 unevenkangaroo
@@ -11361,7 +11361,7 @@ superkayak
 sweetkayak
 swiftkayak
 thirstykayak
-terrrifickayak
+terrifickayak
 thoughtfulkayak
 tinykayak
 unevenkayak
@@ -11526,7 +11526,7 @@ superlake
 sweetlake
 swiftlake
 thirstylake
-terrrificlake
+terrificlake
 thoughtfullake
 tinylake
 unevenlake
@@ -11691,7 +11691,7 @@ superlemon
 sweetlemon
 swiftlemon
 thirstylemon
-terrrificlemon
+terrificlemon
 thoughtfullemon
 tinylemon
 unevenlemon
@@ -11856,7 +11856,7 @@ superlightning
 sweetlightning
 swiftlightning
 thirstylightning
-terrrificlightning
+terrificlightning
 thoughtfullightning
 tinylightning
 unevenlightning
@@ -12021,7 +12021,7 @@ superlion
 sweetlion
 swiftlion
 thirstylion
-terrrificlion
+terrificlion
 thoughtfullion
 tinylion
 unevenlion
@@ -12186,7 +12186,7 @@ superlotus
 sweetlotus
 swiftlotus
 thirstylotus
-terrrificlotus
+terrificlotus
 thoughtfullotus
 tinylotus
 unevenlotus
@@ -12351,7 +12351,7 @@ superlump
 sweetlump
 swiftlump
 thirstylump
-terrrificlump
+terrificlump
 thoughtfullump
 tinylump
 unevenlump
@@ -12516,7 +12516,7 @@ supermango
 sweetmango
 swiftmango
 thirstymango
-terrrificmango
+terrificmango
 thoughtfulmango
 tinymango
 unevenmango
@@ -12681,7 +12681,7 @@ supermesa
 sweetmesa
 swiftmesa
 thirstymesa
-terrrificmesa
+terrificmesa
 thoughtfulmesa
 tinymesa
 unevenmesa
@@ -12846,7 +12846,7 @@ supermint
 sweetmint
 swiftmint
 thirstymint
-terrrificmint
+terrificmint
 thoughtfulmint
 tinymint
 unevenmint
@@ -13011,7 +13011,7 @@ supermonkey
 sweetmonkey
 swiftmonkey
 thirstymonkey
-terrrificmonkey
+terrificmonkey
 thoughtfulmonkey
 tinymonkey
 unevenmonkey
@@ -13176,7 +13176,7 @@ supermoon
 sweetmoon
 swiftmoon
 thirstymoon
-terrrificmoon
+terrificmoon
 thoughtfulmoon
 tinymoon
 unevenmoon
@@ -13341,7 +13341,7 @@ supermotorcycle
 sweetmotorcycle
 swiftmotorcycle
 thirstymotorcycle
-terrrificmotorcycle
+terrificmotorcycle
 thoughtfulmotorcycle
 tinymotorcycle
 unevenmotorcycle
@@ -13506,7 +13506,7 @@ supermountain
 sweetmountain
 swiftmountain
 thirstymountain
-terrrificmountain
+terrificmountain
 thoughtfulmountain
 tinymountain
 unevenmountain
@@ -13671,7 +13671,7 @@ supernest
 sweetnest
 swiftnest
 thirstynest
-terrrificnest
+terrificnest
 thoughtfulnest
 tinynest
 unevennest
@@ -13836,7 +13836,7 @@ superoboe
 sweetoboe
 swiftoboe
 thirstyoboe
-terrrificoboe
+terrificoboe
 thoughtfuloboe
 tinyoboe
 unevenoboe
@@ -14001,7 +14001,7 @@ superocean
 sweetocean
 swiftocean
 thirstyocean
-terrrificocean
+terrificocean
 thoughtfulocean
 tinyocean
 unevenocean
@@ -14166,7 +14166,7 @@ superoctopus
 sweetoctopus
 swiftoctopus
 thirstyoctopus
-terrrificoctopus
+terrificoctopus
 thoughtfuloctopus
 tinyoctopus
 unevenoctopus
@@ -14331,7 +14331,7 @@ superonion
 sweetonion
 swiftonion
 thirstyonion
-terrrificonion
+terrificonion
 thoughtfulonion
 tinyonion
 unevenonion
@@ -14496,7 +14496,7 @@ superorange
 sweetorange
 swiftorange
 thirstyorange
-terrrificorange
+terrificorange
 thoughtfulorange
 tinyorange
 unevenorange
@@ -14661,7 +14661,7 @@ superorchestra
 sweetorchestra
 swiftorchestra
 thirstyorchestra
-terrrificorchestra
+terrificorchestra
 thoughtfulorchestra
 tinyorchestra
 unevenorchestra
@@ -14826,7 +14826,7 @@ superowl
 sweetowl
 swiftowl
 thirstyowl
-terrrificowl
+terrificowl
 thoughtfulowl
 tinyowl
 unevenowl
@@ -14991,7 +14991,7 @@ superpanda
 sweetpanda
 swiftpanda
 thirstypanda
-terrrificpanda
+terrificpanda
 thoughtfulpanda
 tinypanda
 unevenpanda
@@ -15156,7 +15156,7 @@ superpath
 sweetpath
 swiftpath
 thirstypath
-terrrificpath
+terrificpath
 thoughtfulpath
 tinypath
 unevenpath
@@ -15321,7 +15321,7 @@ superpear
 sweetpear
 swiftpear
 thirstypear
-terrrificpear
+terrificpear
 thoughtfulpear
 tinypear
 unevenpear
@@ -15486,7 +15486,7 @@ superpenguin
 sweetpenguin
 swiftpenguin
 thirstypenguin
-terrrificpenguin
+terrificpenguin
 thoughtfulpenguin
 tinypenguin
 unevenpenguin
@@ -15651,7 +15651,7 @@ superphoenix
 sweetphoenix
 swiftphoenix
 thirstyphoenix
-terrrificphoenix
+terrificphoenix
 thoughtfulphoenix
 tinyphoenix
 unevenphoenix
@@ -15816,7 +15816,7 @@ superpiano
 sweetpiano
 swiftpiano
 thirstypiano
-terrrificpiano
+terrificpiano
 thoughtfulpiano
 tinypiano
 unevenpiano
@@ -15981,7 +15981,7 @@ superpineapple
 sweetpineapple
 swiftpineapple
 thirstypineapple
-terrrificpineapple
+terrificpineapple
 thoughtfulpineapple
 tinypineapple
 unevenpineapple
@@ -16146,7 +16146,7 @@ superplanet
 sweetplanet
 swiftplanet
 thirstyplanet
-terrrificplanet
+terrificplanet
 thoughtfulplanet
 tinyplanet
 unevenplanet
@@ -16311,7 +16311,7 @@ superplum
 sweetplum
 swiftplum
 thirstyplum
-terrrificplum
+terrificplum
 thoughtfulplum
 tinyplum
 unevenplum
@@ -16476,7 +16476,7 @@ superpond
 sweetpond
 swiftpond
 thirstypond
-terrrificpond
+terrificpond
 thoughtfulpond
 tinypond
 unevenpond
@@ -16641,7 +16641,7 @@ superpotato
 sweetpotato
 swiftpotato
 thirstypotato
-terrrificpotato
+terrificpotato
 thoughtfulpotato
 tinypotato
 unevenpotato
@@ -16806,7 +16806,7 @@ superprairie
 sweetprairie
 swiftprairie
 thirstyprairie
-terrrificprairie
+terrificprairie
 thoughtfulprairie
 tinyprairie
 unevenprairie
@@ -16971,7 +16971,7 @@ superquail
 sweetquail
 swiftquail
 thirstyquail
-terrrificquail
+terrificquail
 thoughtfulquail
 tinyquail
 unevenquail
@@ -17136,7 +17136,7 @@ superrabbit
 sweetrabbit
 swiftrabbit
 thirstyrabbit
-terrrificrabbit
+terrificrabbit
 thoughtfulrabbit
 tinyrabbit
 unevenrabbit
@@ -17301,7 +17301,7 @@ superraccoon
 sweetraccoon
 swiftraccoon
 thirstyraccoon
-terrrificraccoon
+terrificraccoon
 thoughtfulraccoon
 tinyraccoon
 unevenraccoon
@@ -17466,7 +17466,7 @@ superraid
 sweetraid
 swiftraid
 thirstyraid
-terrrificraid
+terrificraid
 thoughtfulraid
 tinyraid
 unevenraid
@@ -17631,7 +17631,7 @@ superrain
 sweetrain
 swiftrain
 thirstyrain
-terrrificrain
+terrificrain
 thoughtfulrain
 tinyrain
 unevenrain
@@ -17796,7 +17796,7 @@ superraven
 sweetraven
 swiftraven
 thirstyraven
-terrrificraven
+terrificraven
 thoughtfulraven
 tinyraven
 unevenraven
@@ -17961,7 +17961,7 @@ superriver
 sweetriver
 swiftriver
 thirstyriver
-terrrificriver
+terrificriver
 thoughtfulriver
 tinyriver
 unevenriver
@@ -18126,7 +18126,7 @@ superroad
 sweetroad
 swiftroad
 thirstyroad
-terrrificroad
+terrificroad
 thoughtfulroad
 tinyroad
 unevenroad
@@ -18291,7 +18291,7 @@ superrosebud
 sweetrosebud
 swiftrosebud
 thirstyrosebud
-terrrificrosebud
+terrificrosebud
 thoughtfulrosebud
 tinyrosebud
 unevenrosebud
@@ -18456,7 +18456,7 @@ superruby
 sweetruby
 swiftruby
 thirstyruby
-terrrificruby
+terrificruby
 thoughtfulruby
 tinyruby
 unevenruby
@@ -18621,7 +18621,7 @@ supersea
 sweetsea
 swiftsea
 thirstysea
-terrrificsea
+terrificsea
 thoughtfulsea
 tinysea
 unevensea
@@ -18786,7 +18786,7 @@ supersheep
 sweetsheep
 swiftsheep
 thirstysheep
-terrrificsheep
+terrificsheep
 thoughtfulsheep
 tinysheep
 unevensheep
@@ -18951,7 +18951,7 @@ supership
 sweetship
 swiftship
 thirstyship
-terrrificship
+terrificship
 thoughtfulship
 tinyship
 unevenship
@@ -19116,7 +19116,7 @@ supershoe
 sweetshoe
 swiftshoe
 thirstyshoe
-terrrificshoe
+terrificshoe
 thoughtfulshoe
 tinyshoe
 unevenshoe
@@ -19281,7 +19281,7 @@ supershore
 sweetshore
 swiftshore
 thirstyshore
-terrrificshore
+terrificshore
 thoughtfulshore
 tinyshore
 unevenshore
@@ -19446,7 +19446,7 @@ supershrub
 sweetshrub
 swiftshrub
 thirstyshrub
-terrrificshrub
+terrificshrub
 thoughtfulshrub
 tinyshrub
 unevenshrub
@@ -19611,7 +19611,7 @@ supersitter
 sweetsitter
 swiftsitter
 thirstysitter
-terrrificsitter
+terrificsitter
 thoughtfulsitter
 tinysitter
 unevensitter
@@ -19776,7 +19776,7 @@ superskates
 sweetskates
 swiftskates
 thirstyskates
-terrrificskates
+terrificskates
 thoughtfulskates
 tinyskates
 unevenskates
@@ -19941,7 +19941,7 @@ supersnake
 sweetsnake
 swiftsnake
 thirstysnake
-terrrificsnake
+terrificsnake
 thoughtfulsnake
 tinysnake
 unevensnake
@@ -20106,7 +20106,7 @@ supersky
 sweetsky
 swiftsky
 thirstysky
-terrrificsky
+terrificsky
 thoughtfulsky
 tinysky
 unevensky
@@ -20271,7 +20271,7 @@ supersocks
 sweetsocks
 swiftsocks
 thirstysocks
-terrrificsocks
+terrificsocks
 thoughtfulsocks
 tinysocks
 unevensocks
@@ -20436,7 +20436,7 @@ supersparrow
 sweetsparrow
 swiftsparrow
 thirstysparrow
-terrrificsparrow
+terrificsparrow
 thoughtfulsparrow
 tinysparrow
 unevensparrow
@@ -20601,7 +20601,7 @@ superspider
 sweetspider
 swiftspider
 thirstyspider
-terrrificspider
+terrificspider
 thoughtfulspider
 tinyspider
 unevenspider
@@ -20766,7 +20766,7 @@ supersquash
 sweetsquash
 swiftsquash
 thirstysquash
-terrrificsquash
+terrificsquash
 thoughtfulsquash
 tinysquash
 unevensquash
@@ -20931,7 +20931,7 @@ supersquirrel
 sweetsquirrel
 swiftsquirrel
 thirstysquirrel
-terrrificsquirrel
+terrificsquirrel
 thoughtfulsquirrel
 tinysquirrel
 unevensquirrel
@@ -21096,7 +21096,7 @@ superstar
 sweetstar
 swiftstar
 thirstystar
-terrrificstar
+terrificstar
 thoughtfulstar
 tinystar
 unevenstar
@@ -21261,7 +21261,7 @@ superstream
 sweetstream
 swiftstream
 thirstystream
-terrrificstream
+terrificstream
 thoughtfulstream
 tinystream
 unevenstream
@@ -21426,7 +21426,7 @@ superstreet
 sweetstreet
 swiftstreet
 thirstystreet
-terrrificstreet
+terrificstreet
 thoughtfulstreet
 tinystreet
 unevenstreet
@@ -21591,7 +21591,7 @@ supersun
 sweetsun
 swiftsun
 thirstysun
-terrrificsun
+terrificsun
 thoughtfulsun
 tinysun
 unevensun
@@ -21756,7 +21756,7 @@ supertable
 sweettable
 swifttable
 thirstytable
-terrrifictable
+terrifictable
 thoughtfultable
 tinytable
 uneventable
@@ -21921,7 +21921,7 @@ superteapot
 sweetteapot
 swiftteapot
 thirstyteapot
-terrrificteapot
+terrificteapot
 thoughtfulteapot
 tinyteapot
 uneventeapot
@@ -22086,7 +22086,7 @@ superterrain
 sweetterrain
 swiftterrain
 thirstyterrain
-terrrificterrain
+terrificterrain
 thoughtfulterrain
 tinyterrain
 uneventerrain
@@ -22251,7 +22251,7 @@ supertiger
 sweettiger
 swifttiger
 thirstytiger
-terrrifictiger
+terrifictiger
 thoughtfultiger
 tinytiger
 uneventiger
@@ -22416,7 +22416,7 @@ supertoast
 sweettoast
 swifttoast
 thirstytoast
-terrrifictoast
+terrifictoast
 thoughtfultoast
 tinytoast
 uneventoast
@@ -22581,7 +22581,7 @@ supertomato
 sweettomato
 swifttomato
 thirstytomato
-terrrifictomato
+terrifictomato
 thoughtfultomato
 tinytomato
 uneventomato
@@ -22746,7 +22746,7 @@ supertrail
 sweettrail
 swifttrail
 thirstytrail
-terrrifictrail
+terrifictrail
 thoughtfultrail
 tinytrail
 uneventrail
@@ -22911,7 +22911,7 @@ supertrain
 sweettrain
 swifttrain
 thirstytrain
-terrrifictrain
+terrifictrain
 thoughtfultrain
 tinytrain
 uneventrain
@@ -23076,7 +23076,7 @@ supertree
 sweettree
 swifttree
 thirstytree
-terrrifictree
+terrifictree
 thoughtfultree
 tinytree
 uneventree
@@ -23241,7 +23241,7 @@ supertruck
 sweettruck
 swifttruck
 thirstytruck
-terrrifictruck
+terrifictruck
 thoughtfultruck
 tinytruck
 uneventruck
@@ -23406,7 +23406,7 @@ supertrumpet
 sweettrumpet
 swifttrumpet
 thirstytrumpet
-terrrifictrumpet
+terrifictrumpet
 thoughtfultrumpet
 tinytrumpet
 uneventrumpet
@@ -23571,7 +23571,7 @@ supertuba
 sweettuba
 swifttuba
 thirstytuba
-terrrifictuba
+terrifictuba
 thoughtfultuba
 tinytuba
 uneventuba
@@ -23736,7 +23736,7 @@ supertulip
 sweettulip
 swifttulip
 thirstytulip
-terrrifictulip
+terrifictulip
 thoughtfultulip
 tinytulip
 uneventulip
@@ -23901,7 +23901,7 @@ superturkey
 sweetturkey
 swiftturkey
 thirstyturkey
-terrrificturkey
+terrificturkey
 thoughtfulturkey
 tinyturkey
 uneventurkey
@@ -24066,7 +24066,7 @@ superumbrella
 sweetumbrella
 swiftumbrella
 thirstyumbrella
-terrrificumbrella
+terrificumbrella
 thoughtfulumbrella
 tinyumbrella
 unevenumbrella
@@ -24231,7 +24231,7 @@ superunicorn
 sweetunicorn
 swiftunicorn
 thirstyunicorn
-terrrificunicorn
+terrificunicorn
 thoughtfulunicorn
 tinyunicorn
 unevenunicorn
@@ -24396,7 +24396,7 @@ superunit
 sweetunit
 swiftunit
 thirstyunit
-terrrificunit
+terrificunit
 thoughtfulunit
 tinyunit
 unevenunit
@@ -24561,7 +24561,7 @@ supervalley
 sweetvalley
 swiftvalley
 thirstyvalley
-terrrificvalley
+terrificvalley
 thoughtfulvalley
 tinyvalley
 unevenvalley
@@ -24726,7 +24726,7 @@ supervase
 sweetvase
 swiftvase
 thirstyvase
-terrrificvase
+terrificvase
 thoughtfulvase
 tinyvase
 unevenvase
@@ -24891,7 +24891,7 @@ superviolet
 sweetviolet
 swiftviolet
 thirstyviolet
-terrrificviolet
+terrificviolet
 thoughtfulviolet
 tinyviolet
 unevenviolet
@@ -25056,7 +25056,7 @@ superviolin
 sweetviolin
 swiftviolin
 thirstyviolin
-terrrificviolin
+terrificviolin
 thoughtfulviolin
 tinyviolin
 unevenviolin
@@ -25221,7 +25221,7 @@ superwater
 sweetwater
 swiftwater
 thirstywater
-terrrificwater
+terrificwater
 thoughtfulwater
 tinywater
 unevenwater
@@ -25386,7 +25386,7 @@ superwhale
 sweetwhale
 swiftwhale
 thirstywhale
-terrrificwhale
+terrificwhale
 thoughtfulwhale
 tinywhale
 unevenwhale
@@ -25551,7 +25551,7 @@ superwind
 sweetwind
 swiftwind
 thirstywind
-terrrificwind
+terrificwind
 thoughtfulwind
 tinywind
 unevenwind
@@ -25716,7 +25716,7 @@ superwindow
 sweetwindow
 swiftwindow
 thirstywindow
-terrrificwindow
+terrificwindow
 thoughtfulwindow
 tinywindow
 unevenwindow
@@ -25881,7 +25881,7 @@ superzebra
 sweetzebra
 swiftzebra
 thirstyzebra
-terrrificzebra
+terrificzebra
 thoughtfulzebra
 tinyzebra
 unevenzebra
@@ -26046,7 +26046,7 @@ superzoo
 sweetzoo
 swiftzoo
 thirstyzoo
-terrrificzoo
+terrificzoo
 thoughtfulzoo
 tinyzoo
 unevenzoo
