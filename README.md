@@ -64,7 +64,7 @@ $ pskracker -t dpc3941 -b 112233445566
 # Supported OS
 
 PSKracker should compile on macOS, Windows (with cygwin), and any Linux system.  
-It has been tested on macOS High Sierra 10.13.2, Windows 10, Ubuntu 16.04 and ArchLinux. 
+It has been tested on macOS High Sierra 10.13.6, Windows 10, Ubuntu 16.04, Ubuntu 18.04 and ArchLinux. 
 Embedded systems are not supported, though may still work. PSKracker is intended to be run on true pentesting environments (Desktop/Workstation/Laptop). Some psk generators (not bruteforce) are still suitable for embembedded systems, but I will not provide support due to the nature of the tool.
 
 # Acknowledgements
