@@ -26,11 +26,26 @@
 
 #define ATT_NVG5XX_PSK_LEN 13
 
+uint64_t do_rounding(uint64_t x) {
+	int idx = 63 - __builtin_clzll(x);
+	if (idx > 52) {
+		x >>= idx - 52 - 1;
+		x = (x >> 1) + (x & 1);
+		x <<= idx - 52;
+	}
+	return x;
+}
+
 void genpass589(uint32_t x, unsigned char *psk) {
 	static const char CHARSET[] = "abcdefghijkmnpqrstuvwxyz23456789#%+=?";
 	int i;
 
-	uint64_t one = x * 465661287.5245797; // thank you mrfancypants for finding this number
+	uint64_t y = x;
+	y = y + (y << 31);
+	y = do_rounding(y);
+	y = (uint64_t) ( ((__int128)y * (__int128)1000000000000000000ull) >> 61 ); 
+	y = do_rounding(y);
+	uint64_t one = y>> 1;
 	uint64_t two = one;
 	psk[ATT_NVG5XX_PSK_LEN - 1] = 0;
 
