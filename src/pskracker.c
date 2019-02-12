@@ -1,7 +1,7 @@
 /*
  * PSKracker: WPA/WPA2/WPS default key/pin generator written in C.
  *
- * Copyright (c) 2017-2018, soxrok2212 <soxrok2212@gmail.com>
+ * Copyright (c) 2017-2019, soxrok2212 <soxrok2212@gmail.com>
  * SPDX-License-Identifier: GPL-3.0+
  *
  * This program is free software: you can redistribute it and/or modify
@@ -50,7 +50,7 @@ void usage_err() {
 	printf(
 			"\n"
 			" PSKracker %s WiFi Security Auditing Toolkit\n"
-			" Copyright (c) 2017-2018, soxrok2212 <soxrok2212@gmail.com>\n"
+			" Copyright (c) 2017-2019, soxrok2212 <soxrok2212@gmail.com>\n"
 			"\n"
 			" Usage: pskracker <arguments>\n"
 			"\n"
