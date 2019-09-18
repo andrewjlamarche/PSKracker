@@ -36,6 +36,7 @@ daisy
 desk
 diamond
 deer
+dog
 door
 earth
 elephant
@@ -47,6 +48,7 @@ flamingo
 flower
 flute
 forest
+formal
 free
 gadfly
 gate
@@ -63,11 +65,13 @@ house
 ink
 iris
 jade
+jazz
 jet
 jungle
 kangaroo
 kayak
 lake
+lawn
 lemon
 lightning
 lion
@@ -80,8 +84,11 @@ monkey
 moon
 motorcycle
 mountain
+mud
+museum
 nest
 oboe
+object
 ocean
 octopus
 onion
@@ -120,12 +127,16 @@ sitter
 skates
 snake
 sky
+sled
 socks
+spark
 sparrow
 spider
 squash
 squirrel
 star
+stable
+stove
 stream
 street
 sun
@@ -148,6 +159,7 @@ unicorn
 unit
 valley
 vase
+verse
 violet
 violin
 water

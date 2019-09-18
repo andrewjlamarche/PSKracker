@@ -1,4 +1,5 @@
 absurd
+anchor
 ancient
 antique
 aquatic
@@ -26,6 +27,7 @@ clean
 clear
 clever
 cloudy
+clumsy
 cold
 cool
 crispy
@@ -35,9 +37,12 @@ deep
 delightful
 dizzy
 down
+dusty
 dynamic
+eager
 elated
 elegant
+engine
 excited
 exotic
 famous
@@ -45,11 +50,13 @@ fancy
 fast
 fearless
 festive
+fluent
 fluffy
 fragile
 free
 fresh
 friendly
+frosty
 funny
 fuzzy
 gentle
@@ -68,6 +75,7 @@ hungry
 husky
 icy
 imaginary
+input
 invisible
 jagged
 jolly
@@ -75,6 +83,7 @@ joyful
 joyous
 kind
 large
+leader
 light
 little
 lively
@@ -92,6 +101,7 @@ new
 nifty
 noisy
 normal
+north
 odd
 old
 orange
@@ -149,6 +159,7 @@ unusual
 vanilla
 vast
 violet
+violin
 warm
 watery
 weak
