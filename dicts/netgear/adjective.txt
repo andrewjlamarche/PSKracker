@@ -151,6 +151,7 @@ slow
 slower
 small
 smart
+smiley
 smiling
 smooth
 snug
