@@ -1,12 +1,11 @@
 absurd
-anchor
 ancient
 antique
 aquatic
 baby
 basic
-big
 better
+big
 bitter
 black
 blue
@@ -42,7 +41,6 @@ dynamic
 eager
 elated
 elegant
-engine
 excited
 exotic
 famous
@@ -75,7 +73,6 @@ hungry
 husky
 icy
 imaginary
-input
 invisible
 jagged
 jolly
@@ -83,7 +80,6 @@ joyful
 joyous
 kind
 large
-leader
 light
 little
 lively
@@ -92,6 +88,7 @@ lucky
 lumpy
 magical
 manic
+mellow
 melodic
 mighty
 misty
@@ -150,8 +147,8 @@ sunny
 super
 sweet
 swift
-thirsty
 terrific
+thirsty
 thoughtful
 tiny
 uneven
@@ -159,7 +156,6 @@ unusual
 vanilla
 vast
 violet
-violin
 warm
 watery
 weak

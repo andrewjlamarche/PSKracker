@@ -1,4 +1,5 @@
 airplane
+anchor
 apple
 automobile
 ball
@@ -33,14 +34,15 @@ comet
 cream
 curtain
 daisy
+deer
 desk
 diamond
-deer
 dog
 door
 earth
 elephant
 emerald
+engine
 finch
 fire
 fish
@@ -63,6 +65,7 @@ hill
 hippo
 house
 ink
+input
 iris
 jade
 jazz
@@ -72,6 +75,7 @@ kangaroo
 kayak
 lake
 lawn
+leader
 lemon
 lightning
 lion
@@ -87,8 +91,8 @@ mountain
 mud
 museum
 nest
-oboe
 object
+oboe
 ocean
 octopus
 onion
@@ -105,6 +109,7 @@ pineapple
 planet
 plum
 pond
+poodle
 potato
 prairie
 quail
@@ -125,17 +130,17 @@ shore
 shrub
 sitter
 skates
-snake
 sky
 sled
+snake
 socks
 spark
 sparrow
 spider
 squash
 squirrel
-star
 stable
+star
 stove
 stream
 street
