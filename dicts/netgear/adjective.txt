@@ -5,8 +5,9 @@ antique
 aquatic
 baby
 basic
-big
+bay
 better
+big
 bitter
 black
 blue
@@ -18,9 +19,12 @@ breezy
 bright
 brown
 calm
+carrot
+cash
 charming
 cheerful
 chilly
+chip
 chummy
 classy
 clean
@@ -40,9 +44,11 @@ down
 dusty
 dynamic
 eager
+east
 elated
 elegant
 engine
+excite
 excited
 exotic
 famous
@@ -62,6 +68,7 @@ fuzzy
 gentle
 gifted
 gigantic
+good
 graceful
 grand
 grateful
@@ -99,10 +106,12 @@ misty
 modern
 narrow
 new
+nice
 nifty
 noisy
 normal
 north
+occur
 odd
 old
 orange
@@ -115,6 +124,7 @@ phobic
 pink
 plain
 polite
+poor
 precious
 pretty
 purple
@@ -138,6 +148,7 @@ silky
 silly
 slender
 slow
+slower
 small
 smart
 smiling
@@ -151,12 +162,13 @@ sunny
 super
 sweet
 swift
-thirsty
 terrific
+thirsty
 thoughtful
 tiny
 uneven
 unusual
+urban
 vanilla
 vast
 violet
