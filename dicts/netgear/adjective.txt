@@ -33,6 +33,7 @@ clever
 cloudy
 clumsy
 cold
+comet
 cool
 crispy
 curly
@@ -80,6 +81,7 @@ helpful
 hot
 hungry
 husky
+hybrid
 icy
 imaginary
 input

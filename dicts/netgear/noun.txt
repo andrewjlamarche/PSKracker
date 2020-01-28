@@ -25,6 +25,7 @@ bush
 butter
 canoe
 car
+cat
 carrot
 cartoon
 cello
@@ -117,6 +118,7 @@ penguin
 phoenix
 piano
 pineapple
+plane
 planet
 plum
 pond
