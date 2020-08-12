@@ -1,3 +1,4 @@
+absent
 absurd
 acre
 airplane
@@ -86,8 +87,10 @@ delightful
 desk
 diamond
 dink
+dinner
 dizzy
 dog
+doll
 door
 down
 dusty
@@ -131,6 +134,7 @@ gadfly
 gallon
 gate
 gear
+genius
 gentle
 giant
 gifted
@@ -236,6 +240,7 @@ orchestra
 ordinary
 owl
 painless
+palm
 panda
 pant
 park
@@ -279,6 +284,7 @@ reward
 river
 road
 robert
+robin
 rock
 rocky
 rosebud
@@ -327,6 +333,7 @@ sour
 spark
 sparrow
 spider
+spirit
 squash
 squirrel
 stable
