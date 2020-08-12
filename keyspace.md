@@ -185,39 +185,39 @@
 
   - `?d?d?d?d?d?d?d?d`
 
-* MyCharterWiFi-XX	-	[Adjective + Noun + 1 or 3 Digits]	-	Len:Varies
+* MyCharterWiFi-XX	-	[word + word + 1 or 3 Digits]	-	Len:Varies
 
-  - `-a 6 netgear.txt ?d?d?d`
-
-  or  
-
-  - `-a 6 netgear.txt ?d`
-
-    * Dictionaries are located [here](/dicts/netgear)
-
-* MySpectrumWiFi-XX	-	[Adjective + Noun + 1 or 3 Digits]	-	Len:Varies
-
-  - `-a 6 netgear.txt ?d?d?d`  
+  - `-a 6 netgear-spectrum.txt ?d?d?d`
 
   or  
 
-  - `-a 6 netgear.txt ?d`
+  - `-a 6 netgear-spectrum.txt ?d`
 
-    * Dictionaries are located [here](/dicts/netgear)
+    * Dictionaries are located [here](/dicts/netgear-spectrum)
+
+* MySpectrumWiFi-XX	-	[word + word + 1 or 3 Digits]	-	Len:Varies
+
+  - `-a 6 netgear-spectrum.txt ?d?d?d`  
+
+  or  
+
+  - `-a 6 netgear-spectrum.txt ?d`
+
+    * Dictionaries are located [here](/dicts/netgear-spectrum)
 
 * MYWIFI (EE)	-	[MYWIFI + 4 numbers]	-	Len: 10
 
   - `MYWIFI?d?d?d?d`
 
-* NETGEARXX	-	[Adjective + Noun + 3 Digits]	-	Len: Varies
+* NETGEARXX	-	[word + word + 3 Digits]	-	Len: Varies
 
-  - `-a 6 netgear.txt ?d?d?d`  
+  - `-a 6 netgear-spectrum.txt ?d?d?d`  
 
   or  
 
-  - `-a 6 netgear.txt ?d`  
+  - `-a 6 netgear-spectrum.txt ?d`  
 
-    * Dictionaries are located [here](/dicts/netgear)
+    * Dictionaries are located [here](/dicts/netgear-spectrum)
 
 * Netia-XXXXXX	-	[0-9a-f]	-	Len:13
 
