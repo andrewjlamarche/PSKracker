@@ -1,6 +1,7 @@
 absent
 absurd
 acre
+adorable
 airplane
 anchor
 ancient
@@ -9,6 +10,7 @@ apple
 aquatic
 automobile
 baby
+bakery
 ball
 balloon
 banana
@@ -56,15 +58,19 @@ cello
 chair
 charming
 check
+cheek
 cheerful
 cheese
 chilly
 chip
+city
+chorus
 chummy
 classy
 clean
 clear
 clever
+clock
 cloudy
 clumsy
 coast
@@ -84,6 +90,7 @@ deep
 deer
 degree
 delightful
+desert
 desk
 diamond
 dink
@@ -142,6 +149,7 @@ gigantic
 giraffe
 girl
 glove
+gold
 good
 graceful
 grand
@@ -158,6 +166,7 @@ heavy
 helpful
 hill
 hippo
+honest
 hot
 house
 hungry
@@ -186,6 +195,7 @@ ladder
 lake
 large
 lawn
+lazy
 leader
 lemon
 light
@@ -234,6 +244,7 @@ ocean
 octopus
 odd
 old
+olive
 onion
 orange
 orchestra
@@ -246,6 +257,7 @@ pant
 park
 pastel
 path
+patron
 peaceful
 pear
 pencil
@@ -268,6 +280,8 @@ potato
 prairie
 precious
 pretty
+prose
+proud
 purple
 quail
 quaint
@@ -275,11 +289,13 @@ quick
 quiet
 rabbit
 raccoon
+raft
 raid
 rain
 rapid
 raven
 red
+review
 reward
 river
 road
@@ -287,6 +303,7 @@ robert
 robin
 rock
 rocky
+rose
 rosebud
 rough
 round
@@ -300,6 +317,7 @@ sea
 seed
 shark
 sheep
+shelf
 shiny
 ship
 shoe
@@ -325,6 +343,7 @@ smart
 smiley
 smiling
 smooth
+snail
 snake
 snug
 socks
@@ -399,6 +418,8 @@ windy
 wise
 witty
 wonderful
+world
+yacht
 yellow
 young
 zany
