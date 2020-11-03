@@ -162,6 +162,7 @@ guppy
 hair
 happy
 hat
+hearty
 heavy
 helpful
 hill
@@ -182,8 +183,10 @@ iris
 jade
 jagged
 jazz
+jeans
 jet
 jetcar
+jewel
 jolly
 joyful
 joyous
@@ -302,6 +305,7 @@ road
 robert
 robin
 rock
+rocket
 rocky
 rose
 rosebud
@@ -310,6 +314,7 @@ round
 royal
 ruby
 rugged
+runner
 rustic
 safe
 sandy
@@ -363,6 +368,7 @@ strange
 stream
 street
 strong
+studio
 summit
 sun
 sunny
@@ -401,6 +407,7 @@ vast
 verse
 violet
 violin
+voyage
 wagon
 warm
 water
@@ -417,7 +424,9 @@ window
 windy
 wise
 witty
+wolf
 wonderful
+wooden
 world
 yacht
 yellow
