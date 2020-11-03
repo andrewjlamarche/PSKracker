@@ -6,7 +6,7 @@ PROG = pskracker
 SRCS = $(SRCDIR)/pskracker.c
 OBJS = $(SRCS:.c=.o)
 
-CFLAGS += -Wno-unused -Wno-return-type
+CFLAGS += -Wno-unused -Wno-return-type -O3
 
 all: $(PROG)
 
