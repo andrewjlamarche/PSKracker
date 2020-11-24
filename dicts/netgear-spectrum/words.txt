@@ -110,6 +110,7 @@ elated
 elegant
 elephant
 emerald
+energy
 engine
 excite
 excited
@@ -358,6 +359,7 @@ spark
 sparrow
 spider
 spirit
+spoon
 squash
 squirrel
 stable
