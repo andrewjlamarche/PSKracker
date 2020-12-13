@@ -169,6 +169,7 @@ helpful
 hill
 hippo
 honest
+honor
 hot
 house
 hungry
