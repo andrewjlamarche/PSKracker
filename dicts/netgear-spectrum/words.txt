@@ -63,9 +63,9 @@ cheerful
 cheese
 chilly
 chip
-city
 chorus
 chummy
+city
 classy
 clean
 clear
@@ -101,6 +101,7 @@ doll
 door
 down
 dusty
+duty
 dynamic
 eager
 earth
@@ -179,9 +180,10 @@ icy
 imaginary
 ink
 input
-invisible
 invent
+invisible
 iris
+jacket
 jade
 jagged
 jazz
@@ -196,9 +198,11 @@ jungle
 kangaroo
 kayak
 kind
+known
 ladder
 lake
 large
+law
 lawn
 lazy
 leader
@@ -223,6 +227,7 @@ melodic
 mesa
 mighty
 mint
+mirror
 misty
 modern
 monkey
@@ -365,9 +370,9 @@ squash
 squirrel
 stable
 star
-straw
 stove
 strange
+straw
 stream
 street
 strong
