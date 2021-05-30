@@ -8,6 +8,7 @@ ancient
 antique
 apple
 aquatic
+author
 automobile
 baby
 bakery
@@ -45,6 +46,7 @@ brown
 bubble
 bug
 bunny
+bus
 bush
 butter
 calm
@@ -69,6 +71,7 @@ city
 classy
 clean
 clear
+clerk
 clever
 clock
 cloudy
@@ -113,6 +116,7 @@ elephant
 emerald
 energy
 engine
+epic
 excite
 excited
 exotic
@@ -177,6 +181,7 @@ hungry
 husky
 hybrid
 icy
+idea
 imaginary
 ink
 input
@@ -401,6 +406,7 @@ trumpet
 tuba
 tulip
 turkey
+turtle
 umbrella
 uneven
 unicorn
