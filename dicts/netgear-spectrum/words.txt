@@ -375,6 +375,7 @@ squash
 squirrel
 stable
 star
+stealth
 stove
 strange
 straw
