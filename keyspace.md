@@ -308,6 +308,16 @@
 
   - `?h?h?h?h?h?h?h?h?h?h`
 
+* SpectrumSetup-XX	-	[word + word + 1 or 3 Digits]	-	Len:Varies
+
+  - `-a 6 netgear-spectrum.txt ?d?d?d`  
+
+  or  
+
+  - `-a 6 netgear-spectrum.txt ?d`
+
+    * Dictionaries are located [here](/dicts/netgear-spectrum)
+
 * SpeedTouchXXXXXX	-	[0-9a-f]	-	Len: 10
 
   - `?h?h?h?h?h?h?h?h?h?h`
