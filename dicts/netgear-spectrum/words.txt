@@ -9,6 +9,7 @@ airplane
 album
 anchor
 ancient
+angry
 antique
 ape
 apple
@@ -98,6 +99,8 @@ coconut
 cold
 comet
 cool
+cosmic
+country
 cream
 crispy
 curly
@@ -117,6 +120,7 @@ desk
 diamond
 dink
 dinner
+dirt
 dizzy
 dog
 doll
@@ -201,9 +205,11 @@ grateful
 great
 green
 grimy
+grumpy
 guitar
 guppy
 hair
+hall
 happy
 harbor
 hat
@@ -215,6 +221,7 @@ hill
 hippo
 honest
 honor
+horse
 hot
 hotel
 house
@@ -225,6 +232,7 @@ icy
 idea
 imaginary
 immune
+informal
 ink
 input
 invent
@@ -267,6 +275,7 @@ lightning
 lion
 little
 lively
+long
 lotus
 lovely
 loyal
