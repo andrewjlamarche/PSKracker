@@ -367,6 +367,7 @@ monkey
 month
 monthly
 moon
+most
 motorcycle
 mountain
 movie
@@ -601,6 +602,7 @@ ten
 tent
 terrain
 terrific
+thanks
 that
 theory
 think
@@ -619,6 +621,7 @@ tomato
 tooth
 top
 topic
+total
 town
 toy
 trail
