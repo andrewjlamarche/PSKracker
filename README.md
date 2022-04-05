@@ -92,3 +92,9 @@ In publishing these documents and source code, I (and other developers/contribut
 ### Belkin
 * [CVE-2012-4366](https://nvd.nist.gov/vuln/detail/CVE-2012-4366)
 * nvram.c from GPL source code center
+
+### Altice-Optimum
+* [Hashkiller.io Forum](https://forum.hashkiller.io)
+* [@Dawbs](https://forum.hashkiller.io/index.php?members/dawbs.1022870/)
+* [@petrovivo1234](https://forum.hashkiller.io/index.php?members/petrovivo1234.1024253/)
+* [@AimanRulez](https://forum.hashkiller.io/index.php?members/aimanrulez.1029467/)
