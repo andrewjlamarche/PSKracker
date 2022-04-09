@@ -6,12 +6,12 @@ aquamarine
 azure
 baby
 beige
-brick
 black
 blue
 blue-green
 blue-violet
 blush
+brick
 bronze
 brown
 burgundy
@@ -26,6 +26,7 @@ cobalt
 coffee
 copper
 coral
+cordovan
 crimson
 cyan
 desert
@@ -44,7 +45,6 @@ lavender
 lemon
 lilac
 lime
-magenta
 magenta
 maroon
 mauve
@@ -74,7 +74,6 @@ sapphire
 scarlet
 silver
 slate
-spring
 spring
 tan
 taupe
