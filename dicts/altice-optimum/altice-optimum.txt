@@ -2,6 +2,7 @@ amaranth
 amber
 amethyst
 apricot
+aqua
 aquamarine
 azure
 baby
@@ -21,6 +22,7 @@ cerise
 cerulean
 champagne
 chartreuse
+chestnut
 chocolate
 cobalt
 coffee
@@ -33,6 +35,7 @@ desert
 electric
 emerald
 erin
+garnet
 gold
 gray
 green
@@ -68,10 +71,12 @@ red
 red-violet
 rose
 ruby
+sage
 salmon
 sangria
 sapphire
 scarlet
+sepia
 silver
 slate
 spring
