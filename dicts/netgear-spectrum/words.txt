@@ -70,6 +70,7 @@ bug
 bunny
 bus
 bush
+busy
 butler
 butter
 buyer
@@ -155,11 +156,13 @@ down
 dusty
 duty
 dynamic
+each
 eager
 eagle
 earth
 east
 easy
+editor
 effort
 eggplant
 eight
@@ -169,6 +172,7 @@ elephant
 eleven
 emerald
 emigrant
+empty
 energy
 engine
 enough
@@ -395,6 +399,7 @@ occur
 ocean
 octopus
 odd
+office
 oil
 old
 olive
@@ -405,6 +410,7 @@ orange
 orchestra
 ordinary
 outlet
+over
 owl
 owner
 oxygen
@@ -415,6 +421,7 @@ pant
 paper
 parade
 park
+past`
 pastel
 path
 patron
@@ -513,6 +520,7 @@ scaly
 scary
 scout
 sea
+sector
 seed
 self
 series
@@ -532,6 +540,7 @@ silent
 silky
 silly
 silver
+singer
 sitter
 six
 skates
