@@ -63,9 +63,9 @@ $ pskracker -t dpc3941 -b 112233445566
 
 # Supported OS
 
-PSKracker should compile on macOS, Windows (with cygwin), and any Linux system.  
-It has been tested on macOS High Sierra 10.13.6, Windows 10, Ubuntu 16.04, Ubuntu 18.04 and ArchLinux. 
-Embedded systems are not supported, though may still work. PSKracker is intended to be run on true pentesting environments (Desktop/Workstation/Laptop). Some psk generators (not bruteforce) are still suitable for embedded systems, but I will not provide support due to the nature of the tool.
+PSKracker should compile on macOS and most Linux system.  
+It has been tested on macOS Monterey 12.4, Ubuntu 16, Ubuntu 18, Ubuntu 20, Ubuntu 22 and ArchLinux. 
+Embedded systems and Windows are not supported, though may still work. PSKracker is intended to be run on true pentesting environments (Desktop/Workstation/Laptop). Some psk generators (not bruteforce) are still suitable for embedded systems, but I will not provide support due to the nature of the tool.
 
 Some 32-bit systems (Raspberry Pi with Raspbian) do not support 128-bit integers that are currently used for the Arris NVG589 algorithm, and therefore are not supported by PSKracker at this time. You may have luck with a 64-bit OS running on a recent revision, but this has not been tested.
 
