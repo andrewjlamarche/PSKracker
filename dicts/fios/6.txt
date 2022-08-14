@@ -1,2 +1,6 @@
 straws
+quasar
 defuse
+vagary
+petrel
+onward
