@@ -112,6 +112,7 @@ clumsy
 coast
 coat
 coconut
+coffee
 cold
 comet
 complete
