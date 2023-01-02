@@ -1,9 +1,9 @@
-reclaim
-tropics
-petrify
-sanctum
 catalpa
+envelop
 expound
 pastime
-envelop
+petrify
+reclaim
+sanctum
 searing
+tropics
